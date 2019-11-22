@@ -1,0 +1,11 @@
+(function ($) {
+	$(document).ready(function(){
+        var height_banner=jQuery('.bannergroup .banneritem').height();
+        var margin_skin = parseInt(jQuery('.skin ').css("margin-top"));
+        var margin_top = margin_skin - height_banner;
+        $('.skin').css('margin-top',margin_top+'px');
+        $('.skin .center').css('padding-top',height_banner+'px');
+        $('.skin .right').css('padding-top',height_banner+'px');
+        $('.skin .left').css('padding-top',height_banner+'px');
+	});
+}(jQuery));

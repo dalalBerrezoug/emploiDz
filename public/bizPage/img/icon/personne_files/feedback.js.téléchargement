@@ -1,0 +1,42 @@
+(function ($){
+	var callbacks = {
+		    finish : function(data){
+				window.parent.Elib.message(data);
+				$('#cbp-spmenu-s1').simpleOverlay() || $('body').overlay();
+		    }
+	};
+	$(document).ready(function(){
+	    //Ajax Form submit
+		$('#feedback-button').click(function(e){
+            e.preventDefault();
+            //if a tinyMce is present in the page
+            try {
+                    tinyMCE.triggerSave();
+            }
+            catch (ex) {}
+
+            var element = $(this),
+                    elementData = element.data() || {},
+                    form = elementData.formId ? $('#'+elementData.formId) :
+                    element.parents('form:first'),
+                    url = form.attr('action'),
+                    data = form.serialize() || {};
+            //Set Overlay
+            form.data('formValidator').validate().then(function () {
+	            $('#cbp-spmenu-s1').simpleOverlay("<div style='height: 100%'><div style='margin-top: 80%' class='text-center'><h1>Envoi en cours ...</h1></div></div>") || $('body').overlay();
+	            //Set the request
+	            $.post(url,data).done(function( msg ) {
+                    if(msg.success) {
+						callbacks['finish'](msg.message);
+                    }else{
+                        Elib.message(msg.error,'error');
+                       $('#cbp-spmenu-s1').simpleOverlay() || $('body').overlay();
+                    }
+	            }).fail(function(error){
+	                    Elib.message('Erreur inconnue','error');
+	                    $('#cbp-spmenu-s1').simpleOverlay() || $('body').overlay();
+	            });
+            });
+        });
+	});
+}(jQuery));

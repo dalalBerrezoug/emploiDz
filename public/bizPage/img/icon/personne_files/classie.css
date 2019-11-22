@@ -1,0 +1,67 @@
+/*********************************/
+.moduletable .arrow {
+    background-position: 0px -68px;
+}
+.moduletable #showLeft{
+	//margin-top: 20%;
+	left: 240px;top: 238px; box-shadow: 1px 1px 5px #F1F1F1;
+	width: 11px;
+	height: 86px;
+	padding: 20px 10px;
+	float: right; 
+	margin-right: -22px; 
+	margin-top: -333px;
+}
+.moduletable #showLeft .btn{
+	font-weight: 500;
+	width: 160px;  
+	margin-left: -60px; 
+	margin-top: 14px; 
+	border-radius: 3px 3px 0 0;
+	box-shadow: -2px 0px 0px rgba(0, 0, 0, 0.2) inset;
+}
+.moduletable #showLeft .btn i:before {
+	content: "\f102";
+}
+
+.moduletable #showLeft.active .btn i:before {
+    content: "\f103";
+}
+
+
+.moduletable .cbp-spmenu {
+	position: fixed;
+	//margin-left:-250px; 
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+/* Orientation-dependent styles for the content of the menu */
+.moduletable .cbp-spmenu-vertical {
+	width: 380px;
+	//height: 400px;
+	top: 0;
+	z-index: 1000;
+}
+.moduletable .cbp-spmenu-left {
+
+	left: -380px;
+	top: 50%;
+	margin-top: -298px
+		
+}
+.moduletable .cbp-spmenu-left.cbp-spmenu-open {
+	left: 0px;
+	width: 380px;
+	//top: 10%
+}
+.moduletable .cbp-spmenu,
+.moduletable .cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.sirius .cbp-spmenu .alert{
+	padding: 0px !important;
+}
+.sirius .cbp-spmenu section.styled > header {
+	padding: 20px 30px 0px 20px;
+} 
