@@ -31,4 +31,46 @@ public function listArticle()
 
     return view('articles',['articles'=>$articles]);
 }
+
+public function create()
+{
+
+    return view('article.create');
+}
+    public function store(Request $request)
+    {
+        $article = new Article();
+        $article->name = $request->input('nom');
+        $article->description = $request->input('description');
+        $article->save();
+        return redirect('articles');
+    }
+
+    public function index()
+    {
+        $listArticle = Article::all();
+        return view('article.index',['articles'=>$listArticle]);
+    }
+
+    public function edit($id)
+    {
+        $article = Article::find($id);
+        return view('article.edit',['article'=>$article]);
+    }
+
+    public function update(Request $request , $id)
+    {
+        $article = Article::find($id);
+        $article->name  = $request->input('nom');
+        $article->description  = $request->input('description');
+        $article->save();
+        return redirect('articles');
+    }
+/* 
+    public function destroy($id){
+        $article = Article::find($id);
+        $article->delete();
+        return redirect('article');
+    }*/
+
 }

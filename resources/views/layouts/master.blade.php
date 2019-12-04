@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +28,9 @@
 
   <!-- Main Stylesheet File -->
   <link rel="stylesheet" href="{{ asset('bizPage/css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('bizPage/css/stylecv.css')}}">
+  <link href="{{ asset('BizPage/open-iconic-master/font/css/open-iconic-bootstrap.css')}}" rel="stylesheet">
+
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -52,7 +57,7 @@
 
       <nav id="nav-menu-container" style="background-color: black;">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index.html">Home</a></li>
+          <li class="menu-active"><a href="{{ url('accueil') }}">Home</a></li>
           <li class="menu-has-children"><a href="">Offres d'emploi</a>
             <ul>
               <li><a href="{{ url('rechercheavance') }}">Recherche Avancé</a></li>
@@ -63,19 +68,69 @@
           </li>
           <li class="menu-has-children"><a href="">Conseils</a>
             <ul>
-              <li><a href="actualite.html">Actualités</a></li>
-              <li><a href="modelcv.html">Modeles de CV</a></li>
+              <li><a href="{{ url('actualite') }}">Actualités</a></li>
+              <li><a href="{{ url('modelecv') }}">Modeles de CV</a></li>
               
             </ul>
           </li>
-          <li><a href="C:/Users/assia/Desktop/bootstrap/css/Login_v8/connecte.html">Se connecter</a></li>
+          @if (Route::has('login'))
+          <li>
+          @auth 
+           <!-- <a href="{{ url('/home') }}">Home</a>-->
+           <li class="menu-has-children">
+           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a><ul>
+                              <!--  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">-->
+                              
+                                    <li>   <a class="dropdown-item" href="{{url('profil')}}"> Mon Profil </a></li>  
+                                    <li>   <a class="dropdown-item" href="{{url('cv')}}"> Mon CV </a></li>
+                              
+                              <li>   <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" >
+                                        {{ __('Déconnexion') }}
+                                    </a>
+                                   <!-- -->
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"style="display: none;" >
+                                        @csrf
+                                    </form></li>
+                                  <!--******************************************** -->
+                                  
+                                   
+                                    <!-- ******************************-->
+
+
+
+
+
+                                  </ul></li>
+                                <!--</div>-->
+                    @else
+                       <li> <a href="{{ route('login') }}">Se connecter</a><li>
+
+                        @if (Route::has('register'))
+                           <li> <a href="{{ route('register') }}">Register</a><li>
+
+                          <li>  <button type="button" class="btn btn-success btn-lg mb-2">
+                  <a href="{{ route('register') }}">
+                 S'INSCRIRE </a>
+               </button><li>
+                        @endif
+                    @endauth<li>
+                
+            @endif
+            
+
+ <!--         
+<a href="C:/Users/assia/Desktop/bootstrap/css/Login_v8/connecte.html">Se connecter</a></li>
           <li><button type="button" class="btn btn-outline-success btn-lg mb-2">ESPACE RECRUTEUR</button></li>
           <li>
               <button type="button" class="btn btn-success btn-lg mb-2">
                   <a href="C:/Users/assia/Desktop/bootstrap/css/Login_v8/index.html">
                  S'INSCRIRE </a>
                </button>&nbsp;&nbsp;&nbsp;
-          </li>
+          </li> -->
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -172,4 +227,7 @@
     
       <!-- Template Main Javascript File -->
       <script src="{{ asset('bizPage/js/main.js')}}"></script>
+      
+
+      @yield('javascripts')
 

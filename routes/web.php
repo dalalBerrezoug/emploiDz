@@ -53,13 +53,92 @@ Route::get('/rechercheparfonction', function () {
 Route::get('/rechercheparmotcle', function () {
    return view('rechercheparmotcle');
   
-});Route::get('/rechercheavance', function () {
+});
+Route::get('/rechercheavance', function () {
    return view('rechercheavance');
   
 });
+
+Route::get('/actualite', function () {
+   return view('actualite');
+  
+});
+
+Route::get('/modelecv', function () {
+   return view('modelecv');
+  
+});
+
+Route::get('/seconnecte', function () {
+   return view('connecte');
+  
+});
+
+Route::get('/edit', function () {
+   return view('profil.editprofil');
+  
+});
+
+
 
 Route::get('cont', function () {
    return view('contacte');
   
 });
+Route::get('articles/create','ArticleController@create');
+Route::post('articles','ArticleController@store');
+Route::get('articles','ArticleController@index');
+Route::get('articles/{id}/edit','ArticleController@edit');
+Route::put('articles/{id}','ArticleController@update');
+//Route::delete('articles/{id}','ArticleController@destroy');
+
+
+Route::get('cv','CvController@index');
+Route::get('cv/create','CvController@create');
+Route::post('cv','CvController@store');
+Route::get('cv/{id}/editcv','CvController@edit');
+Route::post('cv/{id}','CvController@update');
+//Route::delete('cv/{id}','CvController@destroy');
+//routes experiences
+Route::get('experience','ExperienceController@index');
+Route::get('experience/createexp','ExperienceController@createexp');
+Route::post('experience','ExperienceController@storeexp');
+Route::get('experience/{id}/editexp','ExperienceController@editexp');
+Route::post('experience/{id}/exp','ExperienceController@updateexp');
+
+//routes formations
+
+Route::get('indexformation','FormationController@index');
+Route::get('indexformation/createform','FormationController@createform');
+Route::post('indexformation','FormationController@storeform');
+//Route::post('cv','FormationController@storeform');
+Route::get('indexformation/{id}/editform','FormationController@editform');
+Route::post('indexformation/{id}/form','FormationController@updateform');
+//Route::post('cv/{id}','FormationController@updateform');
+
+//routes competence
+Route::get('indexcompetence','CompetenceController@index');
+Route::get('indexcompetence/createcomp','CompetenceController@createcomp');
+//Route::post('indexcompetence','CompetenceController@storecomp');
+Route::post('cv','CompetenceController@storecomp');
+Route::get('indexcompetence/{id}/editcomp','CompetenceController@editcomp');
+Route::post('cv/{id}','CompetenceController@updatecomp');
+
+//Route::post('indexcompetence/{id}/comp','CompetenceController@updatecomp');
+
+//routes document
+Route::get('indexdocument','DocumentController@index');
+Route::get('indexdocument/createdocument','DocumentController@createdoc');
+Route::post('indexdocument','DocumentController@storedoc');
+Route::get('indexdocument/{id}/editdoc','DocumentController@editdoc');
+Route::post('indexdocument/{id}/doc','DocumentController@updatedoc');
+
+//routes profil
+Route::get('profil','UserController@index');
+Route::get('profil/{id}/editprofil','UserController@edit');
+Route::post('profil/{id}/user','UserController@update');
+
+
+
+
 

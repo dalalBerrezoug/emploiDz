@@ -9,7 +9,7 @@
 
 <div style="margin-top: 5px; margin-left: 20px;margin-right: 300px; background-color: white;" class="row col-lg-9">
     
-        <div class="col-lg-3 col-md-6"> <img src="img/icon/388.png"> </div>
+        <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/388.png"> </div>
         <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;"> Administration, Finance, Comptabilité & Juridique</span>
            <p><a href=rechercheavance.html>Administration</a>, 
             <a href=rechercheavance.html>Moyens généraux Assistanat</a>
@@ -21,7 +21,7 @@
         <br><br><br></div>
         <div style=" margin-left: 20px;margin-right: 300px; background-color: white;" class="row col-lg-9">
     
-        <div class="col-lg-3 col-md-6"> <img src="img/icon/356.png"> </div>
+        <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/356.png"> </div>
          <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;">Commercial, Marketing, Communication & Création</span>
          <p><a href =rechercheavance.html>Vente</a>,
            <a href =rechercheavance.html>Télévente</a>, 
@@ -38,7 +38,7 @@
         </div>
         <div style=" margin-left: 20px;margin-right: 300px; background-color: white;" class="row col-lg-9">
     
-         <div class="col-lg-3 col-md-6"> <img src="img/icon/364.png"> </div>
+         <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/364.png"> </div>
          <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;"> 
                 Informatique, Télécommunication & Réseaux</span>
               <p>
@@ -50,7 +50,7 @@
           </div>
          <div style=" margin-left: 20px;margin-right: 300px; background-color: white;" class="row col-lg-9">
   
-            <div class="col-lg-3 col-md-6"> <img src="img/icon/367.png"> </div>
+            <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/367.png"> </div>
                                 <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;">Ingénierie, Industrie, Construction</span>
                                 <p>
                                     <a href=rechercheavance.html> Chantier</a>,
@@ -73,7 +73,7 @@
 
          <div style=" margin-left: 20px;margin-right: 300px; background-color: white;" class="row col-lg-9">
   
-        <div class="col-lg-3 col-md-6"> <img src="img/icon/375.png"> </div>
+        <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/375.png"> </div>
         <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;">Santé, Médical, Pharmaceutique, Délégué médical</span>
           <a href=rechercheavance.html> Santé</a>, 
               <a href=rechercheavance.html> Médical</a>,
