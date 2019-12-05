@@ -1,0 +1,307 @@
+.edit:hover{
+cursor: pointer;
+color: green;
+}
+.plusexp:hover{
+    cursor: pointer;
+    color: green;
+    }
+    .plustitre:hover{
+        cursor: pointer;
+        color: green;
+        }
+ .editexp:hover{
+        cursor: pointer;
+        color: green;
+        }
+.editform:hover{
+            cursor: pointer;
+            color: green;
+            }
+            
+
+ .forma:hover{
+            cursor: pointer;
+            color: green;
+            }
+            .plusdoc:hover{
+                cursor: pointer;
+                color: green;
+                }
+             .editdoc:hover{
+                    cursor: pointer;
+                    color: green;
+                    }
+                    .edittitre:hover{
+                        cursor: pointer;
+                        color: green;
+                        }
+
+.closeexp{
+        
+        float: right;
+        }
+ .closeexp:hover{
+        
+    cursor: pointer;
+            }
+
+            .closedoc{
+        
+                float: right;
+                }
+         .closedoc:hover{
+                
+            cursor: pointer;
+                    }
+            
+  .closeeditexp{
+        
+                float: right;
+                }
+  .closeeditexp:hover{
+                
+            cursor: pointer;
+                    }
+  .closeform{
+        
+            float: right;
+             }
+.closeform:hover{
+                        
+      cursor: pointer;
+                            }
+                            .closetitre{
+        
+                                float: right;
+                                 }
+                    .closetitre:hover{
+                                            
+                          cursor: pointer;
+                                                }
+                    
+
+                            .closeeditform{
+        
+                                float: right;
+                                }
+                  .closeeditform:hover{
+                                
+                            cursor: pointer;
+                                    }
+
+                                    .closeeditdoc{
+        
+                                        float: right;
+                                        }
+                          .closeeditdoc:hover{
+                                        
+                                    cursor: pointer;
+                                            }
+                                            .closeedittitre{
+        
+                                                float: right;
+                                                }
+                                  .closeedittitre:hover{
+                                                
+                                            cursor: pointer;
+                                                    }
+
+.overlay{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.popup{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+.overlayexp{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    
+   
+    
+}
+.popupexp{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+.overlayeditexp{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.popupeditexp{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+
+
+
+.overlayform{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+   
+    
+}
+.popupform{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+
+
+.overlayeditform{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.popupeditform{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+.overlayeditdoc{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+  
+    
+}
+.overlayedittitre{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+.overlaydoc{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.popupdoc{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+.overlaytitre{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.popuptitre{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+.popupeditdoc{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+.popupedittitre{
+    margin:7% auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: small;
+}
+
+.avatar-pic {
+    width: 100px;
+    }
+
+    input[type="file"]{
+        display :none; 
+   
+    }
+.image{
+    color:white;
+    height: 50px;
+    width: 250px;
+    background-color: yellowgreen;
+    margin: auto;
+    bottom: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
