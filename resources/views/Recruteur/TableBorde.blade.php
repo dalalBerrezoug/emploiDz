@@ -5,7 +5,7 @@
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Tableau de bord</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="{{url('AjouterOffre')}}" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Ajouter Offre</a>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <button target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light"><a href="{{url('AjouterOffre')}}">Ajouter Offre</a>
                         <ol class="breadcrumb">
                            <!-- <li><a href="#">Tableau de bord</a></li>-->
                         </ol>

@@ -35,17 +35,22 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
-                <div class="top-left-part"><a class="logo" href="index.html"><b>Emploi.dz</b></a></div>
-                <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
-                    <li>
-                        <form role="search" class="app-search hidden-xs">
-                            <input type="text" placeholder="Chercher..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
-                        </form>
-                    </li>
+                <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
+                <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
+                    <li><a href="{{ url('accueil') }}">Home</a></li>
+                 <li class="menu-has-children"><a href="">Offres d'emploi</a>
+                 <ul>
+                 <li><a href="{{ url('rechercheavance') }}">Recherche Avancé</a></li>
+                 <li><a href="{{ url('rechercheparregion') }}">Recherche par Région</a></li>
+                 <li><a href="{{ url('rechercheparfonction') }}">Recherche par Fonction</a></li>
+                 <li><a href="{{ url('rechercheparmotcle') }}">Recherche par mot clée</a></li>
+                 </ul>
+                 </li>
+                 <li><a href="{{ url('actualite') }}">Actualités</a></li>
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="#"> <img src="{{asset('pixel/plugins/images/users/recru.jpeg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ __('Login') }}</b> </a>
+                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ __('Login') }}</b> </a>
                     </li>
                 </ul>
             </div>
@@ -53,6 +58,7 @@
             <!-- /.navbar-top-links -->
             <!-- /.navbar-static-side -->
         </nav>
+        @yield('nav')
         <!-- Left navbar-header -->
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
@@ -87,7 +93,7 @@
                     </li>
                     <div class="center p-20">
                     <form>
-                        <span class="hide-menu"><a href="{{url('InsecriptionRec')}}" target="_blank" class="btn btn-danger btn-block btn-rounded waves-effect waves-light" type="submit">Déconnecte</a></span>
+                        <span class="hide-menu"><a href="{{ route('login') }}" target="_blank" class="btn btn-danger btn-block btn-rounded waves-effect waves-light" type="submit">Déconnecte</a></span>
                     </form>
                     </div>
             </div>

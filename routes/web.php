@@ -81,12 +81,17 @@ Route::get('/edit', function () {
 
 
 
+
 Route::get('/cont', function () {
   return view('contacte');
  
 });
+Route::get('/editRec', function () {
+  return view('Recruteur.editProfileRec');
+ 
+});
 Route::get('/master', function () {
-  return view('layouts.master');
+  return view('layouts.mastre2');
  
 });
 Route::get('/masterRec', function () {
@@ -96,6 +101,9 @@ Route::get('/masterRec', function () {
 Route::get('/InsecriptionRec', function () {
   return view('Recruteur.InsecriptionRec');
  
+});
+Route::get('/RECmod',function(){
+  return view('Recruteur.ModifierinfoRec');
 });
 Route::get('/Profile', function () {
   return view('Recruteur.Profile');
@@ -123,6 +131,19 @@ Route::get('/Recruteur',function(){
 Route::get('/ModifierOffre',function(){
   return view('Recruteur.ModifierOffre');
 });
+Route::get('/master2',function(){
+  return view('layouts.mastre2');
+});
+Route::get('/editrec',function(){
+  return view('Recreture.editProfileRec');
+});
+Route::get('/ModifierOffre',function(){
+  return view('Recreture.ModifierOffre');
+});
+Route::get('/AfficheOffre',function(){
+  return view('Recreture.AfficherLesinfOffre');
+});
+
 Route::get('articles/create','ArticleController@create');
 Route::post('articles','ArticleController@store');
 Route::get('articles','ArticleController@index');

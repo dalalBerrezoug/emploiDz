@@ -41,6 +41,7 @@
                                             <td>licence+3</td>
                                             <td>Tlemcen</td>
                                             <td><a href="{{url('mod')}}"><span class="oi oi-eye"></span></a></td>
+                                            <td><a href="{{url('ModifierOffre')}}"><span class="oi oi-pencil"></span></a></td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
@@ -51,6 +52,7 @@
                                             <td>bac</td>
                                             <td>Tlemcen</td>
                                             <td><a></a><span class="oi oi-eye"></span></td>
+                                            <td><a href="{{url('ModifierOffre')}}"><span class="oi oi-pencil"></span></a></td>
                                         </tr>
                                     </thead>
                                     <tbody>
