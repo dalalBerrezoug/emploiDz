@@ -135,13 +135,13 @@ Route::get('/master2',function(){
   return view('layouts.mastre2');
 });
 Route::get('/editrec',function(){
-  return view('Recreture.editProfileRec');
+  return view('Recruteur.editProfileRec');
 });
 Route::get('/ModifierOffre',function(){
-  return view('Recreture.ModifierOffre');
+  return view('Recruteur.ModifierOffre');
 });
 Route::get('/AfficheOffre',function(){
-  return view('Recreture.AfficherLesinfOffre');
+  return view('Recruteur.AfficherLesinfOffre');
 });
 
 Route::get('articles/create','ArticleController@create');

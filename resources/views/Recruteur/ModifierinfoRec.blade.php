@@ -50,6 +50,13 @@
         <div class="overlay" id="overlay">
         <div class="popup" id="popup">
                       <div class="form-group">
+                       <!--pour quite-->
+                       <div class="form-group">
+                      <div class="col-md-12">
+                      <span id="close" class="close"><a href="{{url('Recruteur')}}"> &times; </span></a><hr>
+                      </div>
+                     
+                      <!--pour quite-->
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">Le Nom de l'Entreprise:</label>

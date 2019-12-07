@@ -49,7 +49,13 @@
         <body>
         <div class="overlay" id="overlay">
         <div class="popup" id="popup">
+        <!--pour quite-->
                       <div class="form-group">
+                      <div class="col-md-12">
+                      <span id="close" class="close"><a href="{{url('consulteroffre')}}"> &times; </span></a><hr>
+                      </div>
+                     
+                      <!--pour quite-->
                                     <div class="col-md-12">
                                     <div class="col-md-4">
                                     <input type="email" placeholder="Nom d'Offre" class="form-control form-control-line">

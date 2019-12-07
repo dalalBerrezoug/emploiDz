@@ -15,6 +15,8 @@
                       <div class="col-md-12">                        
                         <div class="white-box">
                             <form class="form-horizontal form-material">
+                             {{csrf_field()}}
+
                                 <div class="form-group">
                                     <div class="col-md-6"><input type="text" placeholder="intitulé" class="form-control form-control-line"> 
                                      </div>

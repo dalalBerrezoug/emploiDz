@@ -31,11 +31,6 @@
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
-                    <li>
-                        <form role="search" class="app-search hidden-xs">
-                            <input type="text" placeholder="Chercher..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
-                        </form>
-                    </li>
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
@@ -50,71 +45,74 @@
         <div class="overlay" id="overlay">
         <div class="popup" id="popup">
                       <div class="form-group">
+                        <!--pour quite-->
+                        <div class="form-group">
+                      <div class="col-md-12">
+                      <h2 style="color:green"> Affihcher le Nom d' Offre<span id="close" class="close"><a href="{{url('consulteroffre')}}"> &times; </span></a></h2><hr>
+                      </div>
+                     
+                      <!--pour quite-->
                                     <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="email" placeholder="Nom d'Offre" class="form-control form-control-line">
+                                     <div class="col-md-4">
+                                     <label style="color:black">Intitulé:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Domaine:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Diplome:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
                                     </div>
-                                    <div class="col-md-4">
-                                    <input type="text" placeholder="Intitulé" class="form-control form-control-line">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="text" placeholder="Domain" class="form-control form-control-line">
-                                    </div>
+                                    <br><br><br><br>
+                                    <br><br><br>
+                                    <div class="col-md-12">
+                                     <div class="col-md-4">
+                                     <label style="color:black">Comptences:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Lieu de travialle:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Rémunération:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="email" placeholder="Diplome" class="form-control form-control-line">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="text" placeholder="Lieux de travaille" class="form-control form-control-line">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="text" placeholder="Competence" class="form-control form-control-line">
-                                    </div>
-                                    </div><br><br><br><br>
-                                    <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="email" placeholder="dureé CDD/Stage" class="form-control form-control-line">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="email" placeholder="Rémunération" class="form-control form-control-line">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="text" placeholder="Date de Début Prévu" class="form-control form-control-line">
-                                    </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Durée CDD/Stage:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Type D'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Date de bébut prévu:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="email" placeholder="Date de Dépot d'Offre" class="form-control form-control-line">
-                                    </div>
-                                    <div class="col-md-8">
-
+                                     <div class="col-md-4">
+                                     <label style="color:black">Date de dépot d'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     </div>
+                                     <div class="col-md-8">
+                                    <label style="color:black">Description:</label>  
+                                    <table border=1>
+                                    <tr><td>
+                                    <label for="example-text-input" class="col-2 col-form-label">
+                                    cette offre pour les devlopeur web krireijiilgidjvlkwdlkwjpogjegjdeoiklfkbmw
+                                    <br>
+                                    et les devlopeurs de java llklifeiijiirioeoooezoeoeieieieziriiilioppoeo
+                                    <br>
+                                    jhvdfjhhgkejli hjurgiohqijhrqkhrptprtrslpslthjpsthp^sp
+                                    <br>
+                                    hgjjgoiegorhg^rohroplhmrr
+                                    </label>
+                                    </td></tr>
+                                    </table>
                                     
                                     </div>
-                                    <div class="col-md-4">
-                                    <input type="text" placeholder="Numero ....." class="form-control form-control-line">
-                                    </div>
                                     </div>
                                     <br><br><br><br>
-                                    <div class="col-md-12">
-                                    <select class="form-control form-control-line">
-                                            <option>Stage</option>
-                                            <option>CDI</option>
-                                            <option>CDD</option>
-                                            
-                                        </select>
-                                    </div>
                                     <br><br><br><br>
-                                    
-                                    <div class="col-md-12">
-                                    <div class="col-md-8">
-                                    <button class="btn btn-success"><a href="{{url('editRec')}}">Confermier La modification</a></button>
-                                    </div>
-                                   
-                                   
-                                    </div>
                                     <br><br>
                       </div>
                       </div>
