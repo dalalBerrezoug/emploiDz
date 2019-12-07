@@ -84,7 +84,7 @@
                         <ul>
 
                             <li><a href="{{url('AjouterOffre')}}">Ajouter offre</a></li>
-                            <li><a href="{{url('consulteroffre')}}">Consulter Mes offres</a></li>
+                            <li><a href="{{url('ConsulterOffre')}}">Consulter Mes offres</a></li>
 
                         </ul>
                         

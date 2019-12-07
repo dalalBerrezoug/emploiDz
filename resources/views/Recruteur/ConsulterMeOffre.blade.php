@@ -32,28 +32,33 @@
                                             <th>lieu de travail</th>
                                             <th></th>
                                         </tr>
+                                        @foreach($offres as $offre)
                                         <tr>
-                                            <td>1</td>
-                                            <td>mon_offre</td>
-                                            <td>ggg</td>
-                                            <td>informatique</td>
-                                            <td>web</td>
-                                            <td>licence+3</td>
-                                            <td>Tlemcen</td>
-                                            <td><a href="{{url('AfficheOffre')}}"><span class="oi oi-eye"></span></a></td>
-                                            <td><a href="{{url('ModifierOffre')}}"><span class="oi oi-pencil"></span></a></td>
+                                            <td>{{$offre->id}}</td>
+                                            <td>{{$offre->nom}}</td>
+                                            <td>{{$offre->type}}</td>
+                                            <td>{{$offre->intitule}}</td>
+                                            <td>{{$offre->domaine}}</td>
+                                            <td>{{$offre->diplome}}</td>
+                                            <td>{{$offre->lieuTrav}}</td>
+                                         
+                                            <td>
+                                            <input type="hidden" name="_method" value="POST">
+                                              {{csrf_field()}}
+                                            <a href="{{url('AfficherInfOffre/'.$offre->id)}}"><span class="oi oi-eye bnt"></span></a>
+                                            </td>
+                                           
+                                            <td>
+                                            <input type="hidden" name="_method" value="PUT">
+                                              {{csrf_field()}}
+                                            <a href="{{url('Offre/'.$offre->id.'/modifier')}}" ><span class="oi oi-pencil"></span></a>
+                                            </td>
+                                            <td>
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
+                                            <a href="{{url('Offre/'.$offre->id.'/delete')}}"><span class="oi oi-trash"></span></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>mon_offre2</td>
-                                            <td>ehh</td>
-                                            <td>dddd</td>
-                                            <td>oo</td>
-                                            <td>bac</td>
-                                            <td>Tlemcen</td>
-                                            <td><a href="{{url('AfficheOffre')}}"><span class="oi oi-eye"></a></span></td>
-                                            <td><a href="{{url('ModifierOffre')}}"><span class="oi oi-pencil"></span></a></td>
-                                        </tr>
+                                      @endforeach
                                     </thead>
                                     <tbody>
                                    <!--hna nzido les informations d'offres-->

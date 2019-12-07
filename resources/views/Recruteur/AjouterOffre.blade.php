@@ -14,22 +14,22 @@
                 <div class="row">
                       <div class="col-md-12">                        
                         <div class="white-box">
-                            <form class="form-horizontal form-material">
+                            <form class="form-horizontal form-material" method="get" action="{{url('insere')}}">
                              {{csrf_field()}}
 
-                                <div class="form-group">
-                                    <div class="col-md-6"><input type="text" placeholder="intitulé" class="form-control form-control-line"> 
+                             <div class="form-group">
+                                    <div class="col-md-6"><input type="text" placeholder="Nom d'Offre" class="form-control form-control-line" name="nom"> 
                                      </div>
                                      <div class="col-md-6">
-                                        <input type="text" placeholder="Domaine" class="form-control form-control-line"> 
+                                        <input type="text" placeholder="Domaine" class="form-control form-control-line" name="domaine"> 
                                      </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Diplôme" class="form-control form-control-line"> </div>
-                                        <div class="col-md-6">
-                                        <input type="text" placeholder="Nombre année d'expérienc" class="form-control form-control-line"> 
-                                        </div>
+                                        <input type="text" placeholder="Diplôme" class="form-control form-control-line" name="diplome"> </div>
+                                        <div class="form-group">
+                                    <div class="col-md-6"><input type="text" placeholder="intitulé" class="form-control form-control-line" name="intitule"> 
+                                     </div>
                                      
                                 </div>
 
@@ -37,10 +37,10 @@
                                     
                                     <div class="col-md-12">
                                          <div class="col-md-6">
-                                            <input type="text" placeholder="lieu de travail" class="form-control form-control-line"> 
+                                            <input type="text" placeholder="lieu de travail" class="form-control form-control-line" name="lieu"> 
                                         </div>
                                          <div class="col-md-6">
-                                            <input type="text" placeholder="compétences" class="form-control form-control-line"> 
+                                            <input type="text" placeholder="compétences" class="form-control form-control-line" name="comp"> 
                                         </div>
                                      
                                          </div>
@@ -49,20 +49,20 @@
                                    
                                     <div class="col-md-12">
                                          <div class="col-md-6">
-                                            <input type="text" placeholder="rémunération" class="form-control form-control-line"> 
+                                            <input type="text" placeholder="rémunération" class="form-control form-control-line" name="remun"> 
                                         </div>
                                          <div class="col-md-6">
-                                            <input type="text" placeholder="date de dépôt d'offre" class="form-control form-control-line">
+                                            <input type="date" placeholder="date de dépôt d'offre" class="form-control form-control-line" name="depot_offre">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                          <div class="col-md-6">
-                                            <input type="text" placeholder="date de début prévu" class="form-control form-control-line"> 
+                                            <input type="date" placeholder="date de début prévu" class="form-control form-control-line" name="debut_prevu"> 
                                         </div>
                                          <div class="col-md-6">
-                                            <input type="text" placeholder="durée CDD/Stage" class="form-control form-control-line"> 
+                                            <input type="datetime-local" placeholder="durée CDD/Stage" class="form-control form-control-line" name="duree"> 
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                     
                                     <div class="col-sm-12">
                                          <div class="col-md-6">
-                                            <select class="form-control form-control-line">
+                                            <select class="form-control form-control-line" name="type">
                                             <option>Stage</option>
                                             <option>CDI</option>
                                             <option>CDD</option>
@@ -87,13 +87,16 @@
                                          <div class="col-md-6">
                                        <label><b>Description:</b></label>
                                         <br/>
-                                         <textarea name="description" rows="10" cols="60">
+                                         <textarea name="description" rows="10" cols="60"  name="description">
                                                 Description...
                                           </textarea>
                                         </div>
                                          <div class="col-md-6">
+                                        
                                         </div>
-                                       
+                                       <div class="col-md-8">
+                                       <input type="submit" class="btn btn-success" value="Ajouter">
+                                       </div>
                                     </div>
                             </form>
                                   

@@ -3,8 +3,82 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Offre;
 
 class OffreController extends Controller
 {
     //
+    public function create(){
+    return view('Recruteur.AjouterOffre');
+
+    }
+
+    public function Store(Request $request){
+        $offre=new Offre();
+        $offre->nom=$request->input('nom');
+        $offre->intitule=$request->input('intitule');
+        $offre->type=$request->input('type');
+        $offre->domaine=$request->input('domaine');
+        $offre->diplome=$request->input('diplome');
+        $offre->lieuTrav=$request->input('lieu');
+        $offre->competences=$request->input('comp');
+        $offre->duree=$request->input('duree');
+        $offre->remuneration=$request->input('remun');
+        $offre->debut_prevu=$request->input('debut_prevu');
+        $offre->depot_offre=$request->input('depot_offre');
+        $offre->description=$request->input('description');
+        $offre->save();
+        return redirect('ConsulterOffre');
+
+
+    }
+
+    public function index(){
+    $list_des_offres=Offre::all();
+    return view('Recruteur.ConsulterMeOffre')->with('offres',$list_des_offres);
+
+
+    }
+    public function Affiche_Info(Request $request,$id){
+        $offres=Offre::find($id);
+        return view('Recruteur.AfficherLesinfOffre')->with('offres',$offres);
+    }
+    public function edit($id){
+        $offre=Offre::find($id);
+        return view('Recruteur.ModifierOffre')->with('offre',$offre);
+
+    }
+    public function update($id,Request $request)
+    {
+        $offre=Offre::find($id);
+        $offre->nom=$request->input('nom'); 
+        $offre->intitule=$request->input('intitule');
+        $offre->type=$request->input('type');
+        $offre->domaine=$request->input('domaine');
+        $offre->diplome=$request->input('diplome');
+        $offre->lieuTrav=$request->input('lieu');
+        $offre->competences=$request->input('comp');
+        $offre->duree=$request->input('duree');
+        $offre->remuneration=$request->input('remun');
+        $offre->debut_prevu=$request->input('debut_prevu');
+        $offre->depot_offre=$request->input('depot_offre');
+        $offre->description=$request->input('description');
+        $offre->save();
+        return redirect('ConsulterOffre');
+
+
+    }
+    public function conf(){
+    return view('Recruteur.confirmer');
+    }
+
+
+
+
+
+    public function destroy(Request $request,$id){
+        $offre=Offre::find($id);
+        $offre->delete();
+        return redirect('ConsulterOffre');
+    }
 }

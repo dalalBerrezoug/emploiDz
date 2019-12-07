@@ -197,6 +197,16 @@ Route::get('profil','UserController@index');
 Route::get('profil/{id}/editprofil','UserController@edit');
 Route::post('profil/{id}/user','UserController@update');
 
+//les routes d'offre
+Route::get('ajouter/AjouterOffre','OffreController@create');
+Route::get('insere','OffreController@Store');
+Route::get('ConsulterOffre','OffreController@index');
+Route::get('AfficherInfOffre/{id}','OffreController@Affiche_Info');
+Route::get('Offre/{id}/modifier','OffreController@edit');
+Route::put('Offre/{id}/update','OffreController@update');
+Route::delete('Offre/{id}/delete','OffreController@destroy');
+Route::get('confirmer/{id}/delete','OffreController@conf');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

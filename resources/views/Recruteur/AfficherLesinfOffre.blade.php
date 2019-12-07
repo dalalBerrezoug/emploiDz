@@ -48,68 +48,65 @@
                         <!--pour quite-->
                         <div class="form-group">
                       <div class="col-md-12">
-                      <h2 style="color:green"> Affihcher le Nom d' Offre<span id="close" class="close"><a href="{{url('consulteroffre')}}"> &times; </span></a></h2><hr>
+                      <h2 style="color:green">{{$offres->nom}}<span id="close" class="close"><a href="{{url('ConsulterOffre')}}"> &times; </span></a></h2><hr>
                       </div>
                      
                       <!--pour quite-->
                                     <div class="col-md-12">
                                      <div class="col-md-4">
-                                     <label style="color:black">Intitulé:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     <label style="color:black">Intitulé:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->intitule}}/label>
                                      </div>
                                      <div class="col-md-4">
-                                     <label style="color:black">Domaine:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     <label style="color:black">Domaine:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->diplome}}</label>
                                      </div>
                                      <div class="col-md-4">
-                                     <label style="color:black">Diplome:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     <label style="color:black">Diplome:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->nom}}</label>
                                      </div>
                                     </div>
                                     <br><br><br><br>
                                     <br><br><br>
                                     <div class="col-md-12">
                                      <div class="col-md-4">
-                                     <label style="color:black">Comptences:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     <label style="color:black">Comptences:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->competences}}</label>
                                      </div>
                                      <div class="col-md-4">
-                                     <label style="color:black">Lieu de travialle:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     <label style="color:black">Lieu de travialle:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->lieu}}</label>
                                      </div>
                                      <div class="col-md-4">
-                                     <label style="color:black">Rémunération:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
-                                     </div>
-                                    </div>
-                                    <br><br><br><br>
-                                    <div class="col-md-12">
-                                     <div class="col-md-4">
-                                     <label style="color:black">Durée CDD/Stage:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Type D'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Date de bébut prévu:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     <label style="color:black">Rémunération:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->remuneration}}</label>
                                      </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
                                      <div class="col-md-4">
-                                     <label style="color:black">Date de dépot d'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">abcd</label>
+                                     <label style="color:black">Durée CDD/Stage:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->duree}}</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Type D'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->type}}</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Date de bébut prévu:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->debut_prevu}}</label>
+                                     </div>
+                                    </div>
+                                    <br><br><br><br>
+                                    <div class="col-md-12">
+                                     <div class="col-md-4">
+                                     <label style="color:black">Date de dépot d'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->depot_offre}}</label>
                                      </div>
                                      <div class="col-md-8">
                                     <label style="color:black">Description:</label>  
-                                    <table border=1>
+                                    <table>
                                     <tr><td>
-                                    <label for="example-text-input" class="col-2 col-form-label">
-                                    cette offre pour les devlopeur web krireijiilgidjvlkwdlkwjpogjegjdeoiklfkbmw
-                                    <br>
-                                    et les devlopeurs de java llklifeiijiirioeoooezoeoeieieieziriiilioppoeo
-                                    <br>
-                                    jhvdfjhhgkejli hjurgiohqijhrqkhrptprtrslpslthjpsthp^sp
-                                    <br>
-                                    hgjjgoiegorhg^rohroplhmrr
-                                    </label>
+                                    <textarea name="description" rows="5" cols="60"  name="description">
+                                         {{$offres->description}}
+                                          </textarea>
                                     </td></tr>
                                     </table>
                                     
                                     </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                    <label style="color:black">Adresse de travaille:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->lieuTrav}}</label>
                                     </div>
                                     <br><br><br><br>
                                     <br><br><br><br>

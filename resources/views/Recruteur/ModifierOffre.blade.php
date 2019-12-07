@@ -31,11 +31,6 @@
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
-                    <li>
-                        <form role="search" class="app-search hidden-xs">
-                            <input type="text" placeholder="Chercher..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
-                        </form>
-                    </li>
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
@@ -52,74 +47,84 @@
         <!--pour quite-->
                       <div class="form-group">
                       <div class="col-md-12">
-                      <span id="close" class="close"><a href="{{url('consulteroffre')}}"> &times; </span></a><hr>
+                      <span id="close" class="close"><a href="{{url('ConsulterOffre')}}"> &times; </span></a><hr>
                       </div>
                      
                       <!--pour quite-->
+                      <form method="post" action="{{url('Offre/'.$offre->id.'/update')}}">
+                                    <input type="hidden" name="_method" value="PUT">
+                                              {{csrf_field()}}
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="email" placeholder="Nom d'Offre" class="form-control form-control-line">
+                                    <input type="text" placeholder="{{$offre->nom}}" class="form-control form-control-line" name="nom">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="Intitulé" class="form-control form-control-line">
+                                    <input type="text" placeholder="{{$offre->intitule}}" class="form-control form-control-line" name="intitule">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="Domain" class="form-control form-control-line">
+                                    <input type="text" placeholder="{{$offre->lieuTrav}}" class="form-control form-control-line" name="lieu">
                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="email" placeholder="Diplome" class="form-control form-control-line">
+                                    <input type="text" placeholder="{{$offre->competences}}" class="form-control form-control-line" name="comp">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="Lieux de travaille" class="form-control form-control-line">
+                                    <input type="text" placeholder="{{$offre->domaine}}" class="form-control form-control-line" name="domaine">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="Competence" class="form-control form-control-line">
+                                    <input type="text" placeholder="{{$offre->diplome}}" class="form-control form-control-line" name="diplome">
                                     </div>
                                     </div><br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="email" placeholder="dureé CDD/Stage" class="form-control form-control-line">
+                                    <input type="datetime-local" placeholder="{{$offre->duree}}" class="form-control form-control-line" name="duree">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="email" placeholder="Rémunération" class="form-control form-control-line">
+                                    <input type="text" placeholder="{{$offre->remuneration}}" class="form-control form-control-line" name="remun">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="Date de Début Prévu" class="form-control form-control-line">
+                                    <input type="date" placeholder="{{$offre->debut_prevu}}" class="form-control form-control-line" name="debut_prevu">
                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="email" placeholder="Date de Dépot d'Offre" class="form-control form-control-line">
+                                    <input type="date" placeholder="{{$offre->depot_offre}}" class="form-control form-control-line" name="depot_offre">
                                     </div>
                                     <div class="col-md-8">
 
                                     
                                     </div>
-                                    <div class="col-md-4">
-                                    <input type="text" placeholder="Numero ....." class="form-control form-control-line">
-                                    </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
-                                    <select class="form-control form-control-line">
+                                    <select class="form-control form-control-line" name="type">
                                             <option>Stage</option>
                                             <option>CDI</option>
                                             <option>CDD</option>
                                             
                                         </select>
+                                        </div>
+                                    <div class="row">
+                                    <div class="col-md-8">
+                                    <label><b>Description:</b></label>
+                                        <br/>
+                                         <textarea name="description" rows="5" cols="60"  name="description">
+                                         {{$offre->description}}
+                                          </textarea>
                                     </div>
-                                    <br><br><br><br>
-                                    
+                                    </div>
+                                    <br>
                                     <div class="col-md-12">
                                     <div class="col-md-8">
-                                    <button class="btn btn-success"><a href="{{url('editRec')}}">Confermier La modification</a></button>
+                                    
+                                    <button  type="submit" class="btn btn-success">
+                                    Confermier La modification
+                                    </button>
+                                    <form>
                                     </div>
-                                   
-                                   
                                     </div>
                                     <br><br>
                       </div>
