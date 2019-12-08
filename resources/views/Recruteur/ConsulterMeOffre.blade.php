@@ -51,12 +51,13 @@
                                             <td>
                                             <input type="hidden" name="_method" value="PUT">
                                               {{csrf_field()}}
-                                            <a href="{{url('Offre/'.$offre->id.'/modifier')}}" ><span class="oi oi-pencil"></span></a>
+                                            <a href="{{url('Offre/'.$offre->id.'/modifier')}}" ><span class="oi oi-pencil btn "></span></a>
                                             </td>
                                             <td>
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
-                                            <a href="{{url('Offre/'.$offre->id.'/delete')}}"><span class="oi oi-trash"></span></a></td>
+                                            <a href="{{url('Offre/'.$offre->id.'/delete')}}"><span class="oi oi-trash btn" ></span></a>
+                                            </td>
                                         </tr>
                                       @endforeach
                                     </thead>

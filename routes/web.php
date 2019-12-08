@@ -204,9 +204,7 @@ Route::get('ConsulterOffre','OffreController@index');
 Route::get('AfficherInfOffre/{id}','OffreController@Affiche_Info');
 Route::get('Offre/{id}/modifier','OffreController@edit');
 Route::put('Offre/{id}/update','OffreController@update');
-Route::delete('Offre/{id}/delete','OffreController@destroy');
-Route::get('confirmer/{id}/delete','OffreController@conf');
-
+Route::get('Offre/{id}/delete','OffreController@destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
