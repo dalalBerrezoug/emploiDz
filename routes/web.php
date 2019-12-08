@@ -87,7 +87,7 @@ Route::get('/cont', function () {
  
 });
 Route::get('/editRec', function () {
-  return view('Recruteur.editProfileRec');
+  return view('Recruteur.mastre2');
  
 });
 Route::get('/master', function () {
@@ -205,6 +205,12 @@ Route::get('AfficherInfOffre/{id}','OffreController@Affiche_Info');
 Route::get('Offre/{id}/modifier','OffreController@edit');
 Route::put('Offre/{id}/update','OffreController@update');
 Route::get('Offre/{id}/delete','OffreController@destroy');
+Route::get('inserRec','RecruteurController@create');
+Route::get('Insertion/Store','RecruteurController@Store');
+Route::get('InfoRec/{id}','RecruteurController@index');
+Route::get('ContectRec','ContectController@create');
+Route::get('Insertion/Contect','ContectController@Store');
+Route::get('AffichageContect/{id}','ContectController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

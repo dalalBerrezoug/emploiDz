@@ -43,19 +43,13 @@
                                             <td>{{$offre->lieuTrav}}</td>
                                          
                                             <td>
-                                            <input type="hidden" name="_method" value="POST">
-                                              {{csrf_field()}}
                                             <a href="{{url('AfficherInfOffre/'.$offre->id)}}"><span class="oi oi-eye bnt"></span></a>
                                             </td>
                                            
                                             <td>
-                                            <input type="hidden" name="_method" value="PUT">
-                                              {{csrf_field()}}
                                             <a href="{{url('Offre/'.$offre->id.'/modifier')}}" ><span class="oi oi-pencil btn "></span></a>
                                             </td>
                                             <td>
-                                            {{csrf_field()}}
-                                            {{method_field('DELETE')}}
                                             <a href="{{url('Offre/'.$offre->id.'/delete')}}"><span class="oi oi-trash btn" ></span></a>
                                             </td>
                                         </tr>

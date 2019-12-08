@@ -70,10 +70,10 @@
                         <a href="{{ url('Accuiel') }}" class="waves-effect"><span class="oi oi-account-logout"> Aller au site</span></a>
                     </li>
                     <li>
-                        <a href="{{url('Profile')}}" class="waves-effect"><span class="oi oi-person"> Contact</span></a>
+                        <a href="{{url('ContectRec')}}" class="waves-effect"><span class="oi oi-person"> Contact</span></a>
                     </li>
                     <li>
-                        <a href="{{url('Recruteur')}}" class="waves-effect"><span class="oi oi-people"> Récruteur</span></a>
+                        <a href="{{url('inserRec')}}" class="waves-effect"><span class="oi oi-people"> Récruteur</span></a>
                     </li>
 
 

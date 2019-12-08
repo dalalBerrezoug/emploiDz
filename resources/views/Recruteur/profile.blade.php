@@ -52,42 +52,42 @@
                                 <div class="form-group" class="col-md-12">
                                     <label class="col-md-6">Nom:</label>
                                     <div class="col-md-6">
-                                                <p>Nom de contact</p>
+                                                <p>{{$Rec->nom}}</p>
                                             </div>
                                     <label for="example-email" class="col-md-6">Prenom</label>
                                     <div class="col-md-6">
-                                                <p>Prenom de contact</p>
+                                                <p>{{$Rec->prenom}}</p>
                                             </div>
                                             <label for="example-email" class="col-md-6">Civilite</label>
                                             <div class="col-md-6">
-                                                <p>Civilite de contact</p>
+                                                <p>{{$Rec->civilite}}</p>
                                             </div>
                                             
                                             </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Email</label>
                                     <div class="col-md-12">
-                                    <p>dari_med@hotmail.com</p>
+                                    <p>{{$Rec->email}}</p>
                                        </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Numéro de téléphone</label>
                                     <div class="col-md-12">
                                     <div class="col-md-12">
-                                    <p>012369756500</p>
+                                    <p>{{$Rec->telephone}}</p>
                                        </div> </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Votre Entreprise</label>
                                     <div class="col-md-12">
-                                       <p>Algerie telecome</p>
+                                       <p>{{$Rec->fonction}}</p>
                                     </div>
                                 </div>
                              
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success"><a href="{{url('editRec')}}">Mettre à jour le profil</a></button>
+                                        <button class="btn btn-success"><a href="{{url('ContectRec')}}">Mettre à jour le profil</a></button>
                                     </div>
                                 </div>
                             </form>

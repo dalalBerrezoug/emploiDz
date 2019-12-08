@@ -47,7 +47,7 @@
                         <h2>Éditer Votre informations personnelles 
                         
                         <span id="close" class="close"><a href="{{url('Profile')}}"> &times; </a></span></h2><hr>
-                       
+                       <form method="get" action="{{url('Insertion/Contect')}}">
                         <div class="form-group row">
                             <label for="example-text-input" class="col-2 col-form-label"><b>Civilité:</b></label>
                             <div class="form-check form-check-inline ">
@@ -70,20 +70,21 @@
                           <label for="example-text-input" class="col-2 col-form-label">Nom:</label>
                             <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="name">
                           <label for="example-text-input" class="col-2 col-form-label">Prenom:</label>
-                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="name">
+                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="prenom">
                           <label for="example-text-input" class="col-2 col-form-label">Email:</label>
                          
-                            <input class="form-control" type="email" value="Artisanal kale" id="example-text-input" name="name">
+                            <input class="form-control" type="email" value="Artisanal kale" id="example-text-input" name="email">
                             <label for="example-text-input" class="col-2 col-form-label">Numéro de telephone:</label>
                          
-                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="name">
+                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="telephone">
                          <label for="example-text-input" class="col-2 col-form-label">Votre Entreprise:</label>
                          <div class="col-12">
                          <div class="col-6">
-                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="name">
+                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="fonction">
                          </div>
                          <div class="col-6">
-                         <button class="btn btn-success"><a href="">Mettre à jour le profil</a></button>
+                         <button class="btn btn-success" type="submit">Mettre à jour le profil</button>
+                         <form>
                          </div>
                         </div>
                         </div>

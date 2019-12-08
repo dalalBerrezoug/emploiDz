@@ -53,16 +53,18 @@
                        <!--pour quite-->
                        <div class="form-group">
                       <div class="col-md-12">
-                      <span id="close" class="close"><a href="{{url('Recruteur')}}"> &times; </span></a><hr>
+                      <span id="close" class="close"><a href="{{url('tablebord')}}"> &times; </span></a><hr>
                       </div>
                      
                       <!--pour quite-->
+                      <form method="get" action="{{url('Insertion/Store')}}">
+                      {{csrf_field()}}
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">Le Nom de l'Entreprise:</label>
                                     </div>
                                     <div class="col-md-6">
-                                    <input type="text" placeholder="Nom D'entreprise" class="form-control form-control-line">
+                                    <input type="text" placeholder="Nom D'entreprise" class="form-control form-control-line" name="name">
                                     </div>
                                     </div>
                                     <br><br><br><br>
@@ -71,7 +73,7 @@
                                     <label style="color:black"> Logo l' Enreprise:</label>
                                     </div>
                                     <div class="col-md-6">
-                                    <input type="text" placeholder="LOGO" class="form-control form-control-line">
+                                    <input type="text" placeholder="LOGO" class="form-control form-control-line" name="logo">
                                     </div>
                                     </div><br><br><br><br>
                                     <div class="col-md-12">
@@ -79,7 +81,7 @@
                                     <label style="color:black">Email de l'Entreprise:</label>
                                     </div>
                                     <div class="col-md-6">
-                                    <input type="email" placeholder="Email" class="form-control form-control-line">
+                                    <input type="email" placeholder="Email" class="form-control form-control-line" name="email">
                                     </div>
                                     </div>
                                     <br><br><br><br>
@@ -88,7 +90,7 @@
                                     <label style="color:black">Site de l'Entreprise:</label>
                                     </div>
                                     <div class="col-md-6">
-                                    <input type="text" placeholder="entre le site" class="form-control form-control-line">
+                                    <input type="text" placeholder="entre le site" class="form-control form-control-line" name="site">
                                     </div>
                                     </div>
                                     <br><br><br><br>
@@ -97,7 +99,7 @@
                                     <label style="color:black">l'Adresse de l'Entreprise:</label>
                                     </div>
                                     <div class="col-md-6">
-                                    <input type="text" placeholder="l'Adresse" class="form-control form-control-line">
+                                    <input type="text" placeholder="l'Adresse" class="form-control form-control-line" name="adr">
                                     </div>
                                     </div>
                                     <br><br><br><br>
@@ -106,7 +108,7 @@
                                     <label style="color:black">Numéro de l'Entreprise:</label>
                                     </div>
                                     <div class="col-md-6">
-                                    <input type="text" placeholder="Numero ....." class="form-control form-control-line">
+                                    <input type="text" placeholder="Numero ....." class="form-control form-control-line" name="num">
                                     
                                     </div>
                                     </div>
@@ -116,7 +118,7 @@
                                     <label style="color:black">Type de l'Entreprise:</label>
                                     </div>
                                     <div class="col-md-6">
-                                    <select class="form-control form-control-line">
+                                    <select class="form-control form-control-line" name="type">
                                             <option>société</option>
                                             <option>public</option>
                                             
@@ -132,7 +134,8 @@
                       <div class="col-md-10"></div>
                       </div>
                       <div class="col-md-1"></div>
-                      <button class="btn btn-success"><a href="{{url('editRec')}}">Confermier La modification</a></button>
+                      <button class="btn btn-success" type="submit">Confermier La modification</button>
+                      <form>
                       </div>
                       </div>
                       </div>

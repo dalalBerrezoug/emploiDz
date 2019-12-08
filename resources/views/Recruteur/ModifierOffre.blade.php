@@ -56,42 +56,42 @@
                                               {{csrf_field()}}
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="{{$offre->nom}}" class="form-control form-control-line" name="nom">
+                                    <input type="text" value="{{$offre->nom}}" class="form-control form-control-line" name="nom">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="{{$offre->intitule}}" class="form-control form-control-line" name="intitule">
+                                    <input type="text" value="{{$offre->intitule}}" class="form-control form-control-line" name="intitule">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="{{$offre->lieuTrav}}" class="form-control form-control-line" name="lieu">
+                                    <input type="text" value="{{$offre->lieuTrav}}" class="form-control form-control-line" name="lieu">
                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="{{$offre->competences}}" class="form-control form-control-line" name="comp">
+                                    <input type="text" value="{{$offre->competences}}" class="form-control form-control-line" name="comp">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="{{$offre->domaine}}" class="form-control form-control-line" name="domaine">
+                                    <input type="text" value="{{$offre->domaine}}" class="form-control form-control-line" name="domaine">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="{{$offre->diplome}}" class="form-control form-control-line" name="diplome">
+                                    <input type="text" value="{{$offre->diplome}}" class="form-control form-control-line" name="diplome">
                                     </div>
                                     </div><br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="datetime-local" placeholder="{{$offre->duree}}" class="form-control form-control-line" name="duree">
+                                    <input type="datetime-local" value="{{$offre->duree}}" class="form-control form-control-line" name="duree">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="text" placeholder="{{$offre->remuneration}}" class="form-control form-control-line" name="remun">
+                                    <input type="text" value="{{$offre->remuneration}}" class="form-control form-control-line" name="remun">
                                     </div>
                                     <div class="col-md-4">
-                                    <input type="date" placeholder="{{$offre->debut_prevu}}" class="form-control form-control-line" name="debut_prevu">
+                                    <input type="date" value="{{$offre->debut_prevu}}" class="form-control form-control-line" name="debut_prevu">
                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="date" placeholder="{{$offre->depot_offre}}" class="form-control form-control-line" name="depot_offre">
+                                    <input type="date" value="{{$offre->depot_offre}}" class="form-control form-control-line" name="depot_offre">
                                     </div>
                                     <div class="col-md-8">
 
