@@ -22,7 +22,7 @@
     <!-- color CSS -->
     <link type="text/css" href="{{asset('pixel/pixel-html/css/colors/blue-dark.css')}}" id="theme" rel="stylesheet">
     <link href="{{asset('pixel/open-iconic-master/font/css/open-iconic-bootstrap.css')}}" rel="stylesheet">
-
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ __('Login') }}</b> </a>
+                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"> {{ Auth::user()->name }}</b> </a>
                     </li>
                 </ul>
             </div>
@@ -73,7 +73,7 @@
                         <a href="{{url('ContectRec')}}" class="waves-effect"><span class="oi oi-person"> Contact</span></a>
                     </li>
                     <li>
-                        <a href="{{url('inserRec')}}" class="waves-effect"><span class="oi oi-people"> Récruteur</span></a>
+                        <a href="{{url('InfoRec/'.Auth::user()->id)}}" class="waves-effect"><span class="oi oi-people"> Récruteur</span></a>
                     </li>
 
 
@@ -92,9 +92,15 @@
                         </a>
                     </li>
                     <div class="center p-20">
-                    <form>
-                        <span class="hide-menu"><a href="{{ route('login') }}" target="_blank" class="btn btn-danger btn-block btn-rounded waves-effect waves-light" type="submit">Déconnecte</a></span>
-                    </form>
+                    <a target="_blank" class="btn btn-danger btn-block btn-rounded waves-effect waves-light" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                       Deconxion
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                     </div>
             </div>
         </div>

@@ -1,14 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" >{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+<link href="{{asset('BizPage/css/style_admin.css')}}" rel="stylesheet">
+<br><br><br>
+<section class="container-fluid bg ">
+		<section class="row justify-content-center">
+			<section class="col-12 col-sm-8 col-md-6">
+                    <form class="form-container" method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -65,9 +63,10 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                    		
+			</section>
+			
+            </section>
+            
+        </section>
 @endsection

@@ -11,7 +11,7 @@
                         </div>
                         
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-<button target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light"><a href="{{url('$Recmod')}}">Modifier information</a>
+<button target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light"><a href="{{url('inserRec')}}">Modifier information</a>
                        
                     </div>
                     </div>

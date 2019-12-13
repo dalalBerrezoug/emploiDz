@@ -39,7 +39,7 @@
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ __('Login') }}</b> </a>
+                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{Auth::user()->name }}</b> </a>
                     </li>
                 </ul>
             <!-- /.navbar-header -->
@@ -53,11 +53,11 @@
                        <!--pour quite-->
                        <div class="form-group">
                       <div class="col-md-12">
-                      <span id="close" class="close"><a href="{{url('tablebord')}}"> &times; </span></a><hr>
+                      <span id="close" class="close"><a href="{{url('InfoRec/'.Auth::user()->id)}}"> &times; </span></a><hr>
                       </div>
                      
                       <!--pour quite-->
-                      <form method="get" action="{{url('Insertion/Store')}}">
+                      <form method="get" action="{{url('Insertion/'.Auth::user()->id)}}">
                       {{csrf_field()}}
                                     <div class="col-md-12">
                                     <div class="col-md-6">

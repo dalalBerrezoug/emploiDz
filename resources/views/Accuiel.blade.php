@@ -83,6 +83,7 @@
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
+    </header>
     @yield('content')
     <body>
   

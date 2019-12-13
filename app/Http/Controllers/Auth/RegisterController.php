@@ -7,7 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Auth;
 class RegisterController extends Controller
 {
     /*
@@ -49,9 +49,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+
         ]);
     }
 
@@ -63,10 +63,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //modification pour mutpile autentification
+        $role=0;
+        
+        if(url()->previous()=='http://localhost:8000/InsecriptionRec'){
+            $role=1;
+        }
+        if(url()->previous()=='http://localhost:8000/register'){
+            $role=0;
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role'=>$role,   // haddddddddddi matatl3ch f table dirli errore makch valeur f admin
+            
         ]);
     }
+
+   
 }

@@ -99,7 +99,7 @@ Route::get('/masterRec', function () {
  
 });
 Route::get('/InsecriptionRec', function () {
-  return view('Recruteur.InsecriptionRec');
+  return view('Recruteur.RecInsecre');
  
 });
 Route::get('/RECmod',function(){
@@ -122,6 +122,8 @@ Route::get('/tablebord',function(){
   return view('Recruteur.TableBorde');
 });
 
+
+
 Route::get('/mod',function(){
   return view('Recruteur.modifrieroffre');
 });
@@ -143,7 +145,15 @@ Route::get('/ModifierOffre',function(){
 Route::get('/AfficheOffre',function(){
   return view('Recruteur.AfficherLesinfOffre');
 });
-
+Route::get('/LogTous',function(){
+  return view('TousLogin');
+});
+//Testttttt
+Route::get('/Test','TestrecController@create');
+Route::get('ajouterTest/story','TestrecController@store');
+Route::get('/Test2','Test2Controller@create');
+Route::get('ajouterTest2/story','Test2Controller@store');
+//fin Testttt
 Route::get('articles/create','ArticleController@create');
 Route::post('articles','ArticleController@store');
 Route::get('articles','ArticleController@index');
@@ -206,11 +216,12 @@ Route::get('Offre/{id}/modifier','OffreController@edit');
 Route::put('Offre/{id}/update','OffreController@update');
 Route::get('Offre/{id}/delete','OffreController@destroy');
 Route::get('inserRec','RecruteurController@create');
-Route::get('Insertion/Store','RecruteurController@Store');
-Route::get('InfoRec/{id}','RecruteurController@index');
+Route::get('Insertion/{id}','RecruteurController@Store');
+Route::get('InfoRec/{user_id}','RecruteurController@index');
 Route::get('ContectRec','ContectController@create');
 Route::get('Insertion/Contect','ContectController@Store');
 Route::get('AffichageContect/{id}','ContectController@index');
+//Route::get('insePtion','Auth\RegisterController@Role')->name('insePtion');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
