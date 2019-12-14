@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role'=>$role,   // haddddddddddi matatl3ch f table dirli errore makch valeur f admin
+            'role'=>$role,   //
             
         ]);
     }

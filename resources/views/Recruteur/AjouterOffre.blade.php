@@ -14,7 +14,7 @@
                 <div class="row">
                       <div class="col-md-12">                        
                         <div class="white-box">
-                            <form class="form-horizontal form-material" method="get" action="{{url('insere')}}">
+                            <form class="form-horizontal form-material" method="get" action="{{url('insere/'.Auth::user()->id)}}">
                              {{csrf_field()}}
 
                              <div class="form-group">

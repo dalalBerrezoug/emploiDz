@@ -48,7 +48,7 @@
                         <!--pour quite-->
                         <div class="form-group">
                       <div class="col-md-12">
-                      <h2 style="color:green">{{$offres->nom}}<span id="close" class="close"><a href="{{url('ConsulterOffre')}}"> &times; </span></a></h2><hr>
+                      <h2 style="color:green">{{$offres->nom}}<span id="close" class="close"><a href="{{url('ConsulterOffre/'Auth::user()->id)}}"> &times; </span></a></h2><hr>
                       </div>
                      
                       <!--pour quite-->

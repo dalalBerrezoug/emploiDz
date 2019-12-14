@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUseridTableRecruteurs extends Migration
+class ModifierRecidContects extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class AddUseridTableRecruteurs extends Migration
      */
     public function up()
     {
-        Schema::table('recruteurs', function (Blueprint $table) {
+        Schema::table('contects', function (Blueprint $table) {
             //
-            $table->integer('user_id');
-            $table->foreign('user_id')
-				  ->references('id')
-				  ->on('users')
-				  ->onDelete('restrict')
-				  ->onUpdate('restrict');
+            $table->integer('rec_id')->unsigned()->unique()->after('id');
+		
         });
     }
 
@@ -31,7 +27,7 @@ class AddUseridTableRecruteurs extends Migration
      */
     public function down()
     {
-        Schema::table('recruteurs', function (Blueprint $table) {
+        Schema::table('contects', function (Blueprint $table) {
             //
         });
     }

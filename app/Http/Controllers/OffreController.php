@@ -13,7 +13,7 @@ class OffreController extends Controller
 
     }
 
-    public function Store(Request $request){
+    public function Store(Request $request,$rec_id){
         $offre=new Offre();
         $offre->nom=$request->input('nom');
         $offre->intitule=$request->input('intitule');
@@ -27,15 +27,19 @@ class OffreController extends Controller
         $offre->debut_prevu=$request->input('debut_prevu');
         $offre->depot_offre=$request->input('depot_offre');
         $offre->description=$request->input('description');
+        $offre->rec_id=$rec_id;
         $offre->save();
         return redirect('ConsulterOffre');
 
 
     }
-
-    public function index(){
-    $list_des_offres=Offre::all();
-    return view('Recruteur.ConsulterMeOffre')->with('offres',$list_des_offres);
+///la methode pour consulter les offres
+    public function index($id_rec){
+    $list_des_offres=Offre::all()->where('rec_id','=',$id_rec);
+    if($list_des_offres==NULL)
+    echo
+     "<p align='center' style='color:red'><b>Aucune offre ajoutée pour le moment</b></p>";
+    else return view('Recruteur.ConsulterMeOffre')->with('offres',$list_des_offres);
 
 
     }

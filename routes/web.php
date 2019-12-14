@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Accuiel');
 });
 Route::get('/contact/{name}/id/{id}', function ($name,$id) {
     //return view('contact');
@@ -105,7 +105,7 @@ Route::get('/InsecriptionRec', function () {
 Route::get('/RECmod',function(){
   return view('Recruteur.ModifierinfoRec');
 });
-Route::get('/Profile', function () {
+Route::get('Profile', function () {
   return view('Recruteur.Profile');
  
 });
@@ -209,18 +209,22 @@ Route::post('profil/{id}/user','UserController@update');
 
 //les routes d'offre
 Route::get('ajouter/AjouterOffre','OffreController@create');
-Route::get('insere','OffreController@Store');
-Route::get('ConsulterOffre','OffreController@index');
+Route::get('insere/{id}','OffreController@Store');
+Route::get('ConsulterOffre/{id}','OffreController@index');
 Route::get('AfficherInfOffre/{id}','OffreController@Affiche_Info');
 Route::get('Offre/{id}/modifier','OffreController@edit');
-Route::put('Offre/{id}/update','OffreController@update');
+Route::put('Offre/{id}/update/{rec_id}','OffreController@update');
 Route::get('Offre/{id}/delete','OffreController@destroy');
 Route::get('inserRec','RecruteurController@create');
 Route::get('Insertion/{id}','RecruteurController@Store');
 Route::get('InfoRec/{user_id}','RecruteurController@index');
 Route::get('ContectRec','ContectController@create');
-Route::get('Insertion/Contect','ContectController@Store');
+Route::get('Insertion/Contect/{id}','ContectController@Store');
 Route::get('AffichageContect/{id}','ContectController@index');
+Route::get('ModifContectRec','ContectController@create_modifier');
+Route::get('Contect/update/{id}','ContectController@update');
+Route::get('ModifProfilRec','RecruteurController@create_modifier_Rec');
+Route::get('Profil/update/{id}','RecruteurController@update');
 //Route::get('insePtion','Auth\RegisterController@Role')->name('insePtion');
 Auth::routes();
 

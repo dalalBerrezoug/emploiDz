@@ -31,10 +31,15 @@
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
+                    <li>
+                        <form role="search" class="app-search hidden-xs">
+                            <input type="text" placeholder="Chercher..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
+                        </form>
+                    </li>
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ __('Login') }}</b> </a>
+                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{Auth::user()->name }}</b> </a>
                     </li>
                 </ul>
             <!-- /.navbar-header -->
@@ -44,91 +49,97 @@
         <body>
         <div class="overlay" id="overlay">
         <div class="popup" id="popup">
-        <!--pour quite-->
                       <div class="form-group">
+                       <!--pour quite-->
+                       <div class="form-group">
                       <div class="col-md-12">
-                      <span id="close" class="close"><a href="{{url('ConsulterOffre')}}"> &times; </span></a><hr>
+                      <span id="close" class="close"><a href="{{url('InfoRec/'.Auth::user()->id)}}"> &times; </span></a><hr>
                       </div>
                      
                       <!--pour quite-->
-                      <form method="post" action="{{url('Offre/'.$offre->id.'/update/'.Auth::user()->id)}}">
-                                    <input type="hidden" name="_method" value="PUT">
-                                              {{csrf_field()}}
+                      <form method="get" action="{{url('Profil/update/'.Auth::user()->id)}}">
+                      {{csrf_field()}}
                                     <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="text" value="{{$offre->nom}}" class="form-control form-control-line" name="nom">
+                                    <div class="col-md-6">
+                                    <label style="color:black">Le Nom de l'Entreprise:</label>
                                     </div>
-                                    <div class="col-md-4">
-                                    <input type="text" value="{{$offre->intitule}}" class="form-control form-control-line" name="intitule">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="text" value="{{$offre->lieuTrav}}" class="form-control form-control-line" name="lieu">
+                                    <div class="col-md-6">
+                                    <input type="text" placeholder="Nom D'entreprise" class="form-control form-control-line" name="name">
                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="text" value="{{$offre->competences}}" class="form-control form-control-line" name="comp">
+                                    <div class="col-md-6">
+                                    <label style="color:black"> Logo l' Enreprise:</label>
                                     </div>
-                                    <div class="col-md-4">
-                                    <input type="text" value="{{$offre->domaine}}" class="form-control form-control-line" name="domaine">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="text" value="{{$offre->diplome}}" class="form-control form-control-line" name="diplome">
+                                    <div class="col-md-6">
+                                    <input type="text" placeholder="LOGO" class="form-control form-control-line" name="logo">
                                     </div>
                                     </div><br><br><br><br>
                                     <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="datetime-local" value="{{$offre->duree}}" class="form-control form-control-line" name="duree">
+                                    <div class="col-md-6">
+                                    <label style="color:black">Email de l'Entreprise:</label>
                                     </div>
-                                    <div class="col-md-4">
-                                    <input type="text" value="{{$offre->remuneration}}" class="form-control form-control-line" name="remun">
-                                    </div>
-                                    <div class="col-md-4">
-                                    <input type="date" value="{{$offre->debut_prevu}}" class="form-control form-control-line" name="debut_prevu">
+                                    <div class="col-md-6">
+                                    <input type="email" placeholder="Email" class="form-control form-control-line" name="email">
                                     </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-12">
-                                    <div class="col-md-4">
-                                    <input type="date" value="{{$offre->depot_offre}}" class="form-control form-control-line" name="depot_offre">
+                                    <div class="col-md-6">
+                                    <label style="color:black">Site de l'Entreprise:</label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
+                                    <input type="text" placeholder="entre le site" class="form-control form-control-line" name="site">
+                                    </div>
+                                    </div>
+                                    <br><br><br><br>
+                                    <div class="col-md-12">
+                                    <div class="col-md-6">
+                                    <label style="color:black">l'Adresse de l'Entreprise:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <input type="text" placeholder="l'Adresse" class="form-control form-control-line" name="adr">
+                                    </div>
+                                    </div>
+                                    <br><br><br><br>
+                                    <div class="col-md-12">
+                                    <div class="col-md-6">
+                                    <label style="color:black">Numéro de l'Entreprise:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <input type="text" placeholder="Numero ....." class="form-control form-control-line" name="num">
+                                    
+                                    </div>
+                                    </div>
+                                    <br><br><br><br>
+                                    <div class="col-md-12">
+                                    <div class="col-md-6">
+                                    <label style="color:black">Type de l'Entreprise:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <select class="form-control form-control-line" name="type">
+                                            <option>société</option>
+                                            <option>public</option>
+                                            
+                                        </select>
 
                                     
                                     </div>
                                     </div>
-                                    <br><br><br><br>
-                                    <div class="col-md-12">
-                                    <select class="form-control form-control-line" name="type">
-                                            <option>Stage</option>
-                                            <option>CDI</option>
-                                            <option>CDD</option>
-                                            
-                                        </select>
-                                        </div>
-                                    <div class="row">
-                                    <div class="col-md-8">
-                                    <label><b>Description:</b></label>
-                                        <br/>
-                                         <textarea name="description" rows="5" cols="60"  name="description">
-                                         {{$offre->description}}
-                                          </textarea>
-                                    </div>
-                                    </div>
-                                    <br>
-                                    <div class="col-md-12">
-                                    <div class="col-md-8">
-                                    
-                                    <button  type="submit" class="btn btn-success">
-                                    Confermier La modification
-                                    </button>
-                                    <form>
-                                    </div>
-                                    </div>
                                     <br><br>
+                                    <div class="col-md-12">
+                      <div class="col-md-1"></div>
+                      </div>
+                      <div class="col-md-10"></div>
+                      </div>
+                      <div class="col-md-1"></div>
+                      <button class="btn btn-success" type="submit">Confermier La modification</button>
+                      <form>
                       </div>
                       </div>
+                      </div>
+                     
                       </div>
 
 

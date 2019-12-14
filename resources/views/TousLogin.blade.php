@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.masterlogin')
 
 @section('content')
 <link href="{{asset('BizPage/css/style_admin.css')}}" rel="stylesheet">
 <br><br><br>
 <section class="container-fluid bg ">
 		<section class="row justify-content-center">
-			<section class="col-12 col-sm-8 col-md-6">
+			<section class="col-12 col-sm-10 col-md-4">
                     <form class="form-container" method="POST" action="{{ route('login') }}">
                         @csrf
 

@@ -47,7 +47,7 @@
                         <h2>Éditer Votre informations personnelles 
                         
                         <span id="close" class="close"><a href="{{url('Profile')}}"> &times; </a></span></h2><hr>
-                       <form method="get" action="{{url('Insertion/Contect/'.Auth::user()->id)}}">
+                       <form method="get" action="{{url('Contect/update/'.Auth::user()->id)}}">
                         <div class="form-group row">
                             <label for="example-text-input" class="col-2 col-form-label"><b>Civilité:</b></label>
                             <div class="form-check form-check-inline ">

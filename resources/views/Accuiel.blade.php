@@ -56,7 +56,7 @@
 
       <nav id="nav-menu-container" style="background-color: black;">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="{{ url('Accuiel') }}">Home</a></li>
+          <li class="menu-active"><a href="{{ route('home') }}">Home</a></li>
           <li class="menu-has-children"><a href="">Offres d'emploi</a>
             <ul>
               <li><a href="{{ url('rechercheavance') }}">Recherche Avancé</a></li>
@@ -72,7 +72,7 @@
               
             </ul>
           </li>
-          <li><a href="{{url('login')}}">Se connecter</a></li>
+          <li><a href="{{url('LogTous')}}">Se connecter</a></li>
           <li><a href="{{url('InsecriptionRec')}}"><button type="button" class="btn btn-outline-success btn-lg mb-2">ESPACE RECRUTEUR</button></li>
           <li>
               <button type="button" class="btn btn-success btn-lg mb-2">

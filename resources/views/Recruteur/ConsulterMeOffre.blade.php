@@ -41,7 +41,7 @@
                                             <td>{{$offre->domaine}}</td>
                                             <td>{{$offre->diplome}}</td>
                                             <td>{{$offre->lieuTrav}}</td>
-                                         
+                                            
                                             <td>
                                             <a href="{{url('AfficherInfOffre/'.$offre->id)}}"><span class="oi oi-eye bnt"></span></a>
                                             </td>

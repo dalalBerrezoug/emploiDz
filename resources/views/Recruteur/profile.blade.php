@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material">
+                            <form class="form-horizontal form-material"  method="get" action="{{url('ModifContectRec')}}">
                                 <div class="form-group" class="col-md-12">
                                     <label class="col-md-6">Nom:</label>
                                     <div class="col-md-6">
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success"><a href="{{url('ContectRec')}}">Mettre à jour le profil</a></button>
+                                   <button class="btn btn-success" type="submit">Mettre à jour le profil</button>
                                     </div>
                                 </div>
                             </form>

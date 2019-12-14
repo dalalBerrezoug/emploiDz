@@ -37,7 +37,7 @@
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
-                    <li><a href="{{ url('accueil') }}">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                  <li class="menu-has-children"><a href="">Offres d'emploi</a>
                  <ul>
                  <li><a href="{{ url('rechercheavance') }}">Recherche Avancé</a></li>
@@ -70,7 +70,7 @@
                         <a href="{{ url('Accuiel') }}" class="waves-effect"><span class="oi oi-account-logout"> Aller au site</span></a>
                     </li>
                     <li>
-                        <a href="{{url('ContectRec')}}" class="waves-effect"><span class="oi oi-person"> Contact</span></a>
+                        <a href="{{url('AffichageContect/'.Auth::user()->id)}}" class="waves-effect"><span class="oi oi-person"> Contact</span></a>
                     </li>
                     <li>
                         <a href="{{url('InfoRec/'.Auth::user()->id)}}" class="waves-effect"><span class="oi oi-people"> Récruteur</span></a>
@@ -79,18 +79,14 @@
 
 
                       <li>
-                        <a href="profile.html" class="waves-effect"><span class="oi oi-briefcase"> Options Offres</span>
+                        <a><span class="oi oi-briefcase"> Options Offres</span></a>
                        
                         <ul>
-
-                            <li><a href="{{url('AjouterOffre')}}">Ajouter offre</a></li>
-                            <li><a href="{{url('ConsulterOffre')}}">Consulter Mes offres</a></li>
-
+                        <li><a href="{{url('AjouterOffre')}}">Ajouter offre</a></li>
+                        <li><a href="{{url('ConsulterOffre/'.Auth::user()->id)}}">Consulter Mes offres</a></li>
                         </ul>
-                        
-
-                        </a>
                     </li>
+                    </ul>
                     <div class="center p-20">
                     <a target="_blank" class="btn btn-danger btn-block btn-rounded waves-effect waves-light" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
