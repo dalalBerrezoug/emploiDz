@@ -49,11 +49,16 @@
           
             
               
-            <div class="row" style="background-color:beige;margin:10px;";> @foreach($cv as $cv)
+            <div class="row" style="background-color:beige;margin:10px;";>@foreach($cv as $cv)
+            @if ($cv)
             <a href="{{url('cv/'.$cv->id.'/editcv')}}">
             <span class="oi oi-pencil editexp" id="editexp" style="margin-left:10px;margin-top:30px;"></span></a>
-            <div style="margin-left:200px";><h1> {{$cv->titre}} </h1>@endforeach</div><br><br>
-           
+            <div style="margin-left:200px";> <h1>  titre:{{$cv->titre}} </h1></h1></div><br><br>
+            @endif
+            
+              
+            @endforeach 
+            <a href="{{url('cv/createcv')}}">Ajouter votre CV</a>
            </div><br><br>
            
           
@@ -66,7 +71,10 @@
                 <td>{{$comp->competence}}</td>
               
               @endforeach</tr>
-              <tr><td colspan=2><a href="{{url('indexcompetence/createcomp')}}">Ajouter une autre competence</a></td></tr></table>
+              <tr><td colspan=2><a href="{{url('indexcompetence/createcomp')}}">Ajouter une autre competence</a></td>
+            
+              
+            </tr></table>
 
                      
                       <br><br>
@@ -112,7 +120,8 @@
             <table class="table">@foreach($doc as $doc)
               <tr>
                 <td style="width:10px;"><a href="{{url('indexdocument/'.$doc->id.'/editdoc')}}">  <span class="oi oi-pencil editexp" id="editexp""></span></a></td>
-                <td>{{$doc->type}}: {{$doc->titre}}</td>
+                <td><img src="{{ asset('storage/'.$doc->file) }}" alt="..." class="img-thumbnail">
+                {{$doc->type}}: {{$doc->titre}}</td>
               
               @endforeach</tr>
               <tr><td  colspan=2><a href="{{url('indexdocument/createdocument')}}">Ajouter un document</a></td></tr></table>

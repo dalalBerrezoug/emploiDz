@@ -79,7 +79,7 @@
                                     </div><br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="datetime-local" value="{{$offre->duree}}" class="form-control form-control-line" name="duree">
+                                    <input type="date" value="{{$offre->duree}}" class="form-control form-control-line" name="duree">
                                     </div>
                                     <div class="col-md-4">
                                     <input type="text" value="{{$offre->remuneration}}" class="form-control form-control-line" name="remun">

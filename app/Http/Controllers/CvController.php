@@ -22,12 +22,25 @@ class CvController extends Controller
     //lister le cv
     public function index(){
         $cv = Cv::where('user_id',Auth::user()->id)->get();
-        $exp = Experience::where('cv_id',Auth::user()->id)->get();
         
-        $form = Formation::all();
-        $dom = Domaine::all();
-        $comp = Competence::all();
+        
+      // $form = Formation::all();
+      //  $form = Formation::where('cv_id',Auth::user()->id)->get();
+      foreach($cv as $cvs)
+      {
+         $id = $cvs->id;
+      } 
+      
+        $form = Formation::where('cv_id',$id)->get();
+        $exp = Experience::where('cv_id',$id)->get();
+        $comp = Competence::where('cv_id',$id)->get();
+      
+      
+      
+      //  $comp = Competence::all();
+        //$comp = Competence::where('cv_id',Auth::user()->id)->get();
         $doc = Document::all();
+       // $doc = Document::where('cv_id',Auth::user()->id)->get();
         return view('cv.index',compact('cv','exp','form','dom','comp','doc'));
     }
 //affiche le form de ceation de cv

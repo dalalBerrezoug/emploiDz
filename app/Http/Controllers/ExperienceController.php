@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Experience;
 use Auth;
+use App\Cv;
 
 class ExperienceController extends Controller
 {
@@ -37,7 +38,12 @@ class ExperienceController extends Controller
      $exp->entreprise = $request->input('entreprise');
      $exp->datedeb = $request->input('datedeb');
      $exp->datefin = $request->input('datefin');
-     $exp->cv_id = Auth::user()->id;
+     //$exp->cv_id = Auth::user()->id;
+     $cv = Cv::where('user_id',Auth::user()->id)->get();
+     foreach($cv as $cv)
+     {
+        $exp->cv_id = $cv->id;
+     } 
      $exp->save();
      return redirect('cv');
  }

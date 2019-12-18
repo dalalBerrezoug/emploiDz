@@ -37,15 +37,6 @@
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                 <li class="menu-has-children"><a href="">Offres d'emploi</a>
-                 <ul>
-                 <li><a href="{{ url('rechercheavance') }}">Recherche Avancé</a></li>
-                 <li><a href="{{ url('rechercheparregion') }}">Recherche par Région</a></li>
-                 <li><a href="{{ url('rechercheparfonction') }}">Recherche par Fonction</a></li>
-                 <li><a href="{{ url('rechercheparmotcle') }}">Recherche par mot clée</a></li>
-                 </ul>
-                 </li>
                  <li><a href="{{ url('actualite') }}">Actualités</a></li>
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">

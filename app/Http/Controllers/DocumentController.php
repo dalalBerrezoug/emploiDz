@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use App\Document;
 
 class DocumentController extends Controller
@@ -28,9 +29,10 @@ class DocumentController extends Controller
      $doc = new Document();
      $doc->titre = $request->input('titre');
      $doc->type = $request->input('type');
-     $path= $request->file('file')->store('image');
+     $doc->cv_id = 1;
+    // $path= $request->file('file')->store('image');
  
-   $doc->file = $request->file('file');
+   $doc->file = $request->file('file')->store('image');
      
      $doc->save();
      return redirect('cv');
@@ -51,9 +53,9 @@ public function updatedoc(Request $request , $id)
         $doc = Document::find($id);
         $doc->titre = $request->input('titre');
        // $doc->file = $request->input('titre');
+      // $doc->file = $request->file('file')->
        
         $doc->save();
         return redirect('cv');
     }
 }
-

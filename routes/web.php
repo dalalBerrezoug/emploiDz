@@ -229,3 +229,5 @@ Route::get('Profil/update/{id}','RecruteurController@update');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('rechercheavance', 'RechercheAvanceeController');

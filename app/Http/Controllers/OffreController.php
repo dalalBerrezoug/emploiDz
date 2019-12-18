@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offre;
+use Auth;
 
 class OffreController extends Controller
 {
@@ -29,7 +30,7 @@ class OffreController extends Controller
         $offre->description=$request->input('description');
         $offre->rec_id=$rec_id;
         $offre->save();
-        return redirect('ConsulterOffre');
+        return redirect('ConsulterOffre/'.$rec_id);
 
 
     }
@@ -68,7 +69,7 @@ class OffreController extends Controller
         $offre->depot_offre=$request->input('depot_offre');
         $offre->description=$request->input('description');
         $offre->save();
-        return redirect('ConsulterOffre');
+        return redirect('ConsulterOffre/'.Auth::user()->id);
 
 
     }

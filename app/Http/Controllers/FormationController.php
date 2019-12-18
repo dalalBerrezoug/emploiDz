@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Formation;
+use App\Cv;
 use Auth;
 
 class FormationController extends Controller
@@ -31,6 +32,8 @@ class FormationController extends Controller
  //enregistrer experience
  public function storeform(Request $request)
  {
+    
+
 
      $form = new Formation();
      $form->titreformation = $request->input('titre');
@@ -39,7 +42,16 @@ class FormationController extends Controller
      $form->typeetat = $request->input('type');
      $form->datedebut = $request->input('deb');
      $form->datefin = $request->input('fin');
-     $form->cv_id = Auth::user()->id;
+     //$form->cv_id = Auth::user()->id;
+     $cv = Cv::where('user_id',Auth::user()->id)->get();
+     foreach($cv as $cv)
+     {
+        $form->cv_id = $cv->id;
+     } 
+    
+     
+     
+    // $form->cv_id = 7;
      $form->save();
      
     

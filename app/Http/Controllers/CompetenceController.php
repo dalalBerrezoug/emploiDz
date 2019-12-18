@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Competence;
 use Auth;
+use App\Cv;
 
 class CompetenceController extends Controller
 {
@@ -32,7 +33,11 @@ class CompetenceController extends Controller
 
      $comp = new Competence();
      $comp->competence = $request->input('competence');
-     $comp->cv_id = Auth::user()->id;
+     $cv = Cv::where('user_id',Auth::user()->id)->get();
+     foreach($cv as $cv)
+     {
+        $comp->cv_id = $cv->id;
+     } 
      $comp->save();
      
     
