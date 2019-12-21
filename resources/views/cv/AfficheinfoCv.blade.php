@@ -51,35 +51,34 @@
               
             <div class="row" style="background-color:beige;margin:10px;";>
           
-            <a href="">
+            <a href="{{url('TitreCv')}}">
             <span class="oi oi-pencil editexp" id="editexp" style="margin-left:10px;margin-top:30px;"></span></a>
-            <div style="margin-left:200px";> <h1>  titre: </h1></h1></div><br><br>
-            
-            
-              
-             
-            <a href="{{url('cv/createcv')}}">Ajouter votre CV</a>
+            <div style="margin-left:200px";> <h1>
+            titre: @if($data['titre'] ){{$data['titre']}}@endif</h1></div><br><br>
            </div><br><br>
            
           
-          <div class="row"> <span style="margin-left:200px;font-color:black;"> <h1>Competences</h1></span> </div>
+          <div class="row"> <span style="margin-left:200px;font-color:black;"> <h1>Experiences</h1></span> </div>
             <div class="row" style="margin-top: 50px; margin-left:30px ;">
-            <div class="col-lg-12">
-            <table class="table" >
+            <div class="col-lg-10">
+            <table class="table">
+            @if($data['experience'])
+            @foreach($data['experience'] as $exper)
               <tr>
-                <td style="width:10px;"><a href="">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
-                <td></td>
-              
+                <td style="width:10px;"><a href=""> <span class="oi oi-pencil editexp" id="editexp"></span></a>  {{$exper->titreposte}}</td>
+                <td style="width:50px;">Du {{$exper->date_deb}}<br>Au {{$exper->date_fin}}</td>
+              <td style="width:10px;"><h4> </h4><br></td>
               </tr>
-              <tr><td colspan=2><a href="{{url('indexcompetence/createcomp')}}">Ajouter une autre competence</a></td>
-            
+              @endforeach
+              @endif
               
-            </tr></table>
+               
+            <tr><td colspan=2><a href="{{url('AjouterExperience')}}">Ajouter une autre experience</a></td></tr></table>
 
                      
                       <br><br>
                   </div></div>
-          
+                  
          
          
             <div class="row"> <span style="margin-left:200px";>  <h1>Formations</h1></span> 
@@ -87,27 +86,35 @@
            <div class="row" style="margin-top: 50px; margin-left:30px ;">
             <div class="col-lg-10">
             <table class="table">
+            @if($data['formation'] )
+            @foreach($data['formation'] as $exper)
               <tr>
-                <td style="width:10px;"><a href=""> <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
-                <td style="width:50px;">Du <br>Au </td>
+                <td style="width:10px;"><a href=""> <span class="oi oi-pencil editexp" id="editexp"></span></a>  {{$exper->titreformation}}</td>
+                <td style="width:50px;">Du {{$exper->datedebut}}<br>Au {{$exper->datefin}}</td>
               <td style="width:10px;"><h4> </h4><br></td>
               </tr>
-            <tr><td colspan=2><a href="{{url('indexformation/createform')}}">Ajouter une autre formation</a></td></tr></table>
+              @endforeach
+              @endif
+               
+            <tr><td colspan=2><a href="{{url('AjouterFormarion')}}">Ajouter une autre formation</a></td></tr></table>
 
                      
                       <br><br>
                   </div></div>
                   
-            <div class="row"> <span style="margin-left:200px";>  <h1>Experiences</h1></span></div>
+                  <div class="row"> <span style="margin-left:200px;font-color:black;"> <h1>Competences</h1></span> </div>
             <div class="row" style="margin-top: 50px; margin-left:30px ;">
             <div class="col-lg-12">
-            <table class="table">
+            <table class="table" >
+            @if($data['competence'] )
+            @foreach($data['competence'] as $comp)
               <tr>
                 <td style="width:10px;"><a href="">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
-                <td style="width:200px;">Du <br>Au </td>
-              <td><h4> </h4><br></td>
-              </tr>
-              <tr><td  colspan=2><a href="{{url('experience/createexp')}}">Ajouter une experience</a></td></tr></table>
+                <td>{{$comp->competence}}</td>
+              
+              @endforeach</tr>
+              @endif
+              <tr><td  colspan=2><a href="{{url('AjouterCompetence')}}">Ajouter une competence</a></td></tr></table>
 
                      
                       <br><br>
@@ -119,12 +126,12 @@
             <div class="col-lg-12">
             <table class="table">
               <tr>
-                <td style="width:10px;"><a href="">  <span class="oi oi-pencil editexp" id="editexp""></span></a></td>
+                <td style="width:10px;"><a href="">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
                 <td><img src="" alt="..." class="img-thumbnail">
                 </td>
               
               </tr>
-              <tr><td  colspan=2><a href="{{url('indexdocument/createdocument')}}">Ajouter un document</a></td></tr></table>
+              <tr><td  colspan=2><a href="{{url('AjouterDocument')}}">Ajouter un document</a></td></tr></table>
 
                      
                       <br><br>

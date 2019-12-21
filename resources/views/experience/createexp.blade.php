@@ -5,7 +5,7 @@
 <div class="overlayexp" id="overlayexp">
                           <div class="popupexp" id="popupexp">
                             <h2>Ajouter une experience <span id="closeexp" class="closeexp"> &times; </span></h2><hr>
-                            <form action= "{{url('experience')}}" method="POST">
+                            <form action= "{{url('InsertionExperience')}}" method="get">
                                       {{csrf_field()}}
                            <div class="form-group row">
                               <label for="example-text-input" class="col-2 col-form-label">Titre de poste</label>

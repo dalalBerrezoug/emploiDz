@@ -8,8 +8,11 @@ use Auth;
 use Illuminate\Http\UplodedFile;
 //use Illuminate\Http\UploadedFile;
 use App\User;
-
-
+use App\Cv;
+use App\Formation;
+use App\Experience;
+use App\Competence;
+use App\Documents;
 class UserController extends Controller
 {
     public function __construct(){
@@ -50,9 +53,9 @@ public function update(Request $request , $id)
         $user->civilite = $request->input('civilite');
        
       
-        $path= $request->file('photo')->store('image');
+        //$path= $request->file('photo')->store('image');
  
-        $user->photo = $request->file('photo');
+       // $user->photo = $request->file('photo');
        
 
         
@@ -154,7 +157,40 @@ public function updatecomp(Request $request , $id)
     }*/
 
 
-
+          public function Cv_Condidat()
+          {
+            $data=[];
+            $cv=Cv::select('id')->where('user_id','=',Auth::user()->id)->get();
+            if($cv!='[]'){
+                 $id=$cv[0]->id;
+                 $CV=Cv::find($id);
+                 $cv_id=$CV->id;
+                 $t=$CV->titre;
+                $data['titre']=$t;
+            $experience=Experience::select('id')->where('cv_id','=',$cv_id)->get();
+            $competence=Competence::select('id')->where('cv_id','=',$cv_id)->get();
+            $formation=Formation::select('id')->where('cv_id','=',$cv_id)->get();
+            if($formation!='[]'){
+                $form=Formation::find($formation[0]->id)->all()->where('cv_id','=',$cv_id);
+                $data['formation']=$form;
+            }else $data['formation']=Null;
+            if( $experience!='[]'){
+                $exp=Experience::find($experience[0]->id)->all()->where('cv_id','=',$cv_id);
+                $data['experience']=$exp;
+              //  echo $data['experience'];
+            }else $data['experience']=Null;
+            if( $competence!='[]'){
+                $comp=Competence::find($competence[0]->id)->all()->where('cv_id','=',$cv_id);
+                $data['competence']=$comp;
+              //  echo $data['experience'];
+            }
+            else $data['competence']=Null;
+           return view('cv.AfficheinfoCv')->with('data',$data);
+        }else{
+            $data=Null;
+            return view('cv.AfficheinfoCv')->with('data',$data);
+            }
+          }
 
   
 

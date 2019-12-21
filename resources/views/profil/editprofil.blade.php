@@ -5,7 +5,7 @@
                       <div class="popup" id="popup">
                         <h2>Editer les informations personnelles <span id="close" class="close"> &times; </span></h2><hr>
                        
-                        <form action= "{{url('profil/'.$user->id.'/user')}}" method="GET">
+                        <form action= "{{url('profil/'.$user->id.'/user')}}" method="get">
     <input type="hidden" name="_method" value="POST">
     {{csrf_field()}}
 

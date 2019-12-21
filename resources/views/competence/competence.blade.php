@@ -7,7 +7,7 @@
                     <h2>Ajouter une compétence <span id="closetitre" class="closetitre"> &times; </span></h2><hr>
                    
                     
-                    <form action= "{{url('cv')}}" method="POST">
+                    <form action= "{{url('InsertionCompetence')}}" method="get">
     {{csrf_field()}}
                 
 

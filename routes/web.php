@@ -148,6 +148,13 @@ Route::get('/AfficheOffre',function(){
 Route::get('/LogTous',function(){
   return view('TousLogin');
 });
+Route::get('/cvCondidat',function(){
+  return view('cv.CvCondidat');
+});
+Route::get('/TitreCv',function(){
+  return view('cv.createcv');
+});
+
 //Testttttt
 Route::get('/Test','TestrecController@create');
 Route::get('ajouterTest/story','TestrecController@store');
@@ -186,21 +193,21 @@ Route::post('indexformation/{id}/form','FormationController@updateform');
 //Route::post('cv/{id}','FormationController@updateform');
 
 //routes competence
-Route::get('indexcompetence','CompetenceController@index');
-Route::get('indexcompetence/createcomp','CompetenceController@createcomp');
+/*Route::get('indexcompetence','CompetenceController@index');
+//Route::get('indexcompetence/createcomp','CompetenceController@createcomp');
 //Route::post('indexcompetence','CompetenceController@storecomp');
 Route::post('cv','CompetenceController@storecomp');
 Route::get('indexcompetence/{id}/editcomp','CompetenceController@editcomp');
-Route::post('cv/{id}','CompetenceController@updatecomp');
+Route::post('cv/{id}','CompetenceController@updatecomp');*/
 
 //Route::post('indexcompetence/{id}/comp','CompetenceController@updatecomp');
 
 //routes document
-Route::get('indexdocument','DocumentController@index');
+/*Route::get('indexdocument','DocumentController@index');
 Route::get('indexdocument/createdocument','DocumentController@createdoc');
 Route::post('indexdocument','DocumentController@storedoc');
 Route::get('indexdocument/{id}/editdoc','DocumentController@editdoc');
-Route::post('indexdocument/{id}/doc','DocumentController@updatedoc');
+Route::post('indexdocument/{id}/doc','DocumentController@updatedoc');*/
 
 //routes profil
 Route::get('profil','UserController@index');
@@ -231,3 +238,36 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('rechercheavance', 'RechercheAvanceeController');
+//cette pour cv de condidate tous les fonctions de cv
+Route::get('ajouterCv','CvCondidatController@cv_create');
+Route::get('AfficherInfoCv','CvCondidatController@Afficher_Info_Cv');
+Route::get('titrecv','CvCondidatController@titre_mon_cv');
+Route::get('MonCv','CvCondidatController@afficher_cv');
+//la fin tous founction cv dans CvCondidatController
+
+
+//les methode pour les formations 
+Route::get('AjouterFormarion','FormationController@index');
+Route::get('InsertionFormarion','FormationController@story');
+Route::get('Cv_Condidat','UserController@Cv_Condidat');
+//fin les methode de forlation
+
+//*************Experience******* */
+Route::get('AjouterExperience','ExperienceController@index');
+Route::get('InsertionExperience','ExperienceController@stroy');
+///fin 
+
+
+
+/////comeptences/////////
+Route::get('AjouterCompetence','CompetenceController@index');
+Route::get('InsertionCompetence','CompetenceController@story');
+/////fin_comeptences/////////
+
+
+
+
+//***document */
+Route::get('AjouterDocument','DocumentController@index');
+Route::get('InsertionDocument','DocumentController@story');
+//****fin document */

@@ -7,7 +7,7 @@
        <div class="overlaytitre" id="overlaytitre">
                   <div class="popuptitre" id="popuptitre">
                     <h2>Ajouter un CV <span id="closetitre" class="closetitre"> &times; </span></h2><hr>
-                    <form action= "{{url('cv')}}" method="POST">
+                    <form action= "{{url('titrecv')}}" method="get">
     {{csrf_field()}}
                 
                       <div class="form-group row">

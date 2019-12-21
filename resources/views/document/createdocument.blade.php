@@ -6,7 +6,7 @@
                   <div class="popupdoc" id="popupdoc">
                     <h2>Ajouter un Docuemnt <span id="closedoc" class="closedoc"> &times; </span></h2><hr>
                    
-                    <form action= "{{url('indexdocument')}}" method="POST" enctype="multipart/form-data">
+                    <form action= "{{url('InsertionDocument')}}" method="get" enctype="multipart/form-data">
     {{csrf_field()}}
                 
                     <div class="form-group row">

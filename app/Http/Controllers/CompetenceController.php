@@ -15,54 +15,25 @@ class CompetenceController extends Controller
     }
     public function index(){
         
-        $comp = Competence::all();
-        $comp = Competence::where('cv_id',Auth::user()->id)->get();
-        
-        return view('indexcompetence',compact('comp'));
+       return view('competence.competence');
     }
 
-    public function createcomp(){
-        // return view("cv.index");
-        return view('competence.competence');
-     }
-
-  
- //enregistrer experience
- public function storecomp(Request $request)
- {
-
-     $comp = new Competence();
-     $comp->competence = $request->input('competence');
-     $cv = Cv::where('user_id',Auth::user()->id)->get();
-     foreach($cv as $cv)
-     {
-        $comp->cv_id = $cv->id;
-     } 
-     $comp->save();
-     
-    
-     return redirect('cv');
- }
-
- public function editcomp($id)
-{
-    
-    $comp = Competence::find($id);
-    return view('competence.editcomp',compact('comp'));
-}
-//modifier
-
-
-public function updatecomp(Request $request , $id)
-    {
-       
-
-        $comp = Competence::find($id);
-        $comp->competence = $request->input('competence');
-       
-        $comp->save();
-       // return redirect('indexcompetence');
-       return redirect('cv');
+   public function story(Request $req)
+   {
+    $cv=Cv::select('id')->where('user_id','=',Auth::user()->id)->get();
+    if($cv!='[]'){
+    $id=$cv[0]->id;
+    $CV=Cv::find($id);
+    $cv_id=$CV->id;
+    $comp=new Competence();
+    $comp->cv_id=$cv_id;
+    $comp->competence=$req->input('competence');
+    $comp->save();
+    return redirect('Cv_Condidat');
+}else{
+    $data=Null;
+    echo "<script>alert('il faut cree titre de cv avant')</script>";
+    return view('cv.AfficheinfoCv')->with('data',$data);
     }
-
+   }
 }

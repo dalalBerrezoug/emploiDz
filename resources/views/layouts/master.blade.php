@@ -83,7 +83,7 @@
                               <!--  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">-->
                               
                                     <li>   <a class="dropdown-item" href="{{url('profil')}}"> Mon Profil </a></li>  
-                                    <li>   <a class="dropdown-item" href="{{url('cv')}}"> Mon CV </a></li>
+                                    <li>   <a class="dropdown-item" href="{{url('Cv_Condidat')}}"> Mon CV </a></li>
                               
                               <li>   <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

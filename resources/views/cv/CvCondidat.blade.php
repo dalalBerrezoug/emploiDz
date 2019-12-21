@@ -51,14 +51,9 @@
               
             <div class="row" style="background-color:beige;margin:10px;";>
           
-            <a href="">
+            <a href="{{url('TitreCv')}}">
             <span class="oi oi-pencil editexp" id="editexp" style="margin-left:10px;margin-top:30px;"></span></a>
             <div style="margin-left:200px";> <h1>  titre: </h1></h1></div><br><br>
-            
-            
-              
-             
-            <a href="{{url('cv/createcv')}}">Ajouter votre CV</a>
            </div><br><br>
            
           
@@ -82,7 +77,7 @@
           
          
          
-            <div class="row"> <span style="margin-left:200px";>  <h1>Formations</h1></span> 
+            <div class="row"> <a href="{{url('AjouterFormarion')}}"><span style="margin-left:200px";> </span> </a> <h1>Formations</h1>
            </div>
            <div class="row" style="margin-top: 50px; margin-left:30px ;">
             <div class="col-lg-10">

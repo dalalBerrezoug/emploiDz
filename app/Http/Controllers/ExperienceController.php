@@ -17,58 +17,34 @@ class ExperienceController extends Controller
      //*************Experience******* */
 
      public function index(){
+       return view('experience.createexp'); 
         
-        $exp = Experience::where('cv_id',Auth::user()->id)->get();
-        
-        return view('experience',compact('exp'));
     }
 
-    //affiche le form de ceation d'ex
-    public function createexp(){
-        // return view("cv.index");
-        return view('experience.createexp');
-     }
 
-  
- //enregistrer experience
- public function storeexp(Request $request)
- {
-     $exp = new Experience();
-     $exp->titreposte = $request->input('titreposte');
-     $exp->entreprise = $request->input('entreprise');
-     $exp->datedeb = $request->input('datedeb');
-     $exp->datefin = $request->input('datefin');
-     //$exp->cv_id = Auth::user()->id;
-     $cv = Cv::where('user_id',Auth::user()->id)->get();
-     foreach($cv as $cv)
-     {
-        $exp->cv_id = $cv->id;
-     } 
-     $exp->save();
-     return redirect('cv');
- }
-
- //recuperer exp et mettre dans form
-
-public function editexp($id)
-{
-    
-
-    $exp = Experience::find($id);
-    return view('experience.editexp',compact('exp'));
-}
-//modifier
-
-
-public function updateexp(Request $request , $id)
+    public function stroy(Request $request)
     {
-       
-
-        $exp = Experience::find($id);
-        $exp->titreposte = $request->input('titreposte');
-        $exp->entreprise = $request->input('entreprise');
-       
+        $cv=Cv::select('id')->where('user_id','=',Auth::user()->id)->get();
+        if($cv!='[]'){
+        $id=$cv[0]->id;
+        $CV=Cv::find($id);
+        $cv_id=$CV->id;
+        $exp=new Experience();
+        $exp->cv_id=$cv_id;
+        $exp->titreposte=$request->input('titreposte');
+        $exp->entreprise=$request->input('entreprise');
+        $exp->date_deb=$request->input('datedeb');
+        $exp->date_fin=$request->input('datefin');
         $exp->save();
-        return redirect('cv');
+        return redirect('Cv_Condidat');
+        }else{
+            $data=Null;
+            echo "<script>alert('il faut cree titre de cv avant')</script>";
+            return view('cv.AfficheinfoCv')->with('data',$data);
+            }
+        
+
     }
+
+   
 }

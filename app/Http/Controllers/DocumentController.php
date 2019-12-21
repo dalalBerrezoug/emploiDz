@@ -5,57 +5,38 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use App\Document;
+use App\Cv;
+use Auth;
 
 class DocumentController extends Controller
 {
-    //
-    public function index(){
-        
-        $doc = Document::all();
-      //  $doc = Document::where('cv_id',Auth::user()->id)->get();
-        
-        return view('indexdocument',compact('comp'));
-    }
-      //affiche le form de ceation d'exp
-      public function createdoc(){
-        
-        return view('document.createdocument');
-     }
-    //enregistrer document
- public function storedoc(Request $request)
- {
-    
- 
-     $doc = new Document();
-     $doc->titre = $request->input('titre');
-     $doc->type = $request->input('type');
-     $doc->cv_id = 1;
-    // $path= $request->file('file')->store('image');
- 
-   $doc->file = $request->file('file')->store('image');
-     
-     $doc->save();
-     return redirect('cv');
- }
- public function editdoc($id)
-{
-    
-    $doc = Document::find($id);
-    return view('document.editdoc',compact('doc'));
+  public function __construct(){
+    $this->middleware('auth');
 }
-//modifier
+   public function index(){
+      return view('document.createdocument');
+    }
 
 
-public function updatedoc(Request $request , $id)
+
+
+    public function story(Request $request)
     {
-       
-
-        $doc = Document::find($id);
-        $doc->titre = $request->input('titre');
-       // $doc->file = $request->input('titre');
-      // $doc->file = $request->file('file')->
-       
-        $doc->save();
-        return redirect('cv');
+      $cv=Cv::select('id')->where('user_id','=',Auth::user()->id)->get();
+      if($cv!='[]'){
+      $id=$cv[0]->id;
+      $CV=Cv::find($id);
+      $cv_id=$CV->id;
+      $doc=new Document();
+      $doc->cv_id=$cv_id;
+      $doc->titre=$request->input('');
+      $doc->type=$request->input('');
+      $doc->save();
+      return redirect('Cv_Condidat');
+    }else{
+      $data=Null;
+      echo "<script>alert('il faut cree titre de cv avant')</script>";
+      return view('cv.AfficheinfoCv')->with('data',$data);
+      }
     }
 }

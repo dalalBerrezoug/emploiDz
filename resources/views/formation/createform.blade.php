@@ -3,14 +3,14 @@
 @section('content')
 <div class="overlayform" id="overlayform">
                   <div class="popupform" id="popupform">
-                    <h2>Ajouter une formation <span id="closeform" class="closeform"> &times; </span></h2><hr>
-                    <form action= "{{url('indexformation')}}" method="POST">
+                    <h2>Ajouter une formation <a href="{{url('Cv_Condidat')}}"><span id="closeform" class="closeform"> &times; </span></a></h2><hr>
+                    <form action= "{{url('InsertionFormarion')}}" method="get">
     {{csrf_field()}}
                            
                     <div class="form-group row">
                         <label for="example-text-input" class="col-2 col-form-label"> (Diplome) Titre de formation</label>
                         <div class="col-8">
-                          <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="titre">
+                          <input class="form-control" type="text" value="titre" id="example-text-input" name="titre">
                         </div>
                       </div>
 

@@ -45,8 +45,8 @@ class CvController extends Controller
     }
 //affiche le form de ceation de cv
     public function create(){
-       // return view("cv.index");
-       return view('cv.createcv');
+        return view("cv.index");
+      // return view('cv.createcv');
     }
 //enregistrer cv
 public function store(Request $request)
