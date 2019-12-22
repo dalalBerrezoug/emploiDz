@@ -65,7 +65,7 @@
             @if($data['experience'])
             @foreach($data['experience'] as $exper)
               <tr>
-                <td style="width:10px;"><a href=""> <span class="oi oi-pencil editexp" id="editexp"></span></a>  {{$exper->titreposte}}</td>
+                <td style="width:10px;"><a href="{{url('UpdateExperience/'.$exper->id)}}"> <span class="oi oi-pencil editexp" id="editexp"></span></a>  {{$exper->titreposte}}</td>
                 <td style="width:50px;">Du {{$exper->date_deb}}<br>Au {{$exper->date_fin}}</td>
               <td style="width:10px;"><h4> </h4><br></td>
               </tr>
@@ -89,7 +89,7 @@
             @if($data['formation'] )
             @foreach($data['formation'] as $exper)
               <tr>
-                <td style="width:10px;"><a href=""> <span class="oi oi-pencil editexp" id="editexp"></span></a>  {{$exper->titreformation}}</td>
+                <td style="width:10px;"><a href="{{url('UpdateFormarion/'.$exper->id)}}"> <span class="oi oi-pencil editexp" id="editexp"></span></a>  {{$exper->titreformation}}</td>
                 <td style="width:50px;">Du {{$exper->datedebut}}<br>Au {{$exper->datefin}}</td>
               <td style="width:10px;"><h4> </h4><br></td>
               </tr>
@@ -109,7 +109,7 @@
             @if($data['competence'] )
             @foreach($data['competence'] as $comp)
               <tr>
-                <td style="width:10px;"><a href="">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
+                <td style="width:10px;"><a href="{{url('UpdayeCompetence/'.$comp->id)}}">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
                 <td>{{$comp->competence}}</td>
               
               @endforeach</tr>
@@ -125,12 +125,15 @@
             <div class="row" style="margin-top: 50px; margin-left:30px ;">
             <div class="col-lg-12">
             <table class="table">
+            @if($data['document'] )
+            @foreach($data['document'] as $doc)
               <tr>
-                <td style="width:10px;"><a href="">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
+                <td style="width:10px;"><a href="{{url('UpdateDocument/'.$doc->id)}}">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
                 <td><img src="" alt="..." class="img-thumbnail">
                 </td>
-              
-              </tr>
+                </tr>
+                @endforeach
+              @endif
               <tr><td  colspan=2><a href="{{url('AjouterDocument')}}">Ajouter un document</a></td></tr></table>
 
                      

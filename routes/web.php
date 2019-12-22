@@ -249,12 +249,16 @@ Route::get('MonCv','CvCondidatController@afficher_cv');
 //les methode pour les formations 
 Route::get('AjouterFormarion','FormationController@index');
 Route::get('InsertionFormarion','FormationController@story');
+Route::get('UpdateFormarion/{id}','FormationController@index_update_formaation');
+Route::get('Update/{id}','FormationController@Update_Formation');
 Route::get('Cv_Condidat','UserController@Cv_Condidat');
 //fin les methode de forlation
 
 //*************Experience******* */
 Route::get('AjouterExperience','ExperienceController@index');
 Route::get('InsertionExperience','ExperienceController@stroy');
+Route::get('UpdateExperience/{id}','ExperienceController@index_update');
+Route::get('Update/{id}','ExperienceController@Update_Experience');
 ///fin 
 
 
@@ -262,6 +266,8 @@ Route::get('InsertionExperience','ExperienceController@stroy');
 /////comeptences/////////
 Route::get('AjouterCompetence','CompetenceController@index');
 Route::get('InsertionCompetence','CompetenceController@story');
+Route::get('UpdayeCompetence/{id}','CompetenceController@index_update');
+Route::get('Updaye/{id}','CompetenceController@Update_Competence');
 /////fin_comeptences/////////
 
 
@@ -270,6 +276,8 @@ Route::get('InsertionCompetence','CompetenceController@story');
 //***document */
 Route::get('AjouterDocument','DocumentController@index');
 Route::get('InsertionDocument','DocumentController@story');
+Route::get('UpdateDocument/{id}','DocumentController@index_update');
+Route::get('Update/{id}','DocumentController@Update_Document');
 //****fin document */
 
 

@@ -4,8 +4,8 @@
 
 <div class="overlayeditexp" id="overlayeditexp">
                               <div class="popupeditexp" id="popupeditexp">
-                                <h2>Editer ma competence <span id="closeeditexp" class="closeeditexp"> &times; </span></h2><hr>
-                                <form action= "{{url('cv/'.$comp->id)}}" method="POST">
+                                <h2>Editer ma competence <a href="{{url('Cv_Condidat')}}"><span id="closeeditexp" class="closeeditexp"> &times; </span></a></h2><hr>
+                                <form action= "{{url('Updaye/'.$comp->id)}}" method="get">
     <input type="hidden" name="_method" value="POST">
     {{csrf_field()}}
                                         

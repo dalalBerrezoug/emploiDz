@@ -12,7 +12,7 @@ use App\Cv;
 use App\Formation;
 use App\Experience;
 use App\Competence;
-use App\Documents;
+use App\Document;
 class UserController extends Controller
 {
     public function __construct(){
@@ -170,6 +170,7 @@ public function updatecomp(Request $request , $id)
             $experience=Experience::select('id')->where('cv_id','=',$cv_id)->get();
             $competence=Competence::select('id')->where('cv_id','=',$cv_id)->get();
             $formation=Formation::select('id')->where('cv_id','=',$cv_id)->get();
+            $document=Document::select('id')->where('cv_id','=',$cv_id)->get();
             if($formation!='[]'){
                 $form=Formation::find($formation[0]->id)->all()->where('cv_id','=',$cv_id);
                 $data['formation']=$form;
@@ -184,8 +185,13 @@ public function updatecomp(Request $request , $id)
                 $data['competence']=$comp;
               //  echo $data['experience'];
             }
-            else $data['competence']=Null;
-           return view('cv.AfficheinfoCv')->with('data',$data);
+            else
+             $data['competence']=Null;
+        if($document!='[]'){
+            $doc=Document::find($document[0]->id)->all()->where('cv_id','=',$cv_id);
+            $data['document']=$doc;
+        }else{ $data['document']=Null;}
+        return view('cv.AfficheinfoCv')->with('data',$data);
         }else{
             $data=Null;
             return view('cv.AfficheinfoCv')->with('data',$data);

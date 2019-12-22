@@ -4,9 +4,9 @@
 
 <div class="overlayeditexp" id="overlayeditexp">
                               <div class="popupeditexp" id="popupeditexp">
-                                <h2>Editer ma experience <span id="closeeditexp" class="closeeditexp"> &times; </span></h2><hr>
-                                <form action= "{{url('experience/'.$exp->id.'/exp')}}" method="POST">
-    <input type="hidden" name="_method" value="POST">
+                                <h2>Editer ma experience <a href="{{url('Cv_Condidat')}}"><span id="closeeditexp" class="closeeditexp"> &times; </span></a></h2><hr>
+                                <form action= "{{url('Update/'.$exp->id)}}" method="get">
+                <input type="hidden" name="_method" value="POST">
     {{csrf_field()}}
                                         
                            <div class="form-group row">
@@ -29,24 +29,23 @@
                                   <div class="col-8">
                                     <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
                                   </div>
-                                </div>
+                                </div>-->
     
     
                            <div class="form-group row">
                               <label for="example-date-input" class="col-2 col-form-label">Date de debut </label>
                               <div class="col-5">
-                                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                                <input class="form-control" type="date" value="{{$exp->date_deb}}" id="example-date-input" name="datedeb">
                               </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-2 col-form-label">Date de fin </label>
                                 <div class="col-5">
-                                  <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                                  <input type="submit" name = "" value="Modifier">
+                                  <input class="form-control" type="date" value="{{$exp->date_fin}}" id="example-date-input" name="datefin">
                                 </div>
-                              </div>-->
-                              <input type="submit" name = "" value="Modifier">
+                              </div>
+                              <input type="submit" name ="ok" value="Modifier">
                                     </form>
           
                                 

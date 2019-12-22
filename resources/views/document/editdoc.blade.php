@@ -4,15 +4,15 @@
 
 <div class="overlayeditdoc" id="overlayeditdoc">
                       <div class="popupeditdoc" id="popupeditdoc">
-                        <h2>Editer mon document <span id="closeeditdoc" class="closeeditdoc"> &times; </span></h2><hr>
+                        <h2>Editer mon document <a href="{{url('Cv_Condidat')}}"><span id="closeeditdoc" class="closeeditdoc"> &times; </span></a></h2><hr>
                        
-                        <form action= "{{url('indexdocument/'.$doc->id.'/doc')}}" method="POST">
+                        <form action= "{{url('Update/'.$doc->id)}}" method="get">
     <input type="hidden" name="_method" value="POST">
     {{csrf_field()}}
                     <div class="form-group row">
                         <label for="example-text-input" class="col-2 col-form-label">Type</label>
                         <div class="col-8">
-                            <select class="form-control" id="exampleSelect1">
+                            <select class="form-control" id="exampleSelect1" name="type">
                                 <option>Sélectionner...</option>
                                 <option>Sertaficat</option>
                                 <option>Diplome</option>

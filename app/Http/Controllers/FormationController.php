@@ -47,4 +47,27 @@ class FormationController extends Controller
 
     }
 
+
+
+    public function index_update_formaation($id_formation)
+    {
+        $formation=Formation::find($id_formation);
+        return view('formation.editform')->with('form', $formation);
+    }
+    public function Update_Formation($id_formation,Request $request)
+    {
+        $formation=Formation::find($id_formation);
+        $formation->titreformation=$request->input('titre');
+        $formation->datedebut=$request->input('deb');
+        $formation->datefin=$request->input('fin');
+        $formation->type_etat=$request->input('type');
+        $formation->domaine=$request->input('domaine');
+        $formation->lieu_formation=$request->input('etablissement');
+        $formation->save();
+        return redirect('Cv_Condidat');
+
+
+
+    }
+
 }

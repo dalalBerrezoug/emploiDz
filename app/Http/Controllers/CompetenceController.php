@@ -36,4 +36,24 @@ class CompetenceController extends Controller
     return view('cv.AfficheinfoCv')->with('data',$data);
     }
    }
+
+
+
+
+   public function index_update($id_comp)
+   {
+       $comp=Competence::find($id_comp);
+       return view('competence.editcomp')->with('comp', $comp);
+
+   }
+
+
+   public function Update_Competence($id_comp,Request $req)
+   {
+    $comp=Competence::find($id_comp);
+    $comp->competence=$req->input('competence');
+    $comp->save();
+    return redirect('Cv_Condidat');
+
+   }
 }

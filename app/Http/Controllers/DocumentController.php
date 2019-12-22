@@ -29,8 +29,8 @@ class DocumentController extends Controller
       $cv_id=$CV->id;
       $doc=new Document();
       $doc->cv_id=$cv_id;
-      $doc->titre=$request->input('');
-      $doc->type=$request->input('');
+      $doc->titre=$request->input('titre');
+      $doc->type=$request->input('type');
       $doc->save();
       return redirect('Cv_Condidat');
     }else{
@@ -38,5 +38,21 @@ class DocumentController extends Controller
       echo "<script>alert('il faut cree titre de cv avant')</script>";
       return view('cv.AfficheinfoCv')->with('data',$data);
       }
+    }
+
+
+    public function index_update($id_doc)
+    {
+        $doc=Document::find($id_doc);
+        return view('document.editdoc')->with('doc',$doc);
+    }
+
+    public function Update_Document($id_doc,Request $request)
+    {
+      $doc=Document::find($id_doc);
+      $doc->titre=$request->input('titre');
+      $doc->type=$request->input('type');
+      $doc->save();
+      return redirect('Cv_Condidat');
     }
 }

@@ -46,5 +46,24 @@ class ExperienceController extends Controller
 
     }
 
+
+    public function index_update($id_exp)
+    {
+      $exp=Experience::find($id_exp);
+      return view('experience.editexp')->with('exp',$exp);
+    }
+
+
+    public function Update_Experience($id_exp,Request $request)
+    {
+        $exp=Experience::find($id_exp);
+        $exp->titreposte=$request->input('titreposte');
+        $exp->entreprise=$request->input('entreprise');
+        $exp->date_deb=$request->input('datedeb');
+        $exp->date_fin=$request->input('datefin');
+        $exp->save();
+        return redirect('Cv_Condidat');
+    }
+
    
 }
