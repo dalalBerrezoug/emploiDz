@@ -3,7 +3,7 @@
 
 <div class="overlay" id="overlay">
                       <div class="popup" id="popup">
-                        <h2>Editer les informations personnelles <span id="close" class="close"> &times; </span></h2><hr>
+                        <h2>Editer les informations personnelles <a href="{{url('ProfilCondidat')}}"><span id="close" class="close"> &times; </span></a></h2><hr>
                        
                         <form action= "{{url('ConferUpdateCondidat')}}" method="get">
     <input type="hidden" name="_method" value="POST">
