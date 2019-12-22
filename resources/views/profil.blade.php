@@ -21,12 +21,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                     <!--   @foreach($user as $user)
-                                    <h5>
-                                    {{$user->name}}
-                                    </h5>
-                                    @endforeach-->
-                                    <h5>{{ Auth::user()->name }} {{ Auth::user()->prenom }}
+                                    <h5>{{ $cond->nom }} {{ $cond->prenom }} 
                                     
 </h5>
                                     <h6>
@@ -45,7 +40,7 @@
                     </div>
                     <div class="col-md-2">
                     
-                        <button class="profile-edit-btn" name="btnAddMore"><a href="{{url('profil/'.$user->id.'/editprofil')}}"> Editer Mon Profil</a></button>
+                        <button class="profile-edit-btn" name="btnAddMore"><a href=""> Editer Mon Profil</a></button>
                     </div>
                 </div>
                 <div class="row">
@@ -71,7 +66,7 @@
                                                 <label>Civilité</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->civilite }}</p>
+                                                <p>{{ $cond->civilite }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -79,7 +74,7 @@
                                                 <label>Nom</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->prenom }}</p>
+                                                <p>{{ $cond->nom }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -87,7 +82,7 @@
                                                 <label>Prenom</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->name }}</p>
+                                                <p>{{ $cond->prenom}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -95,7 +90,7 @@
                                                 <label>Date de naissance</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->datenais }}</p>
+                                                <p>{{ $cond->datenais }}</p>
                                                
                                             </div>
                                         </div>
@@ -107,7 +102,7 @@
                                                 <label>Adresse</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->adresse }}</p>
+                                                <p>{{ $cond->adresse }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -115,7 +110,7 @@
                                                 <label>E-mail</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->email }}</p>
+                                                <p>{{$cond->email }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -123,7 +118,7 @@
                                                 <label>Téléphone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->telephone }}</p>
+                                                <p>{{ $cond->telephone }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -131,7 +126,7 @@
                                                 <label>Lien Linkdin</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{ Auth::user()->linkdin }}</p>
+                                                <p>{{ $cond->linkdin }}</p>
                                             </div>
                                         </div>
                                         

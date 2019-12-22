@@ -271,3 +271,14 @@ Route::get('InsertionCompetence','CompetenceController@story');
 Route::get('AjouterDocument','DocumentController@index');
 Route::get('InsertionDocument','DocumentController@story');
 //****fin document */
+
+
+
+
+
+//Condidat info
+Route::get('Condidat','CondidatController@index');
+Route::get('ProfilCondidat','CondidatController@condidat_Info');
+Route::get('InsertionCondidat','CondidatController@story');
+
+////**//fin info condidat */
