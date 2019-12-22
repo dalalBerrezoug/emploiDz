@@ -65,7 +65,10 @@ class CondidatController extends Controller
 
     public function index_update()
     {
-       return view('profil.editprofil');
+       $cond=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
+       $id_cond=$cond[0]->id;
+       $COND=Condidat::find($id_cond);
+       return view('profil.editprofil')->with('cond', $COND);
     }
 
 

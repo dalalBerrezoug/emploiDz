@@ -59,7 +59,7 @@
                         <div class="form-group row">
                             <label for="example-email-input" class="col-2 col-form-label">Email</label>
                             <div class="col-4">
-                              <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input" name="email">
+                              <input class="form-control" type="email" value="{{Auth::user()->email}}" id="example-email-input" name="email">
                             </div>
                             <label for="example-url-input" class="col-1 col-form-label">Lien linkdin</label>
                                   <div class="col-5">
