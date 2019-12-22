@@ -280,5 +280,7 @@ Route::get('InsertionDocument','DocumentController@story');
 Route::get('Condidat','CondidatController@index');
 Route::get('ProfilCondidat','CondidatController@condidat_Info');
 Route::get('InsertionCondidat','CondidatController@story');
+Route::get('UpdateCondidat','CondidatController@index_update');
+Route::get('ConferUpdateCondidat','CondidatController@Update_Info');
 
 ////**//fin info condidat */

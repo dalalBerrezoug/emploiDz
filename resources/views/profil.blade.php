@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-2">
                     
-                        <button class="profile-edit-btn" name="btnAddMore"><a href=""> Editer Mon Profil</a></button>
+                        <button class="profile-edit-btn" name="btnAddMore"><a href="{{url('UpdateCondidat')}}"> Editer Mon Profil</a></button>
                     </div>
                 </div>
                 <div class="row">

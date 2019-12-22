@@ -59,4 +59,31 @@ class CondidatController extends Controller
             return redirect('Condidat');
         }
     }
+
+
+
+
+    public function index_update()
+    {
+       return view('profil.editprofil');
+    }
+
+
+
+    public function Update_Info(Request $request)
+    {
+        $cond=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
+        $id_cond=$cond[0]->id;
+        $condidat=Condidat::find($id_cond);  
+        $condidat->nom=$request->input('name');
+        $condidat->prenom=$request->input('prenom');
+        $condidat->email=$request->input('email');
+        $condidat->adresse=$request->input('adresse');
+        $condidat->telephone=$request->input('telephone');
+        $condidat->linkdin=$request->input('linkdin');
+        $condidat->datenais=$request->input('datenais');
+        $condidat->civilite=$request->input('civilite');
+        $condidat->save();
+        return redirect('ProfilCondidat'); 
+    }
 }
