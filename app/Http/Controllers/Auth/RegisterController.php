@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Auth;
+use Illuminate\Routing\UrlGenerator;
 class RegisterController extends Controller
 {
     /*
@@ -66,9 +67,12 @@ class RegisterController extends Controller
         //modification pour mutpile autentification
         $role=0;
         
-        if(url()->previous()=='http://localhost:8000/InsecriptionRec'){
+       // if(url()->previous()=='http://127.0.0.1:8000/InsecriptionRec'){
+        if(url()->previous()=='http://127.0.0.1:8000/InsecriptionRec'){
+            
+            
             $role=1;
-        }
+        } 
         if(url()->previous()=='http://localhost:8000/register'){
             $role=0;
         }
