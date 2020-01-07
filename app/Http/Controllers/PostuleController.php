@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Postule;
 use Auth;
+use App\User;
 use App\Notifications\NewOffrePostuler;
+
 class PostuleController extends Controller
 {
     //
@@ -16,10 +18,18 @@ class PostuleController extends Controller
 {
     $postule = new Postule();
     
+    
+
+    
     $postule->condidat_id = $request->input('condidat');
     $postule->offre_id = $request->input('offres');
     $postule->recruteur_id = $request->input('rec');
-    auth()->user()->notify(new NewOffrePostuler($postule));
+    $user = new User();
+    $user->id =  $postule->recruteur_id;
+    
+    
+    $user->notify(new NewOffrePostuler($postule));
+   // auth()->user()->notify(new NewOffrePostuler($postule));
     
     
     
