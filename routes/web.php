@@ -54,6 +54,22 @@ Route::get('/rechercheavance', function () {
   return view('rechercheavance');
  
 });
+/*
+Route::get('/offres', function () {
+  return view('offres');
+ 
+});*/
+Route::get('/recruteurs','RecruteurController@show');
+Route::get('/offres','RecruteurController@show1');
+//Route::get('/offres','RecruteurController@showOffre');
+//Route::get('/offres','OffreController@show');
+Route::get('/offres/{id}','RecruteurController@show1');
+Route::get('/detail/{id}','OffreController@show');
+/*
+Route::get('/detail', function () {
+  return view('detail');
+ 
+});*/
 
 Route::get('/actualite', function () {
   return view('actualite');

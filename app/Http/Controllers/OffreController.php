@@ -44,6 +44,19 @@ class OffreController extends Controller
 
 
     }
+    //afficher la liste de tt les offres
+  public function show($id){
+       // $list_des_offres=Offre::find($id);
+        $list_des_offres=Offre::all()->where('id','=',$id);
+     
+        // return view('entreprises')->with('offres',$list_des_offres);
+
+       // $list_des_offre =Offre::select('id')->where('id','=',$id)->get();
+        return view('detail')->with('offres',$list_des_offres);
+    
+        }
+
+
     public function Affiche_Info(Request $request,$id){
         $offres=Offre::find($id);
         return view('Recruteur.AfficherLesinfOffre')->with('offres',$offres);

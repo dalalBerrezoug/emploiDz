@@ -63,6 +63,7 @@
               <li><a href="{{ url('rechercheparregion') }}">Recherche par Région</a></li>
               <li><a href="{{ url('rechercheparfonction') }}">Recherche par Fonction</a></li>
               <li><a href="{{ url('rechercheparmotcle') }}">Recherche par mot clée</a></li>
+              <li><a href="{{ url('recruteurs') }}">Nos Recruteurs</a></li>
             </ul>
           </li>
           <li class="menu-has-children"><a href="">Conseils</a>
@@ -77,6 +78,7 @@
           @auth 
            <!-- <a href="{{ url('/home') }}">Home</a>-->
            <li class="menu-has-children">
+           @if( Auth::user()->role == 0)
            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a><ul>
@@ -94,10 +96,11 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"style="display: none;" >
                                         @csrf
                                     </form></li>
-                                  <!--******************************************** -->
+
+                                    @else 
+                                    <li><a href="{{url('home')}}"><button type="button" class="btn btn-outline-success btn-lg mb-2">Mon espace</button></li>
+                                    @endif
                                   
-                                   
-                                    <!-- ******************************-->
 
 
 
@@ -107,9 +110,10 @@
                                 <!--</div>-->
                     @else
                        <li> <a href="{{ url('LogTous') }}">Se connecter</a><li>
+                       <li><a href="{{url('InsecriptionRec')}}"><button type="button" class="btn btn-outline-success btn-lg mb-2">ESPACE RECRUTEUR</button></li>
 
                         @if (Route::has('register'))
-                           <li> <a href="{{ route('register') }}">Register</a><li>
+                           
 
                           <li>  <button type="button" class="btn btn-success btn-lg mb-2">
                   <a href="{{ route('register') }}">
@@ -226,6 +230,14 @@
     
       <!-- Template Main Javascript File -->
       <script src="{{ asset('bizPage/js/main.js')}}"></script>
+
+
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
+  
       
 
       @yield('javascripts')
