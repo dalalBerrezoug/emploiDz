@@ -77,8 +77,25 @@
           <li>
           @auth 
            <!-- <a href="{{ url('/home') }}">Home</a>-->
-           <li class="menu-has-children">
            @if( Auth::user()->role == 0)
+           
+          
+
+           @unless (auth()->user()->unreadNotifications->isEmpty())
+
+           <a  >{{auth()->user()->unreadNotifications->count()}} Notification
+                                    
+                                    </a>
+                                    <ul>
+                                    @foreach (auth()->user()->unreadNotifications as $notification)
+                                    <li>   <a class="dropdown-item" href="{{url('Cv_Condidat')}}"> {{$notification->data['nom']}} </a></li>
+                                    
+                                    @endforeach
+                                    
+                                    </ul>
+
+           @endunless
+           <li class="menu-has-children">
            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a><ul>

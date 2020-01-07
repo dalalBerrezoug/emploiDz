@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offre;
+
 use Auth;
 
 class OffreController extends Controller
@@ -48,6 +49,7 @@ class OffreController extends Controller
   public function show($id){
        // $list_des_offres=Offre::find($id);
         $list_des_offres=Offre::all()->where('id','=',$id);
+        
      
         // return view('entreprises')->with('offres',$list_des_offres);
 

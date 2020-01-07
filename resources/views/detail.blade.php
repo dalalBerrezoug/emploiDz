@@ -11,9 +11,28 @@
         <div class="col-lg-3"><img src=img/icon/e1.png></div>
         <div class="col-lg-6"><h5 style="margin-top: 5px;"><h5>
         {{$offres->nom}}
+        
                 </h5>
           <h6>{{$offres->lieuTrav}} &nbsp;&nbsp;&nbsp;&nbsp; {{$offres->created_at}}</h6></div>
-        <div class="col-lg-3" ><input type="button" value="Postuler" style="
+
+
+
+
+          
+                
+          
+
+                          
+
+
+
+        <div class="col-lg-3" >
+        <form action="{{url('detail/8')}}" method="post">
+    {{csrf_field()}}
+    <input id="prodId" name="offres" type="hidden" value="{{$offres->id}}">
+    <input id="prodId" name="rec" type="hidden" value="{{$offres->rec_id}}">
+    <input id="prodId" name="condidat" type="hidden" value="{{ Auth::user()->id }}">
+        <input type="submit" value="Postuler" style="
        
             background: #18d26e;
             color: #fff;
@@ -33,7 +52,7 @@
 }
 
             
-            "></div>
+            "></form></div>
         <br><br>
         
        

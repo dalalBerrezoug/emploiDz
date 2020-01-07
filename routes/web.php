@@ -71,6 +71,8 @@ Route::get('/detail', function () {
  
 });*/
 
+Route::post('detail/{id}','PostuleController@store');
+
 Route::get('/actualite', function () {
   return view('actualite');
  
