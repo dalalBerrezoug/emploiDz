@@ -28,7 +28,8 @@ class HomeController extends Controller
             return view('accueil');
         }
         if(Auth::user()->role==1){
-            return view('Recruteur.TableBorde');
+           // return view('Recruteur.TableBorde');
+           return redirect('statique');
         }
         
     }
