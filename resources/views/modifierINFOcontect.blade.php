@@ -44,29 +44,23 @@
         </nav>
         <div class="overlay" id="overlay">
                       <div class="popup" id="popup">
-                        <h2>Éditer Votre informations personnelles 
+                        <h2>Éditer Votre informations personnelles
                         
-                        <span id="close" class="close"><a href="{{url('Profile')}}"> &times; </a></span></h2><hr>
+                        <span id="close" class="close"><a href="{{url('AffichageContect/'.Auth::user()->id)}}"> &times; </a></span></h2><hr>
                        <form method="get" action="{{url('Contect/update/'.Auth::user()->id)}}">
                         <div class="form-group row">
                             <label for="example-text-input" class="col-2 col-form-label"><b>Civilité:</b></label>
                             <div class="form-check form-check-inline ">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="civilite" id="inlineRadio1" value="Monsieur"> Monsieur
-                                </label>
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="civilite" id="inlineRadio2" value="Madame"> Madame
-                                </label>
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="civilite" id="inlineRadio3" value="Mademoiselle"> Mademoiselle
-                                  </label>
                                 
-                              </div>
+                                  <input class="form-check-input" type="radio" name="civilite" id="inlineRadio1" value="Monsieur"> Monsieur
                               
-                              </div>
-
-
-                              <div class="form-group row">
+                                  <input class="form-check-input" type="radio" name="civilite" id="inlineRadio2" value="Madame"> Madame
+                                
+                              
+                                    <input class="form-check-input" type="radio" name="civilite" id="inlineRadio3" value="Mademoiselle"> Mademoiselle
+                                 
+                                    </div>
+                              
                           <label for="example-text-input" class="col-2 col-form-label">Nom:</label>
                             <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="name">
                           <label for="example-text-input" class="col-2 col-form-label">Prenom:</label>
@@ -87,15 +81,8 @@
                          <form>
                          </div>
                         </div>
-                        </div>
-    
-                        
-                         <div class="form-group">
-                                    
-                                </div>
-                      </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
+                       
+              
     <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="{{asset('pixel/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>

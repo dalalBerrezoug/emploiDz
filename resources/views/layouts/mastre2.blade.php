@@ -44,48 +44,40 @@
         </nav>
         <div class="overlay" id="overlay">
                       <div class="popup" id="popup">
-                        <h2>Éditer Votre informations personnelles 
+                        <h2>Éditer Votre informations personnelles
                         
-                        <span id="close" class="close"><a href="{{url('Profile')}}"> &times; </a></span></h2><hr>
+                        <span id="close" class="close"><a href="{{url('statique')}}"> &times; </a></span></h2><hr>
                        <form method="get" action="{{url('Insertion/Contect/'.Auth::user()->id)}}">
-                        <div class="form-group row">
+                        <div class="form-group">
                             <label for="example-text-input" class="col-2 col-form-label"><b>Civilité:</b></label>
                             <div class="form-check form-check-inline ">
-                                <label class="form-check-label">
+    
                                   <input class="form-check-input" type="radio" name="civilite" id="inlineRadio1" value="Monsieur"> Monsieur
-                                </label>
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="civilite" id="inlineRadio2" value="Madame"> Madame
-                                </label>
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="civilite" id="inlineRadio3" value="Mademoiselle"> Mademoiselle
-                                  </label>
                                 
-                              </div>
-                              
-                              </div>
 
+                                  <input class="form-check-input" type="radio" name="civilite" id="inlineRadio2" value="Madame"> Madame
 
+                                    <input class="form-check-input" type="radio" name="civilite" id="inlineRadio3" value="Mademoiselle"> Mademoiselle
+                              </div>
                               <div class="form-group row">
                           <label for="example-text-input" class="col-2 col-form-label">Nom:</label>
-                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="name">
+                            <input class="form-control" type="text" value="remplir le formulaire" id="example-text-input" name="name">
                           <label for="example-text-input" class="col-2 col-form-label">Prenom:</label>
-                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="prenom">
+                            <input class="form-control" type="text" value="remplir le formulaire" id="example-text-input" name="prenom">
                           <label for="example-text-input" class="col-2 col-form-label">Email:</label>
                          
-                            <input class="form-control" type="email" value="Artisanal kale" id="example-text-input" name="email">
+                            <input class="form-control" type="email" value="remplir le formulaire" id="example-text-input" name="email">
                             <label for="example-text-input" class="col-2 col-form-label">Numéro de telephone:</label>
                          
-                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="telephone">
+                         <input class="form-control" type="text" value="remplir le formulaire" id="example-text-input" name="telephone">
                          <label for="example-text-input" class="col-2 col-form-label">Votre Entreprise:</label>
                          <div class="col-12">
                          <div class="col-6">
-                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="fonction">
+                         <input class="form-control" type="text" value="remplir le formulaire" id="example-text-input" name="fonction">
                          </div>
                          <div class="col-6">
-                         <button class="btn btn-success" type="submit">Mettre à jour le profil</button>
+                         <button class="btn btn-success" type="submit">Mettre à jour le profil</button></div>
                          <form>
-                         </div>
                         </div>
                         </div>
     

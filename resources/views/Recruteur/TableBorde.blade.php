@@ -35,7 +35,7 @@
                                 <div id="ca_graph" ></div>
                                 <?= Lava::render('ColumnChart','Finances','ca_graph') ?>
                                
-                                 statajhkj                               
+                                                                
                                 
                             </div>
                         </div>

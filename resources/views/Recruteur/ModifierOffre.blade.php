@@ -47,7 +47,7 @@
         <!--pour quite-->
                       <div class="form-group">
                       <div class="col-md-12">
-                      <span id="close" class="close"><a href="{{url('ConsulterOffre')}}"> &times; </span></a><hr>
+                      <span id="close" class="close"><a href="{{url('ConsulterOffre/'.Auth::user()->id)}}"> &times; </span></a><hr>
                       </div>
                      
                       <!--pour quite-->
@@ -79,7 +79,7 @@
                                     </div><br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                    <input type="date" value="{{$offre->duree}}" class="form-control form-control-line" name="duree">
+                                    <input type="text" value="{{$offre->duree}}" class="form-control form-control-line" name="duree">
                                     </div>
                                     <div class="col-md-4">
                                     <input type="text" value="{{$offre->remuneration}}" class="form-control form-control-line" name="remun">
@@ -108,28 +108,23 @@
                                         </select>
                                         </div>
                                     <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                     <label><b>Description:</b></label>
                                         <br/>
                                          <textarea name="description" rows="5" cols="60"  name="description">
                                          {{$offre->description}}
-                                          </textarea>
-                                    </div>
-                                    </div>
-                                    <br>
-                                    <div class="col-md-12">
-                                    <div class="col-md-8">
-                                    
-                                    <button  type="submit" class="btn btn-success">
-                                    Confermier La modification
+                                          </textarea></div>
+                                          <div class="col-md-6">
+                                          <br><br><br>
+                                          <button  type="submit" class="btn btn-success">
+                                            Confermier La modification
                                     </button>
+                                    </div>
+                                    </div>
+                                    
                                     <form>
                                     </div>
-                                    </div>
-                                    <br><br>
-                      </div>
-                      </div>
-                      </div>
 
 
     <!-- /#wrapper -->

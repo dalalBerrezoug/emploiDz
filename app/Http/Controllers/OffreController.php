@@ -87,6 +87,6 @@ class OffreController extends Controller
     public function destroy(Request $request,$id){
         $offre=Offre::find($id);
         $offre->delete();
-        return redirect('ConsulterOffre');
+        return redirect('ConsulterOffre/'.Auth::user()->id);
     }
 }
