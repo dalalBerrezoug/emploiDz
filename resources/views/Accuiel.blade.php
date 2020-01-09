@@ -82,6 +82,7 @@
       </nav><!-- #nav-menu-container -->
     </header>
    
+@extends("layouts.master")
     @yield('content')
     <body>
   
