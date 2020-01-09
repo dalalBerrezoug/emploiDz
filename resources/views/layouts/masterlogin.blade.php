@@ -46,7 +46,6 @@
     Header
   ============================-->
   <header id="header" style="background-color: black;">
-    <div class="container-fluid">
 
       <div id="logo" class="pull-left">
         <h1><a href="#intro" class="scrollto">Emploi.dz</a></h1>
@@ -82,7 +81,7 @@
           </li>
         </ul>
       </nav><!-- #nav-menu-container -->
-    </div>
+    
     </header>
     <body>
     @yield('content')
