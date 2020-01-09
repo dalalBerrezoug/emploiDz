@@ -6,32 +6,30 @@ use Illuminate\Http\Request;
 use Khill\Lavacharts\Lavacharts;
 use Charts;
 use App\User;
+use App\Statistique;
 use Auth;
 use App\Offre;
 use Illuminate\Support\Facades\DB;
 class StatistiqueController extends Controller
 {
     //
-    public function stat_graphe(){
-        $users = DB::table('offres')->select(DB::raw('count(*) as a'))
-        ->where('rec_id','=',Auth::user()->id)
-        ->get();
-        $coun_offre= $users[0]->a;
-       /* $anne = DB::table('offres')->select(DB::raw('distinct YEAR(created_at) as anne'))
-        ->get();
-        echo $anne[0]->anne;*/
+    public function stat_graphe(Request $req){
+       $a=$req->input('anne_stat');
+        $CDD = DB::table('offres')->select('type')->where('type','=','CDD')->where('rec_id','=',Auth::user()->id)->where('mois','=',date('M'))->where('anne','=',$a)->count();
+        $CDI=  DB::table('offres')->select('type')->where('type','=','CDI')->where('rec_id','=',Auth::user()->id)->where('mois','=',date('M'))->where('anne','=',$a)->count();
+        $Stage=DB::table('offres')->select('type')->where('type','=','Stage')->where('rec_id','=',Auth::user()->id)->where('mois','=',date('M'))->where('anne','=',$a)->count();
+     
   $lava = new Lavacharts;
   $finances = \Lava::DataTable();
   $finances->addStringColumn('Mois')
            ->addNumberColumn('offre');
-           $finances->addRow([2019,0])
-           ->addRow([2019,0])
-           ->addRow([2019,0])
-           ->addRow([2019,0])
-           ->addRow([2019,0])
-           ->addRow([2019,0]);
+           $finances
+           ->addRow(['CDD',$CDD])
+           ->addRow(['CDI',$CDI])
+           ->addRow(['Stage',$Stage])
+           ;
            $finances =\Lava::ColumnChart('Finances', $finances, [
-              'title' => 'Nombre  d\'offre par mois',
+              'title' => 'Nombre  d\'offre par mois de chaque type',
               'titleTextStyle' => [
                   'color'    => '#eb6b2c',
                   'fontSize' => 10
@@ -46,32 +44,34 @@ $l = new Lavacharts;
 
     $reasons->addStringColumn('Reasons')
             ->addNumberColumn('Percent')
-            ->addRow(array('Telemcen',1))
-            ->addRow(array('Oran',1))
-            ->addRow(array('Algerie',1))
-            ->addRow(array('Chlef',1))
-            ->addRow(array('Laghouat',1))
-            ->addRow(array('Oum El Bouaghi',1))
-            ->addRow(array('Batna',1))
-            ->addRow(array('Béjaïa',1))
-            ->addRow(array('Biskra',1))
-            ->addRow(array('Béchar',15))
-            ->addRow(array('Blida',1))
-            ->addRow(array('Bouira',1))
-            ->addRow(array('Tamanrasset',1))
-            ->addRow(array('Tébessa',1))
-            ->addRow(array('Tiaret',1))
-            ->addRow(array('Tizi Ouzou',1))
-            ->addRow(array('Djelfa',1))
-            ->addRow(array('Jijel',1))
-            ->addRow(array('Sétif',1))
-            ->addRow(array('Saïda',1))
-            ->addRow(array('Skikda',1))
-            ->addRow(array('Sidi Bel Abbès',1))
-            ->addRow(array('Annaba',1))
-            ->addRow(array(' Guelma',1))
-            ->addRow(array('Constantine',1))
-            ->addRow(array('Adrar',1));
+            ->addRow(array('Telemcen',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','tlemcen')->where('anne','=',$a)->count()))
+            ->addRow(array('Oran',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','oran')->where('anne','=',$a)->count()))
+            ->addRow(array('Algerie',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','algerie')->where('anne','=',$a)->count()))
+            ->addRow(array('Chlef',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Chlef')->where('anne','=',$a)->count()))
+            ->addRow(array('Laghouat',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Laghouat')->where('anne','=',$a)->count()))
+            ->addRow(array('Oum El Bouaghi',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Oum El Bouaghi')->where('anne','=',$a)->count()))
+            ->addRow(array('Batna',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Batna')->where('anne','=',$a)->count()))
+            ->addRow(array('Béjaïa',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Béjaïa')->where('anne','=',$a)->count()))
+            ->addRow(array('Biskra',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Biskra')->where('anne','=',$a)->count()))
+            ->addRow(array('Béchar',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Béchar')->where('anne','=',$a)->count()))
+            ->addRow(array('Blida',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Blida')->where('anne','=',$a)->count()))
+            ->addRow(array('Bouira',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Bouira')->where('anne','=',$a)->count()))
+            ->addRow(array('Tamanrasset',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Tamanrasset')->where('anne','=',$a)->count()))
+            ->addRow(array('Tébessa',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Tébessa')->where('anne','=',$a)->count()))
+            ->addRow(array('Tiaret',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Tiaret')->where('anne','=',$a)->count()))
+            ->addRow(array('Tizi Ouzou',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Tizi Ouzou')->where('anne','=',$a)->count()))
+            ->addRow(array('Djelfa',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Djelfa')->where('anne','=',$a)->count()))
+            ->addRow(array('Jijel',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Jijel')->where('anne','=',$a)->count()))
+            ->addRow(array('Sétif',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Sétif')->where('anne','=',$a)->count()))
+            ->addRow(array('Saida',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Saida')->where('anne','=',$a)->count()))
+            ->addRow(array('Saida',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Saida')->where('anne','=',$a)->count()))
+            ->addRow(array('Saida',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Saida')->where('anne','=',$a)->count()))
+            ->addRow(array('Skikda',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Skikda')->where('anne','=',$a)->count()))
+            ->addRow(array('Sidi Bel Abbès',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Sidi Bel Abbès')->where('anne','=',$a)->count()))
+            ->addRow(array('Annaba',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Annaba')->where('anne','=',$a)->count()))
+            ->addRow(array(' Guelma',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Guelma')->where('anne','=',$a)->count()))
+            ->addRow(array('Constantine',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Constantine')->where('anne','=',$a)->count()))
+            ->addRow(array('Adrar',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('lieuTrav','=','Adrar')->where('anne','=',$a)->count()));
 
 
     $donutchart =\Lava::DonutChart('IMDB', $reasons, [
@@ -84,22 +84,22 @@ $line = new Lavacharts;
 $lolo =\Lava::DataTable();
 $lolo->addStringColumn('Mois')
 ->addNumberColumn('offre');
-$lolo->addRow(['Janvier',8])
-->addRow(['Février',78])
-->addRow(['Mars',45])
-->addRow(['Avril',8])
-->addRow(['Mai',4])
-->addRow(['Juin',9])
-->addRow(['Juillet',0])
-->addRow(['Août',0])
-->addRow(['Septembre',52])
-->addRow(['Octobre',0])
-->addRow(['Novembre',78])
-->addRow(['Décembre',78]);
+$lolo->addRow(['Janvier',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=','jan')->where('anne','=',$a)->count()])
+->addRow(['Février',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',2)->where('anne','=',$a)->count()])
+->addRow(['Mars',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',3)->where('anne','=',$a)->count()])
+->addRow(['Avril',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',4)->where('anne','=',$a)->count()])
+->addRow(['Mai',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',5)->where('anne','=',$a)->count()])
+->addRow(['Juin',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',6)->where('anne','=',$a)->count()])
+->addRow(['Juillet',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',7)->where('anne','=',$a)->count()])
+->addRow(['Août',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',8)->where('anne','=',$a)->count()])
+->addRow(['Septembre',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',9)->where('anne','=',$a)->count()])
+->addRow(['Octobre',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',10)->where('anne','=',$a)->count()])
+->addRow(['Novembre',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',11)->where('anne','=',$a)->count()])
+->addRow(['Décembre',DB::table('offres')->where('rec_id','=',Auth::user()->id)->where('mois','=',12)->where('anne','=',$a)->count()]);
 $p=\Lava::LineChart('LINE',$lolo, [
     'title' => 'Nombre  d\'offre par mois'
 ]);
-                return  view('Recruteur.TableBorde'); 
+                return  view('Recruteur.TableBorde');
                              
 
     }

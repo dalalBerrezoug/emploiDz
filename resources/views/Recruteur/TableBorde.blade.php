@@ -5,8 +5,22 @@
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Tableau de bord</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <button target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light"><a href="{{url('AjouterOffre')}}">Ajouter Offre</a>
-                        <ol class="breadcrumb">
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <form action="{{url('statique')}}">
+                       <select name="anne_stat" target="_blank" class="pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">
+                       <?php
+                       use Illuminate\Support\Facades\DB;
+                       use App\Offre;
+                       $anne = DB::table('offres')->select(DB::raw('distinct YEAR(created_at) as anne'))
+                         ->get();
+                         foreach ($anne as $a) {
+                         ?>
+                         <option><?php echo $a->anne;?></option>
+                            <?php } ?>
+                       </select>
+                       <button target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light" type="submit">Appliquer</button>
+                       <form>
+                                            <ol class="breadcrumb">
                            <!-- <li><a href="#">Tableau de bord</a></li>-->
                         </ol>
                     </div>
