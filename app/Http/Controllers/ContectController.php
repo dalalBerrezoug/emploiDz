@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contect;
 use Auth;
+use Image;
 class ContectController extends Controller
 {
     //
@@ -63,5 +64,27 @@ class ContectController extends Controller
                 return redirect('AffichageContect/'.$id);
         
         
+            }
+
+
+
+            public function update_avatar(Request $request){
+                // Logic for user upload of avatar
+                if($request->hasFile('avatar')){
+                    $avatar = $request->file('avatar');
+                    $filename = time() . '.' . $avatar->getClientOriginalExtension();
+                    Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename ) );
+                    $Cont=Contect::select('id')->where('Rec_id','=',Auth::user()->id)->get();
+                    $cont=Contect::find($Cont);
+                    $a= $cont[0]->id;
+                    $Rec=Contect::find($a);
+                    $Rec->avatar = $filename;
+                    $Rec->save();
+                }
+                $Cont=Contect::select('id')->where('Rec_id','=',Auth::user()->id)->get();
+                    $cont=Contect::find($Cont);
+                    $a= $cont[0]->id;
+                    $Rec=Contect::find($a);
+                return view('Recruteur.Profile')->with('Rec',$Rec);
             }
 }

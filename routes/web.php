@@ -296,3 +296,9 @@ Route::get('ConferUpdateCondidat','CondidatController@Update_Info');
 Route::get('statique','StatistiqueController@stat_graphe');
 Route::get('statique2','StatistiqueController@graphe');
 /////statis////////////
+
+
+
+/////photo de profile/////
+Route::post('profile_update', 'ContectController@update_avatar');
+///fin photo de profile////

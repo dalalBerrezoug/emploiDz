@@ -39,11 +39,7 @@
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
                  <li><a href="{{ url('actualite') }}">Actualités</a></li>
                 </ul>
-                <ul class="nav navbar-top-links navbar-right pull-right">
-                    <li>
-                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"> {{ Auth::user()->name }}</b> </a>
-                    </li>
-                </ul>
+                @yield('photoprofile')
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->
