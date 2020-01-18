@@ -35,7 +35,7 @@
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ Auth::user()->name }}</b> </a>
+                        <a class="profile-pic" href="#"> <img src="/uploads/avatars/{{$Rec->avatar}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{$Rec->nom}} {{$Rec->prenom}}</b> </a>
                     </li>
                 </ul>
             <!-- /.navbar-header -->
@@ -47,7 +47,7 @@
                         <h2>Éditer Votre informations personnelles
                         
                         <span id="close" class="close"><a href="{{url('AffichageContect/'.Auth::user()->id)}}"> &times; </a></span></h2><hr>
-                       <form method="get" action="{{url('Contect/update/'.Auth::user()->id)}}">
+                       <form method="get" action="{{url('Contect/update/')}}">
                         <div class="form-group row">
                             <label for="example-text-input" class="col-2 col-form-label"><b>Civilité:</b></label>
                             <div class="form-check form-check-inline ">
@@ -62,19 +62,19 @@
                                     </div>
                               
                           <label for="example-text-input" class="col-2 col-form-label">Nom:</label>
-                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="name">
+                            <input class="form-control" type="text" value="{{$Rec->nom}}" id="example-text-input" name="nom">
                           <label for="example-text-input" class="col-2 col-form-label">Prenom:</label>
-                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="prenom">
+                            <input class="form-control" type="text" value="{{$Rec->prenom}}" id="example-text-input" name="prenom">
                           <label for="example-text-input" class="col-2 col-form-label">Email:</label>
                          
-                            <input class="form-control" type="email" value="Artisanal kale" id="example-text-input" name="email">
+                            <input class="form-control" type="email" value="{{$Rec->email}}" id="example-text-input" name="email">
                             <label for="example-text-input" class="col-2 col-form-label">Numéro de telephone:</label>
                          
-                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="telephone">
+                         <input class="form-control" type="text" value="{{$Rec->telephone}}" id="example-text-input" name="telephone">
                          <label for="example-text-input" class="col-2 col-form-label">Votre Entreprise:</label>
                          <div class="col-12">
                          <div class="col-6">
-                         <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="fonction">
+                         <input class="form-control" type="text" value="{{$Rec->fonction}}" id="example-text-input" name="fonction">
                          </div>
                          <div class="col-6">
                          <button class="btn btn-success" type="submit">Mettre à jour le profil</button>

@@ -229,7 +229,7 @@ Route::get('ContectRec','ContectController@create');
 Route::get('Insertion/Contect/{id}','ContectController@Store');
 Route::get('AffichageContect/{id}','ContectController@index');
 Route::get('ModifContectRec','ContectController@create_modifier');
-Route::get('Contect/update/{id}','ContectController@update');
+Route::get('Contect/update/','ContectController@update');
 Route::get('ModifProfilRec','RecruteurController@create_modifier_Rec');
 Route::get('Profil/update/{id}','RecruteurController@update');
 //Route::get('insePtion','Auth\RegisterController@Role')->name('insePtion');

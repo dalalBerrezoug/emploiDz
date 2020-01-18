@@ -15,7 +15,11 @@ class ContectController extends Controller
     
         }
         public function create_modifier(){
-            return view('modifierINFOcontect');
+            $Cont=Contect::select('id')->where('Rec_id','=',Auth::user()->id)->get();
+            $cont=Contect::find($Cont);
+            $a= $cont[0]->id;
+            $Rec=Contect::find($a);
+            return view('modifierINFOcontect')->with('Rec',$Rec);
         
             }
 
@@ -50,18 +54,22 @@ class ContectController extends Controller
       
             }
             //mise ajour les information de conect
-            public function update($id,Request $request)
+            public function update(Request $request)
             {
-                $Rec=Contect::find($id);
-                $Rec->nom=$request->input('name');
+                $Cont=Contect::select('id')->where('Rec_id','=',Auth::user()->id)->get();
+                $cont=Contect::find($Cont);
+                $a= $cont[0]->id;
+                $Rec=Contect::find($a);
+                $Rec->nom=$request->input('nom');
                 $Rec->prenom=$request->input('prenom');
                 $Rec->email=$request->input('email');
                 $Rec->civilite=$request->input('civilite');
                 $Rec->telephone=$request->input('telephone');
                 $Rec->fonction=$request->input('fonction');
-                $Rec->Rec_id=$id;
+                $Rec->avatar=$Rec->avatar;
+                $Rec->Rec_id=Auth::user()->id;
                 $Rec->save();
-                return redirect('AffichageContect/'.$id);
+                return redirect('AffichageContect/'.Auth::user()->id);
         
         
             }
