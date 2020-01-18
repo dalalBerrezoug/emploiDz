@@ -38,7 +38,7 @@
                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <label for="file">changer photo</label>
                                 <input type="submit" class="pull-right btn btn-sm btn-primary">
-                                <form>
+                                </form>
                                 </div>
                             </div>
                             <div class="user-btm-box">
@@ -65,6 +65,7 @@
                                     <div class="col-md-6">
                                                 <p>{{$Rec->nom}}</p>
                                             </div>
+                                            </div>
                                     <label for="example-email" class="col-md-6">Prenom</label>
                                     <div class="col-md-6">
                                                 <p>{{$Rec->prenom}}</p>
@@ -74,7 +75,7 @@
                                                 <p>{{$Rec->civilite}}</p>
                                             </div>
                                             
-                                            </div>
+                                            
                                 <div class="form-group">
                                     <label class="col-md-12">Email</label>
                                     <div class="col-md-12">
@@ -94,15 +95,12 @@
                                        <p>{{$Rec->fonction}}</p>
                                     </div>
                                 </div>
-                             
-                                </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                    <button class="btn btn-success" type="submit">Mettre à jour le profil</button>
+                                   </form>
                                     </div>
                                 </div>
-                            </form>
-                            </div>
                         </div>
                     </div>
                 </div>
