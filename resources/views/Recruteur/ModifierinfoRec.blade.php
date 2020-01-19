@@ -53,7 +53,7 @@
                        <!--pour quite-->
                        <div class="form-group">
                       <div class="col-md-12">
-                      <span id="close" class="close"><a href="{{url('InfoRec/'.Auth::user()->id)}}"> &times; </span></a><hr>
+                      <span id="close" class="close"><a href="{{url('statique')}}"> &times; </span></a><hr>
                       </div>
                      
                       <!--pour quite-->
@@ -61,13 +61,12 @@
                       {{csrf_field()}}
                                     <div class="col-md-12">
                                     <div class="col-md-6">
-                                    <label style="color:black">Le Nom de l'Entreprise:</label>
+                                    <label style="color:black">Le Nom de 'Entreprise:</label>
                                     </div>
                                     <div class="col-md-6">
                                     <input type="text" placeholder="Nom D'entreprise" class="form-control form-control-line" name="name">
                                     </div>
                                     </div>
-                                    <br><br><br><br>
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black"> Logo l' Enreprise:</label>
@@ -75,7 +74,7 @@
                                     <div class="col-md-6">
                                     <input type="text" placeholder="LOGO" class="form-control form-control-line" name="logo">
                                     </div>
-                                    </div><br><br><br><br>
+                                    </div>
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">Email de l'Entreprise:</label>
@@ -129,11 +128,6 @@
                                     </div>
                                     <br><br>
                                     <div class="col-md-12">
-                      <div class="col-md-1"></div>
-                      </div>
-                      <div class="col-md-10"></div>
-                      </div>
-                      <div class="col-md-1"></div>
                       <button class="btn btn-success" type="submit">Confermier La modification</button>
                       <form>
                       </div>

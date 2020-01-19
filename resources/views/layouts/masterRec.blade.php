@@ -78,7 +78,11 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
+
                         <a href="{{asset('home')}}" class="waves-effect"><span class="oi oi-box"> Tableau de bord</span></a>
+
+                        <a href="{{asset('statique')}}" class="waves-effect"><span class="oi oi-box"> stat</span></a>
+
                     </li>
                      <li>
                         <a href="{{ url('Accuiel') }}" class="waves-effect"><span class="oi oi-account-logout"> Aller au site</span></a>

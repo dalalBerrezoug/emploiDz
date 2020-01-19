@@ -67,7 +67,7 @@
                                     <input type="text" placeholder="Nom D'entreprise" class="form-control form-control-line" name="name">
                                     </div>
                                     </div>
-                                    <br><br><br><br>
+                                    
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black"> Logo l' Enreprise:</label>
@@ -75,7 +75,7 @@
                                     <div class="col-md-6">
                                     <input type="text" placeholder="LOGO" class="form-control form-control-line" name="logo">
                                     </div>
-                                    </div><br><br><br><br>
+                                    </div>
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">Email de l'Entreprise:</label>
@@ -84,7 +84,7 @@
                                     <input type="email" placeholder="Email" class="form-control form-control-line" name="email">
                                     </div>
                                     </div>
-                                    <br><br><br><br>
+                                    
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">Site de l'Entreprise:</label>
@@ -93,7 +93,7 @@
                                     <input type="text" placeholder="entre le site" class="form-control form-control-line" name="site">
                                     </div>
                                     </div>
-                                    <br><br><br><br>
+                                    
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">l'Adresse de l'Entreprise:</label>
@@ -102,7 +102,7 @@
                                     <input type="text" placeholder="l'Adresse" class="form-control form-control-line" name="adr">
                                     </div>
                                     </div>
-                                    <br><br><br><br>
+                                    
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">Numéro de l'Entreprise:</label>
@@ -112,7 +112,7 @@
                                     
                                     </div>
                                     </div>
-                                    <br><br><br><br>
+                                    
                                     <div class="col-md-12">
                                     <div class="col-md-6">
                                     <label style="color:black">Type de l'Entreprise:</label>

@@ -311,3 +311,7 @@ Route::get('UpdateCondidat','CondidatController@index_update');
 Route::get('ConferUpdateCondidat','CondidatController@Update_Info');
 
 ////**//fin info condidat */
+//////statistique/////
+Route::get('statique','StatistiqueController@stat_graphe');
+Route::get('statique2','StatistiqueController@graphe');
+/////statis////////////

@@ -18,17 +18,23 @@
                              {{csrf_field()}}
 
                              <div class="form-group">
-                                    <div class="col-md-6"><input type="text" placeholder="Nom d'Offre" class="form-control form-control-line" name="nom"> 
+                                    <div class="col-md-6">
+                                    <label>Nom d'Offre</label>
+                                    <input type="text" placeholder="Nom d'Offre" class="form-control form-control-line" name="nom"> 
                                      </div>
                                      <div class="col-md-6">
+                                     <label>Domaine</label>
                                         <input type="text" placeholder="Domaine" class="form-control form-control-line" name="domaine"> 
                                      </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6">
+                                    <label>Diplôme</label>
                                         <input type="text" placeholder="Diplôme" class="form-control form-control-line" name="diplome"> </div>
                                         <div class="form-group">
-                                    <div class="col-md-6"><input type="text" placeholder="intitulé" class="form-control form-control-line" name="intitule"> 
+                                    <div class="col-md-6">
+                                    <label>Intitulé</label>
+                                    <input type="text" placeholder="intitulé" class="form-control form-control-line" name="intitule"> 
                                      </div>
                                      
                                 </div>
@@ -37,9 +43,11 @@
                                     
                                     <div class="col-md-12">
                                          <div class="col-md-6">
+                                         <label>lieu de travail</label>
                                             <input type="text" placeholder="lieu de travail" class="form-control form-control-line" name="lieu"> 
                                         </div>
                                          <div class="col-md-6">
+                                         <label>Compétences</label>
                                             <input type="text" placeholder="compétences" class="form-control form-control-line" name="comp"> 
                                         </div>
                                      
@@ -48,10 +56,13 @@
                                 <div class="form-group">
                                    
                                     <div class="col-md-12">
+                                    <label></label>
                                          <div class="col-md-6">
+                                         <label>Rémunération</label>
                                             <input type="text" placeholder="rémunération" class="form-control form-control-line" name="remun"> 
                                         </div>
                                          <div class="col-md-6">
+                                         <label>Date de Dépôt d'Offre</label>
                                             <input type="date" placeholder="date de dépôt d'offre" class="form-control form-control-line" name="depot_offre">
                                         </div>
                                     </div>
@@ -59,10 +70,12 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                          <div class="col-md-6">
+                                         <label>Date de Début Prévu</label>
                                             <input type="date" placeholder="date de début prévu" class="form-control form-control-line" name="debut_prevu"> 
                                         </div>
                                          <div class="col-md-6">
-                                            <input type="datetime-local" placeholder="durée CDD/Stage" class="form-control form-control-line" name="duree"> 
+                                         <label>Durée CDD/Stage</label>
+                                            <input type="text" placeholder="durée CDD/Stage" class="form-control form-control-line" name="duree"> 
                                         </div>
                                     </div>
                                 </div>
@@ -70,6 +83,7 @@
                                     
                                     <div class="col-sm-12">
                                          <div class="col-md-6">
+                                         <label>Type</label>
                                             <select class="form-control form-control-line" name="type">
                                             <option>Stage</option>
                                             <option>CDI</option>

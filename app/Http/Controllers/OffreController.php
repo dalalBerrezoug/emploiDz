@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Offre;
 
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class OffreController extends Controller
 {
@@ -30,6 +31,8 @@ class OffreController extends Controller
         $offre->depot_offre=$request->input('depot_offre');
         $offre->description=$request->input('description');
         $offre->rec_id=$rec_id;
+        $offre->mois=date('M');
+        $offre->anne=date('Y');
         $offre->save();
         return redirect('ConsulterOffre/'.$rec_id);
 
@@ -99,6 +102,6 @@ class OffreController extends Controller
     public function destroy(Request $request,$id){
         $offre=Offre::find($id);
         $offre->delete();
-        return redirect('ConsulterOffre');
+        return redirect('ConsulterOffre/'.Auth::user()->id);
     }
 }

@@ -31,6 +31,7 @@ class HomeController extends Controller
             return view('accueil');
         }
         if(Auth::user()->role==1){
+
             //$con = new Condidat();
           //  $postule = Postule::where('recruteur_id',Auth::user()->id)->get();
           //  $postule1 = Postule::where('recruteur_id',Auth::user()->id)->get();
@@ -70,7 +71,9 @@ class HomeController extends Controller
         
         return view('Recruteur.TableBorde',compact('postule','postule1'));
 
-           // return view('Recruteur.TableBorde');
+           
+          // return redirect('statique');
+
         }
         
     }
