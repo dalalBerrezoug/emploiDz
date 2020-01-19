@@ -7,14 +7,17 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container emp-profile">
-            <form method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                        <img src="/uploads/avatars/{{$cond->avatar}}" alt=""/>
                             <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" id="photo" name="photo"/>
+                            <form enctype="multipart/form-data" action="{{url('updateProfilecondidat')}}" method="POST">
+                               <input type="file" id="file" accept="image/*" name="avatar">
+                               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <label for="file">changer photo</label>
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
                               
                             </div>
                         </div>
@@ -24,9 +27,9 @@
                                     <h5>{{ $cond->nom }} {{ $cond->prenom }} 
                                     
 </h5>
-                                    <h6>
+                                   <!-- <h6>
                                         Web Developer and Designer 
-                                    </h6>
+                                    </h6>-->
                                    <br><br><br>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
@@ -134,6 +137,5 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>           
+                </div>          
         </div>

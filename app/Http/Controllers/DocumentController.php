@@ -7,14 +7,15 @@ use Illuminate\Http\UploadedFile;
 use App\Document;
 use App\Cv;
 use Auth;
+use Image;
 
 class DocumentController extends Controller
 {
   public function __construct(){
     $this->middleware('auth');
 }
-   public function index(){
-      return view('document.createdocument');
+   public function index($id){
+      return view('document.createdocument')->with('id',$id);
     }
 
 
@@ -55,4 +56,22 @@ class DocumentController extends Controller
       $doc->save();
       return redirect('Cv_Condidat');
     }
+
+
+    public function Ajouter_Doc(Request $request,$id){
+      // Logic for user upload of avatar
+      if($request->hasFile('avatar')){
+          $avatar = $request->file('avatar');
+          $filename = time() . '.' . $avatar->getClientOriginalExtension();
+          Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename ) );
+          $Cont=Document::select('id')->where('cv_id','=',$id)->get();
+          $cont=Document::find($Cont);
+          $a= $cont[0]->id;
+          $Rec=Document::find($a);
+          $Rec->doc = $filename;
+          $Rec->save();
+      }
+      
+      return redirect('Cv_Condidat');
+  }
 }

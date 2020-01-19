@@ -274,7 +274,7 @@ Route::get('Updaye/{id}','CompetenceController@Update_Competence');
 
 
 //***document */
-Route::get('AjouterDocument','DocumentController@index');
+Route::get('AjouterDocument/{id}','DocumentController@index');
 Route::get('InsertionDocument','DocumentController@story');
 Route::get('UpdateDocument/{id}','DocumentController@index_update');
 Route::get('Update/{id}','DocumentController@Update_Document');
@@ -302,3 +302,13 @@ Route::get('statique2','StatistiqueController@graphe');
 /////photo de profile/////
 Route::post('profile_update', 'ContectController@update_avatar');
 ///fin photo de profile////
+
+
+/////photo de profile de condidat/////
+Route::post('updateProfilecondidat','CondidatController@avatar_update');
+///fin photo de profile  de condidat////
+
+
+////ajoute de document//////
+Route::post('doc_ajouter/{id}','DocumentController@Ajouter_Doc');
+///fin ajoute de document////
