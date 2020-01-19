@@ -123,28 +123,67 @@
                 <!-- /.row -->
                 <!-- row -->
                 <div class="row">
-                    <div class="col-md-12 col-lg-6 col-sm-12">
+
+                <div class="col-md-12 col-lg-6 col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Spontanée</h3>
+                            <h3 class="box-title">Les offres Postulés</h3>
+                            @foreach($postule as $postule)
+
+                                @if($postule->rec_id == Auth::user()->id and $postule->typepostule == 0 )
+                                
+
                             <div class="comment-center">
-                                <div class="comment-body">
-                                    <div class="user-img"> <img src="{{asset('pixel/plugins/images/users/pawandeep.jpg')}}" alt="user" class="img-circle"></div>
-                                    <div class="mail-contnet">
-                                        <h5>Belhadj nadir</h5> <span class="mail-desc">hahahahahahaha.ghahhajajjaaii ahuiuiiiiiiiiiiiiiii</span><a href="javacript:void(0)" class="action"><i class="ti-close text-danger"></i></a> <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><span class="time pull-right">April 14, 2016</span></div>
-                                </div>
-                                <div class="comment-body">
-                                    <div class="user-img"> <img src="{{asset('pixel/plugins/images/users/sonu.jpg')}}" alt="user" class="img-circle"> </div>
-                                    <div class="mail-contnet">
-                                        <h5>Somia bouad</h5> <span class="mail-desc">jfhjfghvhfubvhiuhu bvbbbbbbbriuurtzooppjzopzjpzijgijziogzhiozhgihgiozhg</span><a href="javacript:void(0)" class="action"><i class="ti-close text-danger"></i></a> <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><span class="time pull-right">April 14, 2016</span></div>
-                                </div>
+                                
+                                
                                 <div class="comment-body b-none">
                                     <div class="user-img"> <img src="{{asset('pixel/plugins/images/users/arijit.jpg')}}" alt="user" class="img-circle"> </div>
                                     <div class="mail-contnet">
-                                        <h5>khadidja dari</h5> <span class="mail-desc">hahahahaha hhohohooh llllll êêfgorghhouhornbjkfbhbuhbti </span><a href="javacript:void(0)" class="action"><i class="ti-close text-danger"></i></a> <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><span class="time pull-right">April 14, 2016</span></div>
-                                </div>
+                                        <h5>{{$postule->prenom}} {{$postule->nom}}</h5> <span class="mail-desc"> a Postulé {{$postule->titre}}   <span class="time pull-right"> le {{$postule->cree}}</span></span>
+                                       
+                                        <span class="time pull-left"><a href="#"> <strong>Voir son CV</strong></a> </span>
+                                         <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><br>
+                                         
+                                         <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a></div>
+                                </div><hr>
                             </div>
+                            @endif
+                            @endforeach 
+
+                           
+                            
+                           
                         </div>
                     </div>
+
+                <!-- ************************** -->
+               <div class="col-md-12 col-lg-6 col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Les Condidatures Spontanné</h3>
+                            @foreach($postule1 as $postule1)
+                            @if($postule1->user_id == Auth::user()->id and $postule1->typepostule == 1 )
+
+                            
+
+                            <div class="comment-center">
+                                
+                                
+                                <div class="comment-body b-none">
+                                    <div class="user-img"> <img src="{{asset('pixel/plugins/images/users/arijit.jpg')}}" alt="user" class="img-circle"> </div>
+                                    <div class="mail-contnet">
+                                        <h5>{{$postule1->prenom}} {{$postule1->nom}}</h5> <span class="mail-desc"> a vous envoyer une condidature <span class="time pull-right"> SPONTANNE </span></span>
+                                       
+                                        <span class="time pull-left"><a href="#"> <strong>Voir son CV</strong></a> </span>
+                                         <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><br>
+                                         
+                                         <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a></div>
+                                </div><hr>
+                            </div>
+                            @endif
+                            @endforeach
+                        </div>
+                    </div>
+                    <!-- ************************* -->
+                  
                   
             </div>
             @stop

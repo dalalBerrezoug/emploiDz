@@ -32,6 +32,7 @@
     <input id="prodId" name="offres" type="hidden" value="{{$offres->id}}">
     <input id="prodId" name="rec" type="hidden" value="{{$offres->rec_id}}">
     <input id="prodId" name="condidat" type="hidden" value="{{ Auth::user()->id }}">
+    <input id="prodId" name="type" type="hidden" value="0">
         <input type="submit" value="Postuler" style="
        
             background: #18d26e;

@@ -60,7 +60,7 @@ class RecruteurController extends Controller
               public function show1($id){
                 //$recruteurs=Recruteur::find($id);
                 $recruteurs=Recruteur::select('Nom_Rec','Adresse','Telephone',
-                                                'Site_web','Email'
+                                                'Site_web','Email','user_id'
                                               )->where('id','=',$id)->get();
                
               //  $offres=Offre::all();

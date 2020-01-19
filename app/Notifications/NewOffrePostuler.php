@@ -8,12 +8,14 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use App\Condidat;
 use App\Postule;
+use App\Offre;
 
 
 class NewOffrePostuler extends Notification
 {
     use Queueable;
     protected $condidat;
+    protected $pos;
     protected $offre;
     
 
@@ -22,10 +24,11 @@ class NewOffrePostuler extends Notification
      *
      * @return void
      */
-    public function __construct(Postule $offre)
+    public function __construct(Postule $pos,Condidat $condidat,Offre $offre)
     {
         //
-      //  $this->condidat = $condidat;
+        $this->condidat = $condidat;
+        $this->pos = $pos;
         $this->offre = $offre;
 
     }
@@ -65,8 +68,14 @@ class NewOffrePostuler extends Notification
     {
         return [
             //
-            'nom' => $this->offre->offre_id,
-          //  'condidat' => $this->condidat->nom,
+            'idoffre' => $this->pos->offre_id,
+            'condidat' => $this->condidat->id,
+                'nom' => $this->condidat->nom,
+            'prenom' => $this->condidat->prenom,
+           // 'condidatp' => $this->condidat->id,
+            //'r' => $this->condidat->nom,
+            //'re' => $this->condidat->prenom,
+            'offre' => $this->offre->nom,
 
 
         ];

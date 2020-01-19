@@ -38,22 +38,24 @@
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
                  <li><a href="{{ url('actualite') }}">Actualités</a></li>
-                </ul>
                 
-
+                
+                 <span style="color:white;margin-left:600px;">
 
                 @unless(auth()->user()->unreadNotifications->isEmpty())
-                       
-                            <a style="background-color=black" >{{auth()->user()->unreadNotifications->count()}} Notification
+             
+                          <li class="menu-has-children nav navbar-top-links navbar-right pull-right">  {{auth()->user()->unreadNotifications->count()}} Notification
                          
-                         </a>
-                         <ul>
+                         </span>
+                         <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
                          @foreach (auth()->user()->unreadNotifications as $notification)
-                         <li>   <a class="dropdown-item" href="{{url('Cv_Condidat')}}"> {{$notification->data['nom']}} </a></li>
+                         <li>   <a class="dropdown-item" href="{{url('Cv_Condidat')}}"> {{$notification->data['nom']}}  {{$notification->data['prenom']}} a postulé {{$notification->data['offre']}}</a></li>
                          
                          @endforeach
                          
-                         </ul>
+                         </ul></li>
+                         
+              </ul>
 
                 @endunless
 
@@ -76,7 +78,7 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="{{asset('tablebord')}}" class="waves-effect"><span class="oi oi-box"> Tableau de bord</span></a>
+                        <a href="{{asset('home')}}" class="waves-effect"><span class="oi oi-box"> Tableau de bord</span></a>
                     </li>
                      <li>
                         <a href="{{ url('Accuiel') }}" class="waves-effect"><span class="oi oi-account-logout"> Aller au site</span></a>

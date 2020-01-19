@@ -65,6 +65,7 @@ Route::get('/offres','RecruteurController@show1');
 //Route::get('/offres','OffreController@show');
 Route::get('/offres/{id}','RecruteurController@show1');
 Route::get('/detail/{id}','OffreController@show');
+//Route::get('/home','PostuleController@index');
 /*
 Route::get('/detail', function () {
   return view('detail');
