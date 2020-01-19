@@ -4,7 +4,7 @@
              
              <div class="overlaydoc" id="overlaydoc">
                   <div class="popupdoc" id="popupdoc">
-                    <h2>Ajouter un Docuemnt <span id="closedoc" class="closedoc"> &times; </span></h2><hr>
+                    <h2>Ajouter un Docuemnt <a href="{{url('Cv_Condidat')}}"><span id="closedoc" class="closedoc"> &times; </span></a></h2><hr>
                    
       
                 
