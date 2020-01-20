@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+        
 
 
 
@@ -178,6 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        
+       // Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
 
     ],
 
@@ -230,7 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\Datatables::class,
-        Khill\Lavacharts\Laravel\LavachartsFacade::class,
+        //'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
 
 
 

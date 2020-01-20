@@ -98,7 +98,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Trouvez votre Futur Emploi en Algerie</h2>
-                
+                <!--
                 <form class="header-job-search" method="get" style="padding-left: 200px;">
                     <div class="row">
                       <div class="input-keyword col-lg-5">
@@ -137,7 +137,7 @@
                           
                       </div>
                     </div>
-                  </form> 
+                  </form> -->
               </div>
             </div>
           </div>
