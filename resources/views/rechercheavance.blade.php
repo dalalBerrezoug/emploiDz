@@ -146,8 +146,8 @@ $(document).ready(function(){
 
 
         $('#customer_data tbody').on( 'click', 'button', function () {
-        var data = table.row( $(this).parents('th') ).data();
-        alert( id +"'s salary is: " );
+        var data = table.row( $(this).parents('tr') ).data();
+        alert( data[0] +"'s salary is: " );
       
     } );
     }

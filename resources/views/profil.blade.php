@@ -54,7 +54,7 @@
 
                                 @if($postule->condidat_id == Auth::user()->id and $postule->typepostule == 0 )
 
-                            <a href=""> {{$postule->titre}} {{$postule->intitule}}</a><br/>
+                            <a href="{{url('detail/'.$postule->offre_id)}}"> {{$postule->titre}} {{$postule->intitule}}</a><br/>
                             @endif
                             @endforeach
 
