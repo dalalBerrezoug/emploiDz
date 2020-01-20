@@ -72,7 +72,6 @@
                     <thead>
                         <tr>
                            <th>id</th>
-                           
                             <th>domaine</th>
                             <th>diplome</th>
                             <th>lieu de travail</th>
@@ -135,7 +134,7 @@ $(document).ready(function(){
                 },
                 {
                    
-                    defaultContent: "<button>Postuler</button>"
+                    defaultContent: "<button>detail</button>"
                 },
                
                 
@@ -144,7 +143,15 @@ $(document).ready(function(){
             ]
            
         });
+
+
+        $('#customer_data tbody').on( 'click', 'button', function () {
+        var data = table.row( $(this).parents('th') ).data();
+        alert( id +"'s salary is: " );
+      
+    } );
     }
+    
     
     
 
