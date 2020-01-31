@@ -113,7 +113,8 @@ $(document).ready(function(){
             columns: [
               {
                     data:'id',
-                    name:'id'
+                    name:'id',
+                    
                 },  
              
                 {
@@ -134,7 +135,7 @@ $(document).ready(function(){
                 },
                 {
                    
-                    defaultContent: "<button>detail</button>"
+                    defaultContent: "<button>ss</button>"
                 },
                
                 
@@ -144,12 +145,12 @@ $(document).ready(function(){
            
         });
 
-
+/*
         $('#customer_data tbody').on( 'click', 'button', function () {
-        var data = table.row( $(this).parents('tr') ).data();
-        alert( data[0] +"'s salary is: " );
+        var d = table.row( $(this).parents('tr') ).data();
+        alert( d[0] +"'s salary is: " );
       
-    } );
+    } );*/
     }
     
     
