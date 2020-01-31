@@ -5,7 +5,7 @@
                       <div class="popupeditform" id="popupeditform">
                         <h2>Editer ma formation <a href="{{url('Cv_Condidat')}}"><span id="closeeditform" class="closeeditform"> &times; </span></a></h2><hr>
                        
-                       <  <form action= "{{url('Update/'.$form->id)}}" method="get">
+                       <  <form action= "{{url('UpdateForm/'.$form->id)}}" method="get">
     {{csrf_field()}}
                            
                     <div class="form-group row">
@@ -35,7 +35,7 @@
                           <div class="form-group row">
                               <label for="exampleSelect1" class="col-2 col-form-label" value="{{$form->type_etat}}">Type de l'etablissement</label>
                               <div  class="col-8">
-                              <select class="form-control" id="exampleSelect1" name="type">
+                              <select class="form-control" id="exampleSelect1" name="type" >
                                 <option>Sélectionner...</option>
                                 <option>Université</option>
                                 <option>Lycée</option>
@@ -61,7 +61,7 @@
                           <div class="col-5">
                             <input class="form-control" type="date" value="{{$form->datefin}}" id="example-date-input" name="fin">
                           </div>
-                          <div class="col-lg-2"><input type="submit" name = "Modifier" value="Modifier"></form></div>
+                          <div class="col-lg-2"><input type="submit" name = "Modifier" value="Modifier" class="btn btn-success btn-lg mb-2"></form></div>
                         </div>
                         
   

@@ -14,9 +14,12 @@
                               <div class="col-8">
                                 <input class="form-control" type="text" value="{{$comp->competence}}" id="example-text-input" name="competence">
                               </div>
+                              <div class="col-2">
+                              <input type="submit" name = "" value="Modifier" class="btn btn-success btn-lg mb-2">
+                            </div>
                             </div>
 
-                            <input type="submit" name = "" value="Modifier">
+                           
                                     </form>
           
                                 

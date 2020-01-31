@@ -135,7 +135,7 @@ $(document).ready(function(){
                 },
                 {
                    
-                    defaultContent: "<button>ss</button>"
+                    defaultContent: "<button class='btn btn-success btn-lg mb-2'><a href='detail/8' style='font-color:white;'>détail</a></button>"
                 },
                
                 

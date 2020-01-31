@@ -269,7 +269,7 @@ Route::get('MonCv','CvCondidatController@afficher_cv');
 Route::get('AjouterFormarion','FormationController@index');
 Route::get('InsertionFormarion','FormationController@story');
 Route::get('UpdateFormarion/{id}','FormationController@index_update_formaation');
-Route::get('Update/{id}','FormationController@Update_Formation');
+Route::get('UpdateForm/{id}','FormationController@Update_Formation');
 Route::get('Cv_Condidat','UserController@Cv_Condidat');
 //fin les methode de forlation
 
