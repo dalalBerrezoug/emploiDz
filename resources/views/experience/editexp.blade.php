@@ -45,7 +45,7 @@
                                   <input class="form-control" type="date" value="{{$exp->date_fin}}" id="example-date-input" name="datefin">
                                 </div>
                               </div>
-                              <input type="submit" name ="ok" value="Modifier">
+                              <input type="submit" name ="ok" value="Modifier" class="btn btn-success btn-lg mb-2">
                                     </form>
           
                                 

@@ -16,7 +16,7 @@
                             <input class="form-control" type="text" value="titre" name="titre" id="example-text-input">
                           </div>
 
-                          <input type="submit" name = "" value="Enregister">
+                          <input type="submit" name = "" value="Enregister" class="btn btn-success btn-lg mb-2">
                         </div></form>
                             </div>
 

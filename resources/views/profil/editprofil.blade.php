@@ -82,7 +82,7 @@
                                 
                                 </div>
                                 <div class="col-5">
-                                  <input  type="submit" value="Modifier" id="example-text-input">
+                                  <input  type="submit" value="Modifier" id="example-text-input" class="btn btn-success btn-lg mb-2">
                                 
                                 </div>
                               </div>
