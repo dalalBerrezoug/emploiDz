@@ -51,14 +51,27 @@
                         <div class="profile-work">
                             <p>Mon CV</p>
                             <a href="{{url('cv')}}">Mon CV</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
+                            
                             <p>Les Offres Postulés</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
+                            @foreach($postule as $postule)
+
+                                @if($postule->condidat_id == Auth::user()->id and $postule->typepostule == 0 )
+
+                            <a href=""> {{$postule->titre}} {{$postule->intitule}}</a><br/>
+                            @endif
+                            @endforeach
+
+
+                            <p>Les Condidatures spontannés</p>
+                            @foreach($postule1 as $postule1)
+
+                                @if($postule1->condidat_id == Auth::user()->id and $postule1->typepostule == 1 )
+
+                            <a href=""> {{$postule1->Nom_Rec}}-{{$postule1->Adresse}}</a><br/>
+                            @endif
+                            @endforeach
+                        
+                            
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -135,6 +148,11 @@
                                         
                                 
                             </div>
+
+
+
+
+                            
                         </div>
                     </div>
                 </div>          

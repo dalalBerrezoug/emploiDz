@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Condidat;
 use Image;
+use App\Offre;
+use App\Recruteur;
+use DB;
 
 class CondidatController extends Controller
 {
@@ -53,8 +56,36 @@ class CondidatController extends Controller
         if($cond!='[]')
         {
            $id_cond=$cond[0]->id;
-           $COND=Condidat::find($id_cond);
-           return view('profil')->with('cond',$COND);
+          // $COND=Condidat::find($id_cond);
+          $cond=Condidat::find($id_cond);
+          // return view('profil')->with('cond',$COND);
+          $postule = DB::table('postules')
+                                
+          ->join('recruteurs','recruteurs.user_id','postules.recruteur_id')
+          ->join('condidats','condidats.user_id','postules.condidat_id')
+          ->join('offres','offres.id','postules.offre_id')
+          
+          ->select('condidats.*','offres.nom as titre','offres.intitule','offres.rec_id'
+          ,'offres.created_at as cree','postules.*')
+          
+          ->get();
+
+
+
+          
+          $postule1 = DB::table('postules')
+                                
+          ->join('recruteurs','recruteurs.user_id','postules.recruteur_id')
+          ->join('condidats','condidats.user_id','postules.condidat_id')
+          
+          
+          ->select('condidats.*','recruteurs.*'
+          ,'postules.*')
+          
+          ->get();
+
+
+          return view('profil',compact('cond','postule','postule1'));
         }else 
         {
             return redirect('Condidat');

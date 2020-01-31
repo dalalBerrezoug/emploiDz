@@ -49,6 +49,42 @@ class RecruteurController extends Controller
         
             }
 
+<<<<<<< HEAD
+=======
+            public function show(){
+              $recruteurs=Recruteur::all();
+               return view('entreprises')->with('recruteurs',$recruteurs);
+          
+          
+              }
+              public function show1($id){
+                //$recruteurs=Recruteur::find($id);
+                $recruteurs=Recruteur::select('Nom_Rec','Adresse','Telephone',
+                                                'Site_web','Email','user_id'
+                                              )->where('id','=',$id)->get();
+               
+              //  $offres=Offre::all();
+                $userid =Recruteur::select('user_id')->where('id','=',$id)->get();
+                $u = $userid[0]->user_id;
+                
+                $offres = Offre::select('id','type','lieuTrav','created_at','nom')->where('rec_id','=',$u)->get();
+              //   return view('offres')->with('recruteurs',$recruteurs);
+                 return view('offres',compact('recruteurs','offres'));
+
+
+             
+            
+            
+                }
+/*
+                public function showOffre(){
+                  $list_des_offres=Offre::all();
+                   return view('offres')->with('offres',$list_des_offres);
+              
+              
+                  }*/
+
+>>>>>>> 5ab935d8b0c28a983972246a3eaa0400beeb8c82
 
             public function update($id,Request $request)
             {

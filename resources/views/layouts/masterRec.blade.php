@@ -38,8 +38,40 @@
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
                  <li><a href="{{ url('actualite') }}">Actualités</a></li>
+<<<<<<< HEAD
                 </ul>
                 @yield('photoprofile')
+=======
+                
+                
+                 <span style="color:white;margin-left:600px;">
+
+                @unless(auth()->user()->unreadNotifications->isEmpty())
+             
+                          <li class="menu-has-children nav navbar-top-links navbar-right pull-right">  {{auth()->user()->unreadNotifications->count()}} Notification
+                         
+                         </span>
+                         <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
+                         @foreach (auth()->user()->unreadNotifications as $notification)
+                         <li>   <a class="dropdown-item" href="{{url('Cv_Condidat')}}"> {{$notification->data['nom']}}  {{$notification->data['prenom']}} a postulé {{$notification->data['offre']}}</a></li>
+                         
+                         @endforeach
+                         
+                         </ul></li>
+                         
+              </ul>
+
+                @endunless
+
+
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <a class="profile-pic" href="#"> <img src="{{asset('profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"> {{ Auth::user()->name }}</b> </a>
+                    </li>
+                </ul>
+
+
+>>>>>>> 5ab935d8b0c28a983972246a3eaa0400beeb8c82
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->
@@ -51,7 +83,11 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="{{asset('statique')}}" class="waves-effect"><span class="oi oi-box"> Tableau de bord</span></a>
+
+                        <a href="{{asset('home')}}" class="waves-effect"><span class="oi oi-box"> Tableau de bord</span></a>
+
+                        <a href="{{asset('statique')}}" class="waves-effect"><span class="oi oi-box"> stat</span></a>
+
                     </li>
                      <li>
                         <a href="{{ url('Accuiel') }}" class="waves-effect"><span class="oi oi-account-logout"> Aller au site</span></a>
