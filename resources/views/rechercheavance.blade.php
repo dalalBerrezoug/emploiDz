@@ -13,11 +13,12 @@
  <body>
   <div class="container">    
      <br />
-     <h3 align="center">Recherche Avancée</h3>
+     <h1 align="center" class="text-success">Recherche Avancée</h1>
+     <br /><h3 align="center" >Séléctionnez vos critères et cherchez un offre</h3><br />
      <br />
-            <br />
+          
             <div class="row">
-                <div class="col-md-4"></div>
+                <div class="col-md-4"> </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <select name="filter_domaine" id="filter_domaine" class="form-control" required>
@@ -66,21 +67,28 @@
                 </div>
                 <div class="col-md-4"></div>
             </div>
-            <br />
-   <div class="table-responsive">
-    <table id="customer_data" class="table table-bordered table-striped">
+            <br /><!-- {
+                    data:'description',
+                    name:'description'
+                },-->
+               
+                
+                <div clas="row">
+                <div class='col-lg-11'>
+   <div class="table-responsive ">
+    <table id="customer_data" class="table table-bordered table-striped col-md-12">
                     <thead>
-                        <tr>
-                           <th>id</th>
-                            <th>domaine</th>
-                            <th>diplome</th>
-                            <th>lieu de travail</th>
-                           <th>description</th>
+                        <tr style="width: 200px;">
+                           <th style="width: 300px;">Entreprise</th>
+                            <th style="width: 200px;">domaine</th>
+                            <th style="width: 200px;">diplome</th>
+                            <th style="width: 200px;">lieu de travail</th>
+                            <th style="width: 200px;">type</th>
                            <th></th>
                         </tr>
                     </thead>
                 </table>
-   </div>
+   </div></div> </div>
             <br />
             <br />
   </div>
@@ -112,8 +120,8 @@ $(document).ready(function(){
             
             columns: [
               {
-                    data:'id',
-                    name:'id',
+                    data:'Nom_Rec',
+                    name:'Nom_Rec',
                     
                 },  
              
@@ -130,12 +138,14 @@ $(document).ready(function(){
                     name:'lieuTrav'
                 },
                 {
-                    data:'description',
-                    name:'description'
+                    data:'type',
+                    name:'type'
                 },
+               
+                
                 {
                    
-                    defaultContent: "<button class='btn btn-success btn-lg mb-2'><a href='detail/8' style='font-color:white;'>détail</a></button>"
+                    defaultContent: "<button class='btn btn-success btn-lg mb-2' style='color:white;'><a href='detail/8' style='color:white;'>détail</a></button>"
                 },
                
                 
@@ -161,7 +171,7 @@ $(document).ready(function(){
         var filter_lieuTrav = $('#filter_lieuTrav').val();
         var filter_diplome = $('#filter_diplome').val();
 
-        if(filter_domaine != '' &&  filter_lieuTrav != '' && filter_diplome != '')
+        if(filter_domaine != '' ||  filter_lieuTrav != '' || filter_diplome != '')
         {
             $('#customer_data').DataTable().destroy();
             fill_datatable(filter_domaine, filter_lieuTrav, filter_diplome);

@@ -15,8 +15,10 @@ class RechercheAvanceeController extends Controller
       if(!empty($request->filter_domaine))
       {
        $data = DB::table('offres')
-         ->select('id', 'domaine', 'diplome', 'lieuTrav', 'description')
-         ->where('domaine', $request->filter_domaine)
+       ->join('recruteurs','recruteurs.user_id','offres.rec_id')
+         ->select('Nom_Rec', 'domaine', 'diplome', 'lieuTrav' ,'offres.type')
+      
+         ->where('domaine', $request->filter_domaine) 
          ->where('lieuTrav', $request->filter_lieuTrav)
          ->get();
          
@@ -24,7 +26,10 @@ class RechercheAvanceeController extends Controller
       else
       {
        $data = DB::table('offres')
-         ->select('id', 'domaine', 'diplome', 'lieuTrav', 'description')
+          ->join('recruteurs','recruteurs.user_id','offres.rec_id')
+          ->select('Nom_Rec', 'domaine', 'diplome', 'lieuTrav', 'offres.type')
+         //->select('id', 'domaine', 'diplome', 'lieuTrav', 'description')
+        
          ->get();
       }
       return datatables()->of($data)->make(true);

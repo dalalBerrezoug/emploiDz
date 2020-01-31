@@ -24,7 +24,6 @@
                         <div class="form-group row">
                           <label for="example-text-input" class="col-2 col-form-label">Etablissement</label>
                           <div class="col-8">
-                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="etablissement">
                             <input class="form-control" type="text"  id="example-text-input" name="etablissement">
                           </div>
                         </div>
