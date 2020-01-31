@@ -17,7 +17,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Trouvez votre Futur Emploi en Algerie</h2>
-                
+                <!--
                 <form class="header-job-search" method="get" style="padding-left: 200px;">
                     <div class="row">
                       <div class="input-keyword col-lg-5">
@@ -56,7 +56,7 @@
                           
                       </div>
                     </div>
-                  </form> 
+                  </form> -->
               </div>
             </div>
           </div>
@@ -65,8 +65,8 @@
             <div class="carousel-background"><img src="bizPage/img/intro-carousel/2.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Nous sommes Profetionnel</h2>
-                
+                <h2>Trouver votre Futur employés</h2>
+                <!--
                 <form class="header-job-search" method="get" style="padding-left: 200px;">
                     <div class="row">
                       <div class="input-keyword col-lg-5">
@@ -105,7 +105,7 @@
                           
                       </div>
                     </div>
-                  </form> 
+                  </form> -->
               </div>
             </div>
           </div>
@@ -114,8 +114,8 @@
             <div class="carousel-background"><img src="bizPage/img/intro-carousel/3.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Tous les Domaines</h2>
-               
+                <h2>Nous sommes Profetionnel</h2>
+               <!--
                 <form class="header-job-search" method="get" style="padding-left: 200px;">
                     <div class="row">
                       <div class="input-keyword col-lg-5">
@@ -154,7 +154,7 @@
                           
                       </div>
                     </div>
-                  </form> 
+                  </form> -->
               </div>
             </div>
           </div>
@@ -164,7 +164,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Tous les Offres</h2>
-                
+                <!--
                 <form class="header-job-search" method="get" style="padding-left: 200px;">
                     <div class="row">
                       <div class="input-keyword col-lg-5">
@@ -203,7 +203,7 @@
                           
                       </div>
                     </div>
-                  </form> 
+                  </form> -->
               </div>
             </div>
           </div>
@@ -212,8 +212,8 @@
             <div class="carousel-background"><img src="bizPage/img/intro-carousel/5.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Tous les Offres possibles</h2>
-               
+                <h2>Tous les Domaines</h2>
+               <!--
                 <form class="header-job-search" method="get" style="padding-left: 200px;">
                     <div class="row">
                       <div class="input-keyword col-lg-5">
@@ -252,7 +252,7 @@
                           
                       </div>
                     </div>
-                  </form> 
+                  </form> -->
               </div>
             </div>
           </div>

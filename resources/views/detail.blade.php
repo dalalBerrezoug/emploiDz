@@ -61,17 +61,17 @@
      <div class="row" style=" background-color: white; margin-top: 5px;margin-left: 10px;">
         <table class="table ">
             <tr>
-                <td>Secteur d'activité</td>
+                <td><strong>domaine</strong></td>
                 <td>{{$offres->domaine}}</td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td>Diplome</td>
+                <td><strong>Diplome</strong></td>
                 <td>{{$offres->diplome}}</td>
             </tr>
             <tr>
-                    <td>Date d'expiration</td>
+                    <td><strong>Date d'expiration</strong></td>
                     <td>09 janvier 2020</td>
                     <td></td>
-                    <td>Nombre de postes</td>
+                    <td><strong>Nombre de postes</strong></td>
                     <td>1 poste</td>
                 </tr>
         </table>

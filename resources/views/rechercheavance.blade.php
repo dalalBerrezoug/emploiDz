@@ -69,7 +69,6 @@
                     <thead>
                         <tr>
                            <th>id</th>
-                           
                             <th>domaine</th>
                             <th>diplome</th>
                             <th>lieu de travail</th>
@@ -111,7 +110,8 @@ $(document).ready(function(){
             columns: [
               {
                     data:'id',
-                    name:'id'
+                    name:'id',
+                    
                 },  
              
                 {
@@ -132,7 +132,7 @@ $(document).ready(function(){
                 },
                 {
                    
-                    defaultContent: "<button>Postuler</button>"
+                    defaultContent: "<button>ss</button>"
                 },
                
                 
@@ -141,7 +141,15 @@ $(document).ready(function(){
             ]
            
         });
+
+/*
+        $('#customer_data tbody').on( 'click', 'button', function () {
+        var d = table.row( $(this).parents('tr') ).data();
+        alert( d[0] +"'s salary is: " );
+      
+    } );*/
     }
+    
     
     
 

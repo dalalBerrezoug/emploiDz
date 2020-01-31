@@ -10,7 +10,7 @@
                            <div class="form-group row">
                               <label for="example-text-input" class="col-2 col-form-label">Titre de poste</label>
                               <div class="col-8">
-                                <input class="form-control" type="text" value="titreposte" id="example-text-input" name="titreposte">
+                                <input class="form-control" type="text" value="titre du poste" id="example-text-input" name="titreposte">
                               </div>
                             </div>
     
@@ -18,7 +18,7 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-2 col-form-label">Entreprise</label>
                                 <div class="col-8">
-                                  <input class="form-control" type="text" value="Artisanal kale" id="example-text-input" name="entreprise">
+                                  <input class="form-control" type="text" value="l'entreprise" id="example-text-input" name="entreprise">
                                 </div>
                               </div>
 
@@ -38,7 +38,7 @@
                                   <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="datefin">
                                 </div>
                               </div>
-                              <input type="submit" name = "" value="Enregister"></form>
+                              <input type="submit" name = "" value="Enregister" class="btn btn-success btn-lg mb-2"></form>
     
                    
                             
