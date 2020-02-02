@@ -9,11 +9,11 @@
      @foreach($offres as $offres)
 <div class="row" style=" background-color: white; margin-top: 5px;margin-left: 10px;">
         <div class="col-lg-3"><img src=img/icon/e1.png></div>
-        <div class="col-lg-6"><h5 style="margin-top: 5px;"><h5>
-        {{$offres->nom}}
+        <div class="col-lg-6"><h5 style="margin-top: 5px;">
+          <h2>  <strong>{{$offres->nom}}</strong></h2>
         
-                </h5>
-          <h6>{{$offres->lieuTrav}} &nbsp;&nbsp;&nbsp;&nbsp; {{$offres->created_at}}</h6></div>
+                
+          <h6>{{$offres->lieuTrav}} &nbsp;&nbsp;&nbsp;&nbsp;<strong>crée le: </strong>   {{$offres->created_at}}</h6></div>
 
 
 
@@ -53,6 +53,7 @@
 }
           
             "></form>
+           
             @else 
             <form action="{{ url('LogTous') }}" method="get">
     {{csrf_field()}}
@@ -90,7 +91,7 @@
             </tr>
             <tr>
                     <td><strong>Date d'expiration</strong></td>
-                    <td>09 janvier 2020</td>
+                    <td>{{$offres->debut_prevu}}</td>
                     <td></td>
                     <td><strong>Nombre de postes</strong></td>
                     <td>1 poste</td>
@@ -105,19 +106,21 @@
             <div class="col-lg-8" style="background-color: white;">
                 <h4>Description d'offre</h4>
                 <ul>  
-                {{$offres->description}}
+                {{$offres->description}}<br><br>
             </ul>  
                 <h4>Compétences</h4>
-                <lu>{{$offres->competences}}</lu>
+                <lu>
+                <span style="margin-left:40px;"> {{$offres->competences}}</span>
+                </lu><br><br>
 <br>
 
                 <h4>Durée</h4>
-                <p>{{$offres->duree}}</p>
+                <p><span style="margin-left:40px;">{{$offres->duree}}</span></p><br><br>
 
                 <h4>type d'offre</h4>
-                 <p> {{$offres->type}}</p>
+                 <p> <span style="margin-left:40px;">{{$offres->type}}</span></p><br><br>
                  <h4>Renumération</h4>
-                  <p> {{$offres->remuneration}}</p>
+                  <p><span style="margin-left:40px;"> {{$offres->remuneration}}</span></p>
             </div>
 
          </div> @endforeach

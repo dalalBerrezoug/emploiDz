@@ -3,8 +3,8 @@
 <div class="form-bg" style="margin-top: 150px;">
         <div class="container">
         @foreach($recruteurs as $recruteurs)
-          <div class="row col-lg-12" style="background-color: white;"><h4><span class="oi oi-align-right" style="margin-top: 10px;">    {{$recruteurs->Nom_Rec}}</span></h4></div>
-          <div class="row col-lg-12" style="background-color: white; margin-top: 2px;"> 
+          <div class="row col-lg-12" style="background-color: #18d26e;  bottom: 15px;"><h1><span  style="margin-top:20px; color:white">    {{$recruteurs->Nom_Rec}}</span></h1></div>
+          <div class="row col-lg-12" style="background-color: white; margin-top: 10px;"> 
      
            
                 <div class="row" style="margin-top: 50px; ">
@@ -12,13 +12,13 @@
                     <img src="C:\Users\assia\Desktop\bootstrap\css\BizPage\img\icon\personne.png" style="width: 100px; height: 100px;">
                 </div>
                     <div style="margin-left: 20px;">
-                            <span class="oi oi-person"> <span style="font-size:20px;">Type de l'entreprise:</span>  {{$recruteurs->type}}</span><br><br>
-                            <span class="oi oi-map-marker">   {{$recruteurs->Adresse}}</span>
+                            <span class="oi oi-person"> <strong>Type de l'entreprise:</strong> {{$recruteurs->type}}</span><br><br>
+                            <span class="oi oi-map-marker"><strong>Adresse: </strong>   {{$recruteurs->Adresse}}</span>
                     </div>
                     <div style="margin-left: 150px;">
-                            <span class="oi oi-envelope-closed">    {{$recruteurs->Email}}</span><br><br>
-                            <span class="oi oi-phone">    {{$recruteurs->Telephone}}</span><br><br>
-                           <span style="font-size:20px;">Site web:</span>  {{$recruteurs->Site_web}}<br><br>
+                            <span class="oi oi-envelope-closed"><strong>Email:</strong>    {{$recruteurs->Email}}</span><br><br>
+                            <span class="oi oi-phone">  <strong>Téléphone </strong>  {{$recruteurs->Telephone}}</span><br><br>
+                            <strong>Site web:</strong>  {{$recruteurs->Site_web}}<br><br>
                     </div>
                 </div>
 
@@ -45,7 +45,7 @@
             margin-top: 20px;
             cursor:pointer;
             margin-top:200px;
-            margin-left:-500px;
+            margin-left:-0px;
 
 }
 
@@ -70,14 +70,14 @@
             margin-top: 20px;
             cursor:pointer;
             margin-top:200px;
-            margin-left:-500px;
+            margin-left:-0px;
 
 }
 
             
             "></form>@endauth
               @endif
-          </div>  @endforeach
+          </div><br>  @endforeach
 
           <br><br>
          
@@ -97,9 +97,9 @@
                         <hr>
                       </h4>
                       
-                      <p class="card-text">Type de contract: {{$offres->type}} </p>
-                      <p class="card-text">Lieu de Travail: {{$offres->lieuTrav}}</p>
-                      <p class="card-text">Crée le: {{$offres->created_at}}</p>
+                      <p class="card-text"><strong>Type de contract:</strong> {{$offres->type}} </p>
+                      <p class="card-text"><strong>Lieu de Travail:</strong>  {{$offres->lieuTrav}}</p>
+                      <p class="card-text"><strong>Crée le: </strong> {{$offres->created_at}}</p>
                     </div>
                     <div class="card-footer">
                       <small class="text-muted"><a href="{{url('detail/'.$offres->id)}}">voir les détails</a></small>

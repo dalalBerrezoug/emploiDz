@@ -35,6 +35,7 @@ class PostuleController extends Controller
     $postule->recruteur_id = $request->input('rec');
     $postule->typepostule = $request->input('type');
     $postule->save();
+    
     $user = new User();
     $user->id =  $postule->recruteur_id;
   
@@ -74,7 +75,7 @@ class PostuleController extends Controller
     
     
     
-
+  
     
     return redirect('detail/'.$postule->offre_id);
  
