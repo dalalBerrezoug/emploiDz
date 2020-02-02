@@ -23,7 +23,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            
                                             <th>Nom d'offre</th>
                                             <th>Intitulé</th>
                                             <th>Type</th>
@@ -34,7 +34,6 @@
                                         </tr>
                                         @foreach($offres as $offre)
                                         <tr>
-                                            <td>{{$offre->id}}</td>
                                             <td>{{$offre->nom}}</td>
                                             <td>{{$offre->type}}</td>
                                             <td>{{$offre->intitule}}</td>

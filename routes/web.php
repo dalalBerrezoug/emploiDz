@@ -252,7 +252,7 @@ Route::get('ContectRec','ContectController@create');
 Route::get('Insertion/Contect/{id}','ContectController@Store');
 Route::get('AffichageContect/{id}','ContectController@index');
 Route::get('ModifContectRec','ContectController@create_modifier');
-Route::get('Contect/update/{id}','ContectController@update');
+Route::get('Contect/update/','ContectController@update');
 Route::get('ModifProfilRec','RecruteurController@create_modifier_Rec');
 Route::get('Profil/update/{id}','RecruteurController@update');
 //Route::get('insePtion','Auth\RegisterController@Role')->name('insePtion');
@@ -297,7 +297,7 @@ Route::get('Updaye/{id}','CompetenceController@Update_Competence');
 
 
 //***document */
-Route::get('AjouterDocument','DocumentController@index');
+Route::get('AjouterDocument/{id}','DocumentController@index');
 Route::get('InsertionDocument','DocumentController@story');
 Route::get('UpdateDocument/{id}','DocumentController@index_update');
 Route::get('Update/{id}','DocumentController@Update_Document');
@@ -319,3 +319,19 @@ Route::get('ConferUpdateCondidat','CondidatController@Update_Info');
 Route::get('statique','StatistiqueController@stat_graphe');
 Route::get('statique2','StatistiqueController@graphe');
 /////statis////////////
+
+
+
+/////photo de profile/////
+Route::post('profile_update', 'ContectController@update_avatar');
+///fin photo de profile////
+
+
+/////photo de profile de condidat/////
+Route::post('updateProfilecondidat','CondidatController@avatar_update');
+///fin photo de profile  de condidat////
+
+
+////ajoute de document//////
+Route::post('doc_ajouter/{id}','DocumentController@Ajouter_Doc');
+///fin ajoute de document////

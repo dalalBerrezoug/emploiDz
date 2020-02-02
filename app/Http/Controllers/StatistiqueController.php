@@ -22,12 +22,23 @@ class StatistiqueController extends Controller
   $lava = new Lavacharts;
   $finances = \Lava::DataTable();
   $finances->addStringColumn('Mois')
-           ->addNumberColumn('offre');
+           ->addNumberColumn('CDD')
+           ->addNumberColumn('CDI')
+           ->addNumberColumn('Stage');
            $finances
-           ->addRow(['CDD',$CDD])
-           ->addRow(['CDI',$CDI])
-           ->addRow(['Stage',$Stage])
-           ;
+           ->addRow(['Janvier', $CDD, $CDI, $Stage])
+           ->addRow(['Février',0,0,0])
+           ->addRow(['Mars',0,0,0])
+           ->addRow(['Avril',0,0,0])
+           ->addRow(['Mai',0,0,0])
+           ->addRow(['Juin',0,0,0])
+           ->addRow(['Juillet',0,0,0])
+           ->addRow(['Août',0,0,0])
+           ->addRow(['Septembre',0,0,0])
+           ->addRow(['Octobre',0,0,0])
+           ->addRow(['Novembre',0,0,0])
+           ->addRow(['Décembre',0,0,0])
+        ;
            $finances =\Lava::ColumnChart('Finances', $finances, [
               'title' => 'Nombre  d\'offre par mois de chaque type',
               'titleTextStyle' => [

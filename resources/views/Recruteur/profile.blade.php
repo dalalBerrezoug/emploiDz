@@ -1,4 +1,11 @@
 @extends('layouts.masterRec')
+@section('photoprofile')
+<ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <a class="profile-pic" href="#"> <img src="/uploads/avatars/{{$Rec->avatar}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"> {{$Rec->nom }} {{$Rec->prenom}}</b> </a>
+                    </li>
+                </ul>
+                @stop
 @section('contenu')
 
         <div id="page-wrapper">
@@ -22,12 +29,16 @@
                             <div class="user-bg"> <img width="100%" alt="user" src="../plugins/images/large/couver.jpg">
                                 <div class="overlay-box">
                                     <div class="user-content">
-                                        <a href="javascript:void(0)"><img src="{{asset('profile.jpg')}}" class="thumb-lg img-circle" alt="img"></a>
+                                        <a href="javascript:void(0)"><img src="/uploads/avatars/{{$Rec->avatar}}" class="thumb-lg img-circle" alt="img"></a>
     
                                
                                </div>
-                               <input type="file" id="file" accept="image/*" name="photo">
+                               <form enctype="multipart/form-data" action="{{url('profile_update')}}" method="POST">
+                               <input type="file" id="file" accept="image/*" name="avatar">
+                               <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <label for="file">changer photo</label>
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
                                 </div>
                             </div>
                             <div class="user-btm-box">
@@ -54,6 +65,7 @@
                                     <div class="col-md-6">
                                                 <p>{{$Rec->nom}}</p>
                                             </div>
+                                            </div>
                                     <label for="example-email" class="col-md-6">Prenom</label>
                                     <div class="col-md-6">
                                                 <p>{{$Rec->prenom}}</p>
@@ -63,7 +75,7 @@
                                                 <p>{{$Rec->civilite}}</p>
                                             </div>
                                             
-                                            </div>
+                                            
                                 <div class="form-group">
                                     <label class="col-md-12">Email</label>
                                     <div class="col-md-12">
@@ -83,14 +95,12 @@
                                        <p>{{$Rec->fonction}}</p>
                                     </div>
                                 </div>
-                             
-                                </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                    <button class="btn btn-success" type="submit">Mettre à jour le profil</button>
+                                   </form>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>

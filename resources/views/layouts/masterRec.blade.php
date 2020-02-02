@@ -38,6 +38,10 @@
                 <div class="top-left-part"><a class="logo" href="{{url('Accuiel')}}"><b>Emploi.dz</b></a></div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs nav-menu">
                  <li><a href="{{ url('actualite') }}">Actualités</a></li>
+<<<<<<< HEAD
+                </ul>
+                @yield('photoprofile')
+=======
                 
                 
                  <span style="color:white;margin-left:600px;">
@@ -67,6 +71,7 @@
                 </ul>
 
 
+>>>>>>> 5ab935d8b0c28a983972246a3eaa0400beeb8c82
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->

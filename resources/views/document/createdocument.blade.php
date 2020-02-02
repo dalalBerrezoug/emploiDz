@@ -4,10 +4,9 @@
              
              <div class="overlaydoc" id="overlaydoc">
                   <div class="popupdoc" id="popupdoc">
-                    <h2>Ajouter un Docuemnt <span id="closedoc" class="closedoc"> &times; </span></h2><hr>
+                    <h2>Ajouter un Docuemnt <a href="{{url('Cv_Condidat')}}"><span id="closedoc" class="closedoc"> &times; </span></a></h2><hr>
                    
-                    <form action= "{{url('InsertionDocument')}}" method="get" enctype="multipart/form-data">
-    {{csrf_field()}}
+      
                 
                     <div class="form-group row">
                         <label for="example-text-input" class="col-2 col-form-label">Type</label>
@@ -32,10 +31,12 @@
                         
                       <div class="form-group row">
                           <label for="example-text-input" class="col-2 col-form-label">Ajouter un docuement</label>
-                            <input type="file" id="file" name="file" >
+                          <form enctype="multipart/form-data" action="{{url('doc_ajouter/'.$id)}}" method="POST">
+                          <input type="file" id="file" accept="image/*" name="avatar">
+                               <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <label for="file" class="image"><span class="oi oi-cloud-upload"></span>  &nbsp; &nbsp;choisir un document</label>
                           </div>
-                          <input type="submit" name = "" value="Enregister">
+                          <input type="submit" name = "valider" value="Enregister">
                             </div> </form>
 
 

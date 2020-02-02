@@ -13,6 +13,7 @@ use App\Formation;
 use App\Experience;
 use App\Competence;
 use App\Document;
+use App\Condidat;
 class UserController extends Controller
 {
     public function __construct(){
@@ -160,13 +161,17 @@ public function updatecomp(Request $request , $id)
           public function Cv_Condidat()
           {
             $data=[];
+            $photo=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
+            $id_cond=$photo[0]->id;
+            $c=Condidat::find($id_cond);
+            $data['cond']=$c;
             $cv=Cv::select('id')->where('user_id','=',Auth::user()->id)->get();
             if($cv!='[]'){
                  $id=$cv[0]->id;
                  $CV=Cv::find($id);
                  $cv_id=$CV->id;
-                 $t=$CV->titre;
-                $data['titre']=$t;
+                 
+                $data['titre']=$CV;
             $experience=Experience::select('id')->where('cv_id','=',$cv_id)->get();
             $competence=Competence::select('id')->where('cv_id','=',$cv_id)->get();
             $formation=Formation::select('id')->where('cv_id','=',$cv_id)->get();

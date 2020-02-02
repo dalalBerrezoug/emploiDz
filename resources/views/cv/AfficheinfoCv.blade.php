@@ -8,7 +8,7 @@
           <div class="row">
           <div class="col-lg-4" style="background-color:beige;";>
             <div class="row"> <div class="profile-img" style="margin:40px;">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                        <img src="/uploads/avatars/{{$data['cond']->avatar}}" alt=""/>
                            <!-- <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" id="photo" name="photo"/>
@@ -21,10 +21,10 @@
                 <p>
                   
                   
-                  <strong>Telephone:</strong> {{ Auth::user()->telephone }}<br>
-                  <strong>Date de naissance:</strong> {{ Auth::user()->datenais }}<br>
-                  <strong>Adresse:</strong> {{ Auth::user()->adresse }}<br>
-                  <strong>E-mail:</strong> {{ Auth::user()->email }}<br>
+                  <strong>Telephone:</strong> {{ $data['cond']->telephone}}<br>
+                  <strong>Date de naissance:</strong> {{ $data['cond']->datenais }}<br>
+                  <strong>Adresse:</strong> {{ $data['cond']->adresse }}<br>
+                  <strong>E-mail:</strong> {{ $data['cond']->email }}<br>
 
                 </p>
     
@@ -54,7 +54,7 @@
             <a href="{{url('TitreCv')}}">
             <span class="oi oi-pencil editexp" id="editexp" style="margin-left:10px;margin-top:30px;"></span></a>
             <div style="margin-left:200px";> <h1>
-            titre: @if($data['titre'] ){{$data['titre']}}@endif</h1></div><br><br>
+            titre: @if($data['titre'] ){{$data['titre']->titre}}@endif</h1></div><br><br>
            </div><br><br>
            
           
@@ -129,12 +129,13 @@
             @foreach($data['document'] as $doc)
               <tr>
                 <td style="width:10px;"><a href="{{url('UpdateDocument/'.$doc->id)}}">  <span class="oi oi-pencil editexp" id="editexp"></span></a></td>
-                <td><img src="" alt="..." class="img-thumbnail">
+                <td><img src="/uploads/avatars/{{$doc->doc}}" alt="..." class="img-thumbnail">
+                
                 </td>
                 </tr>
                 @endforeach
               @endif
-              <tr><td  colspan=2><a href="{{url('AjouterDocument')}}">Ajouter un document</a></td></tr></table>
+              <tr><td  colspan=2><a href="{{url('AjouterDocument/'.$data['titre']->id)}}">Ajouter un document</a></td></tr></table>
 
                      
                       <br><br>

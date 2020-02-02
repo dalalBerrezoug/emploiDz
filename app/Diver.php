@@ -4,9 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
-
-class Postule extends Model
+class Diver extends Model
 {
     //
 }

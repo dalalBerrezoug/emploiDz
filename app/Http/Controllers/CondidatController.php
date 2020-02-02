@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Condidat;
+use Image;
 use App\Offre;
 use App\Recruteur;
 use DB;
-
 
 class CondidatController extends Controller
 {
@@ -121,7 +121,23 @@ class CondidatController extends Controller
         $condidat->save();
         return redirect('ProfilCondidat'); 
     }
-
-
-   
+    public function avatar_update(Request $request){
+        // Logic for user upload of avatar
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename ) );
+            $Cont=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
+            $cont=Condidat::find($Cont);
+            $a= $cont[0]->id;
+            $Rec=Condidat::find($a);
+            $Rec->avatar = $filename;
+            $Rec->save();
+        }
+        $Cont=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
+            $cont=Condidat::find($Cont);
+            $a= $cont[0]->id;
+            $Rec=Condidat::find($a);
+        return view('profil')->with('cond',$Rec);
+    }
 }
