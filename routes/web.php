@@ -63,8 +63,12 @@ Route::get('/recruteurs','RecruteurController@show');
 Route::get('/offres','RecruteurController@show1');
 //Route::get('/offres','RecruteurController@showOffre');
 //Route::get('/offres','OffreController@show');
-Route::get('/offres/{id}','RecruteurController@show1');
-Route::get('/detail/{id}','OffreController@show');
+//Route::get('/offres/{id}','RecruteurController@show1');
+
+Route::get('/offres/{id}','showrecController@show1');
+//Route::get('/detail/{id}','OffreController@show');
+Route::get('/detail/{id}','showOffreController@show');
+
 //Route::get('/home','PostuleController@index');
 /*
 Route::get('/detail', function () {

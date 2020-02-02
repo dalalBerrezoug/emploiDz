@@ -22,7 +22,8 @@
                     </div>
                 </div>
 
-
+                @if (Route::has('login'))
+                @auth 
                 <form action="{{url('detail/8')}}" method="post">
     {{csrf_field()}}
     <input id="prodId" name="offres" type="hidden" value="0">
@@ -49,7 +50,33 @@
 }
 
             
-            "></form>
+            "></form> 
+            @else 
+            <form action="{{url('LogTous')}}" method="get">
+    {{csrf_field()}}
+   
+        <input type="submit" value="Envoyez une condidature spontané" style="
+       
+            background: #18d26e;
+            color: #fff;
+            width: 300px;
+            height: 44px;
+            text-align: center;
+            line-height: 1;
+            font-size: 16px;
+            border-radius: 10%;
+            right: 15px;
+            bottom: 15px;
+            margin-top: 20px;
+            cursor:pointer;
+            margin-top:200px;
+            margin-left:-500px;
+
+}
+
+            
+            "></form>@endauth
+              @endif
           </div>  @endforeach
 
           <br><br>
