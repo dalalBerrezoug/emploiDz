@@ -24,9 +24,11 @@
 
                           
 
-
+          
 
         <div class="col-lg-3" >
+        @if (Route::has('login'))
+          @auth
         <form action="{{url('detail/8')}}" method="post">
     {{csrf_field()}}
     <input id="prodId" name="offres" type="hidden" value="{{$offres->id}}">
@@ -48,12 +50,31 @@
             margin-top: 20px;
             cursor:pointer;
 
-
+}
+          
+            "></form>
+            @else 
+            <form action="{{ url('LogTous') }}" method="get">
+    {{csrf_field()}}
+    
+        <input type="submit" value="Postuler" style="
+       
+            background: #18d26e;
+            color: #fff;
+            width: 100px;
+            height: 44px;
+            text-align: center;
+            line-height: 1;
+            font-size: 16px;
+            border-radius: 10%;
+            right: 15px;
+            bottom: 15px;
+            margin-top: 20px;
+            cursor:pointer;
 
 }
-
-            
-            "></form></div>
+          
+            "></form> @endauth  @endif</div>
         <br><br>
         
        
