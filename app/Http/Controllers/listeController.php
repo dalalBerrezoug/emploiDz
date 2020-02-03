@@ -8,7 +8,7 @@ use DB;
 class listeController extends Controller
 {
     //
-    public function show($domaine){
+  /*  public function show($domaine){
         
         // $list_des_offres=Offre::all()->where('domaine','=',$domaine);
          
@@ -17,7 +17,7 @@ class listeController extends Controller
 
 
 
-         $list_des_offres = DB::table('offres')
+         $list_des_offres1 = DB::table('offres')
                                 
          ->join('recruteurs','recruteurs.user_id','offres.rec_id')
          
@@ -26,7 +26,30 @@ class listeController extends Controller
          ->where('domaine','=',$domaine)
          
          ->get();
-         return view('listeoffre')->with('offres',$list_des_offres);
+         return view('listeoffre')->with('offres',$list_des_offres1);
      
-         }
+         }*/
+
+
+         public function showregion($ville){
+        
+            // $list_des_offres=Offre::all()->where('domaine','=',$domaine);
+             
+          
+            // return view('listeoffre')->with('offres',$list_des_offres);
+    
+    
+    
+             $list_des_offres = DB::table('offres')
+                                    
+             ->join('recruteurs','recruteurs.user_id','offres.rec_id')
+             
+             
+             ->select('recruteurs.id as idrec','recruteurs.Nom_Rec','offres.*')
+             ->where('lieuTrav','=',$ville)
+             
+             ->get();
+             return view('listeregion')->with('offres',$list_des_offres);
+         
+             }
 }

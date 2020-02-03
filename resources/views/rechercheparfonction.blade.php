@@ -42,7 +42,7 @@
          <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;"> 
                 Informatique, Télécommunication & Réseaux</span>
               <p>
-                  <a href="{{url('liste/informatique')}}">   Informatique</a>,
+                  <a href="{{url('listefonction/informatique')}}">   Informatique</a>,
                       <a href="{{url('liste/systèmes information')}}">   Systèmes d'information</a>,
                           <a href="{{url('liste/internet Télécommunication')}}">    Internet Télécommunication</a>,
                               <a href="{{url('liste/réseaux')}}">    Réseaux</a>

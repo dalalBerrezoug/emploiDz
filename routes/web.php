@@ -42,11 +42,12 @@ Route::get('/rechercheparregion', function () {
   return view('rechercheparregion');
  
 });
+Route::get('/liste/{ville}','listeController@showregion');
 Route::get('/rechercheparfonction', function () {
   return view('rechercheparfonction');
  
 });
-Route::get('/liste/{domaine}','listeController@show');
+Route::get('/listefonction/{domaine}','listefoncController@show');
 
 Route::get('/rechercheparmotcle', function () {
   return view('rechercheparmotcle');

@@ -61,6 +61,7 @@
               <li><a href="{{ url('rechercheparregion') }}">Recherche par Région</a></li>
               <li><a href="{{ url('rechercheparfonction') }}">Recherche par Fonction</a></li>
               <li><a href="{{ url('rechercheparmotcle') }}">Recherche par mot clée</a></li>
+              <li><a href="{{ url('recruteurs') }}">Nos Recruteurs</a></li>
             </ul>
           </li>
           <li class="menu-has-children"><a href="">Conseils</a>
