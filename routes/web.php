@@ -46,6 +46,8 @@ Route::get('/rechercheparfonction', function () {
   return view('rechercheparfonction');
  
 });
+Route::get('/liste/{domaine}','listeController@show');
+
 Route::get('/rechercheparmotcle', function () {
   return view('rechercheparmotcle');
  
@@ -68,6 +70,9 @@ Route::get('/offres','RecruteurController@show1');
 Route::get('/offres/{id}','showrecController@show1');
 //Route::get('/detail/{id}','OffreController@show');
 Route::get('/detail/{id}','showOffreController@show');
+
+
+
 
 //Route::get('/home','PostuleController@index');
 /*
