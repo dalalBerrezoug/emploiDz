@@ -8,6 +8,7 @@ use Charts;
 use App\User;
 use App\Statistique;
 use Auth;
+use App\Recruteur;
 use App\Offre;
 use Illuminate\Support\Facades\DB;
 class StatistiqueController extends Controller
@@ -26,8 +27,8 @@ class StatistiqueController extends Controller
            ->addNumberColumn('CDI')
            ->addNumberColumn('Stage');
            $finances
-           ->addRow(['Janvier', $CDD, $CDI, $Stage])
-           ->addRow(['Février',0,0,0])
+           ->addRow(['Janvier',0,0,0])
+           ->addRow(['Février',$CDD,$CDI,$Stage])
            ->addRow(['Mars',0,0,0])
            ->addRow(['Avril',0,0,0])
            ->addRow(['Mai',0,0,0])
@@ -110,7 +111,40 @@ $lolo->addRow(['Janvier',DB::table('offres')->where('rec_id','=',Auth::user()->i
 $p=\Lava::LineChart('LINE',$lolo, [
     'title' => 'Nombre  d\'offre par mois'
 ]);
-                return  view('Recruteur.TableBorde');
+
+///////////////////////////////////////postule and spontane//////////////////
+
+$rec=Recruteur::select('id')->where('user_id','=',Auth::user()->id)->get();
+$A= $rec[0]->id;
+$post=DB::table('postules')->where('recruteur_id','=',Auth::user()->id)->where('typepostule','=',0)->where('anne','=',$a)->where('mois','=','Feb')->count();
+$spont=DB::table('postules')->where('recruteur_id','=',Auth::user()->id)->where('typepostule','=',1)->where('anne','=',$a)->where('mois','=','Feb')->count();
+$postule = \Lava::DataTable();
+$postule->addStringColumn('Mois')
+         ->addNumberColumn('Post')
+         ->addNumberColumn('Spont');
+         $postule
+         ->addRow(['Janvier',0,0,])
+         ->addRow(['Février',$post,$spont])
+         ->addRow(['Mars',0,0])
+         ->addRow(['Avril',0,0])
+         ->addRow(['Mai',0,0])
+         ->addRow(['Juin',0,0])
+         ->addRow(['Juillet',0,0])
+         ->addRow(['Août',0,0])
+         ->addRow(['Septembre',0,0])
+         ->addRow(['Octobre',0,0])
+         ->addRow(['Novembre',0,0])
+         ->addRow(['Décembre',0,0])
+      ;
+         $postule =\Lava::ColumnChart('Postule', $postule, [
+            'title' => 'Nombre  d\'offre postule et spontané par mois',
+            'titleTextStyle' => [
+                'color'    => '#eb6b2c',
+                'fontSize' => 10
+            ]
+        ]);
+///////////////////////////fin de postule////////////////
+                return  view('Recruteur.statistique');
                              
 
     }

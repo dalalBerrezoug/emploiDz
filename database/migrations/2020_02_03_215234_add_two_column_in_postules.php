@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class AddColumnPostule extends Migration
+class AddTwoColumnInPostules extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,8 @@ class AddColumnPostule extends Migration
     {
         Schema::table('postules', function (Blueprint $table) {
             //
-            $table->integer('typepostule');
+            $table->string('mois');
+            $table->string('anne');
         });
     }
 

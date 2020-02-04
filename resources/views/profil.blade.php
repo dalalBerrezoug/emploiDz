@@ -49,8 +49,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>Mon CV</p>
-                            <a href="{{url('cv')}}">Mon CV</a><br/>
+                            <p></p>
+                            <a href="{{url('Cv_Condidat')}}">Mon CV</a><br/>
                             
                             <p>Les Offres Postulés</p>
                             @foreach($postule as $postule)

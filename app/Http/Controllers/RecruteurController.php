@@ -49,8 +49,6 @@ class RecruteurController extends Controller
         
             }
 
-<<<<<<< HEAD
-=======
             public function show(){
               $recruteurs=Recruteur::all();
                return view('entreprises')->with('recruteurs',$recruteurs);
@@ -83,8 +81,6 @@ class RecruteurController extends Controller
               
               
                   }*/
-
->>>>>>> 5ab935d8b0c28a983972246a3eaa0400beeb8c82
 
             public function update($id,Request $request)
             {

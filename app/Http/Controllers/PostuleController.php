@@ -9,6 +9,12 @@ use App\User;
 use App\Condidat;
 use App\Offre;
 use App\Notifications\NewOffrePostuler;
+use App\Cv;
+use App\Formation;
+use App\Experience;
+use App\Competence;
+use App\Document;
+use App\Diver;
 
 
 class PostuleController extends Controller
@@ -34,6 +40,8 @@ class PostuleController extends Controller
     $postule->offre_id = $request->input('offres');
     $postule->recruteur_id = $request->input('rec');
     $postule->typepostule = $request->input('type');
+    $postule->mois=date('M');
+    $postule->anne=date('Y');
     $postule->save();
     
     $user = new User();
@@ -79,5 +87,54 @@ class PostuleController extends Controller
     
     return redirect('detail/'.$postule->offre_id);
  
+}
+
+
+
+///voir profile de personne spont///
+public function Voir_cv_Spont($id){
+            $data=[];
+            $photo=Condidat::select('id')->where('user_id','=',$id)->get();
+            $id_cond=$photo[0]->id;
+            //echo $id_cond;
+            $c=Condidat::find($id_cond);
+            $data['cond']=$c;
+            $cv=Cv::select('id')->where('user_id','=',$id)->get();
+            if($cv!='[]'){
+                 $id=$cv[0]->id;
+                 $CV=Cv::find($id);
+                 $cv_id=$CV->id;
+                 $div=Diver::where('cv_id',$cv_id)->get();
+                 $data['divers']=$div;
+                $data['titre']=$CV;
+            $experience=Experience::select('id')->where('cv_id','=',$cv_id)->get();
+            $competence=Competence::select('id')->where('cv_id','=',$cv_id)->get();
+            $formation=Formation::select('id')->where('cv_id','=',$cv_id)->get();
+            $document=Document::select('id')->where('cv_id','=',$cv_id)->get();
+            if($formation!='[]'){
+                $form=Formation::find($formation[0]->id)->all()->where('cv_id','=',$cv_id);
+                $data['formation']=$form;
+            }else $data['formation']=Null;
+            if( $experience!='[]'){
+                $exp=Experience::find($experience[0]->id)->all()->where('cv_id','=',$cv_id);
+                $data['experience']=$exp;
+              //  echo $data['experience'];
+            }else $data['experience']=Null;
+            if( $competence!='[]'){
+                $comp=Competence::find($competence[0]->id)->all()->where('cv_id','=',$cv_id);
+                $data['competence']=$comp;
+              //  echo $data['experience'];
+            }
+            else
+             $data['competence']=Null;
+        if($document!='[]'){
+            $doc=Document::find($document[0]->id)->all()->where('cv_id','=',$cv_id);
+            $data['document']=$doc;
+        }else{ $data['document']=Null;}
+        return view('cv.Voir_Cv')->with('data',$data);
+        }else{
+            $data=Null;
+            return view('cv.Voir_Cv')->with('data',$data);
+            }
 }
 }

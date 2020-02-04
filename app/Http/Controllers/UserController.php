@@ -14,6 +14,7 @@ use App\Experience;
 use App\Competence;
 use App\Document;
 use App\Condidat;
+use App\Diver;
 class UserController extends Controller
 {
     public function __construct(){
@@ -170,7 +171,8 @@ public function updatecomp(Request $request , $id)
                  $id=$cv[0]->id;
                  $CV=Cv::find($id);
                  $cv_id=$CV->id;
-                 
+                 $div=Diver::where('cv_id',$cv_id)->get();
+                 $data['divers']=$div;
                 $data['titre']=$CV;
             $experience=Experience::select('id')->where('cv_id','=',$cv_id)->get();
             $competence=Competence::select('id')->where('cv_id','=',$cv_id)->get();

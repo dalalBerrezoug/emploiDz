@@ -335,3 +335,24 @@ Route::post('updateProfilecondidat','CondidatController@avatar_update');
 ////ajoute de document//////
 Route::post('doc_ajouter/{id}','DocumentController@Ajouter_Doc');
 ///fin ajoute de document////
+
+
+
+
+//////Divers///////////////
+Route::get('divers','DiverController@AjouterDivers');
+Route::get('inser_divers','DiverController@Insertion_divers');
+Route::get('update_diver/{id}','DiverController@edit_divers');
+Route::get('update_div/{id}','DiverController@update');
+////////fin divers///////////
+
+
+
+
+
+
+
+
+///Spontatni cv///
+Route::get('voir_cv/{id}','PostuleController@Voir_cv_Spont');
+/////fin/////

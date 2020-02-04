@@ -6,35 +6,14 @@
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Tableau de bord</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
-                    <form action="{{url('statique')}}">
-                       <select name="anne_stat" target="_blank" class="pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">
-                       <?php
-                       use Illuminate\Support\Facades\DB;
-                       use App\Offre;
-                       $anne = DB::table('offres')->select(DB::raw('distinct YEAR(created_at) as anne'))
-                         ->get();
-                         foreach ($anne as $a) {
-                         ?>
-                         <option><?php echo $a->anne;?></option>
-                            <?php } ?>
-                       </select>
-                       <button target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light" type="submit">Appliquer</button>
-                       <form>
-                                            <ol class="breadcrumb">
-                           <!-- <li><a href="#">Tableau de bord</a></li>-->
-                        </ol>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- row -->
+                   
                 <div class="row">
                     <!--col -->
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                         <div class="white-box">
                             <div class="col-in row">
                                 <div id="ca_graph" ></div>
-                                <?= Lava::render('ColumnChart','Finances','ca_graph') ?>
-                               
+                                
                                                                 
                                 
                             </div>
@@ -45,7 +24,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="white-box">
                         <div id="a">
-                        <?= Lava::render('DonutChart','IMDB','a') ?>
+                        
                         </div>
                     </div>
                     <!-- /.col -->
@@ -75,7 +54,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                     <div id="line">
-                    <?= Lava::render('LineChart','LINE','line') ?>
+                   
                     </div>
                         </div>
                     </div>
@@ -100,8 +79,8 @@
                                     <div class="user-img"> <img src="{{asset('pixel/plugins/images/users/arijit.jpg')}}" alt="user" class="img-circle"> </div>
                                     <div class="mail-contnet">
                                         <h5>{{$postule->prenom}} {{$postule->nom}}</h5> <span class="mail-desc"> a Postulé {{$postule->titre}}   <span class="time pull-right"> le {{$postule->cree}}</span></span>
-                                       
-                                        <span class="time pull-left"><a href="#"> <strong>Voir son CV</strong></a> </span>
+                                        
+                                        <span class="time pull-left"><a href="{{url('voir_cv/'.$postule->condidat_id)}}"> <strong>Voir son CV</strong></a> </span>
                                          <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><br>
                                          
                                          <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a></div>
