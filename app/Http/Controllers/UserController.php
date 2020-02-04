@@ -201,7 +201,8 @@ public function updatecomp(Request $request , $id)
         return view('cv.AfficheinfoCv')->with('data',$data);
         }else{
             $data=Null;
-            return view('cv.AfficheinfoCv')->with('data',$data);
+            //return view('cv.AfficheinfoCv')->with('data',$data);
+            return redirect('titrecv');
             }
           }
 

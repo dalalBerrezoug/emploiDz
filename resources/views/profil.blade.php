@@ -53,6 +53,7 @@
                             <a href="{{url('Cv_Condidat')}}">Mon CV</a><br/>
                             
                             <p>Les Offres Postulés</p>
+                            @if($postule)
                             @foreach($postule as $postule)
 
                                 @if($postule->condidat_id == Auth::user()->id and $postule->typepostule == 0 )
@@ -60,6 +61,7 @@
                             <a href="{{url('detail/'.$postule->offre_id)}}"> {{$postule->titre}} {{$postule->intitule}}</a><br/>
                             @endif
                             @endforeach
+                            @endif
 
 
                             <p>Les Condidatures spontannés</p>

@@ -19,6 +19,9 @@ class StatistiqueController extends Controller
         $CDD = DB::table('offres')->select('type')->where('type','=','CDD')->where('rec_id','=',Auth::user()->id)->where('mois','=',date('M'))->where('anne','=',$a)->count();
         $CDI=  DB::table('offres')->select('type')->where('type','=','CDI')->where('rec_id','=',Auth::user()->id)->where('mois','=',date('M'))->where('anne','=',$a)->count();
         $Stage=DB::table('offres')->select('type')->where('type','=','Stage')->where('rec_id','=',Auth::user()->id)->where('mois','=',date('M'))->where('anne','=',$a)->count();
+        $CDD1 = DB::table('offres')->select('type')->where('type','=','CDD')->where('rec_id','=',Auth::user()->id)->where('mois','=','Jan')->where('anne','=',$a)->count();
+        $CDI1=  DB::table('offres')->select('type')->where('type','=','CDI')->where('rec_id','=',Auth::user()->id)->where('mois','=','Jan')->where('anne','=',$a)->count();
+        $Stage1=DB::table('offres')->select('type')->where('type','=','Stage')->where('rec_id','=',Auth::user()->id)->where('mois','=','Jan')->where('anne','=',$a)->count();
      
   $lava = new Lavacharts;
   $finances = \Lava::DataTable();
@@ -27,7 +30,7 @@ class StatistiqueController extends Controller
            ->addNumberColumn('CDI')
            ->addNumberColumn('Stage');
            $finances
-           ->addRow(['Janvier',0,0,0])
+           ->addRow(['Janvier',$CDD1,$CDI1,$Stage1])
            ->addRow(['Février',$CDD,$CDI,$Stage])
            ->addRow(['Mars',0,0,0])
            ->addRow(['Avril',0,0,0])

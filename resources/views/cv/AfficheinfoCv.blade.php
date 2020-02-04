@@ -21,10 +21,10 @@
                 <p>
                   
                   
-                  <strong>Telephone:</strong> {{ $data['cond']->telephone}}<br>
-                  <strong>Date de naissance:</strong> {{ $data['cond']->datenais }}<br>
-                  <strong>Adresse:</strong> {{ $data['cond']->adresse }}<br>
-                  <strong>E-mail:</strong> {{ $data['cond']->email }}<br>
+                  <strong>Telephone:</strong>  @if($data['cond'] ){{ $data['cond']->telephone}}@endif<br>
+                  <strong>Date de naissance:</strong>@if($data['cond'] ) {{ $data['cond']->datenais }}@endif<br>
+                  <strong>Adresse:</strong>@if($data['cond'] ) {{ $data['cond']->adresse }}@endif<br>
+                  <strong>E-mail:</strong>@if($data['cond'] ) {{ $data['cond']->email }}@endif<br>
 
                 </p>
     

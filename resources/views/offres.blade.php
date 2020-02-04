@@ -9,7 +9,7 @@
            
                 <div class="row" style="margin-top: 50px; ">
                 <div>
-                    <img src="C:\Users\assia\Desktop\bootstrap\css\BizPage\img\icon\personne.png" style="width: 100px; height: 100px;">
+                    <img src="/uploads/avatars/{{$recruteurs->logo_avt}}" style="width: 100px; height: 100px;">
                 </div>
                     <div style="margin-left: 20px;">
                             <span class="oi oi-person"> <strong>Type de l'entreprise:</strong> {{$recruteurs->type}}</span><br><br>

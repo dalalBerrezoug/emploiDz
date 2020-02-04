@@ -58,7 +58,7 @@ class HomeController extends Controller
                                 
                                 
                                 ->select('condidats.*','recruteurs.user_id'
-                                ,'postules.typepostule')
+                                ,'postules.typepostule','postules.condidat_id')
                                 
                                 ->get();
 

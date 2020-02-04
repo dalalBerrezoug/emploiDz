@@ -13,7 +13,7 @@ class CvCondidatController extends Controller
         $this->middleware('auth');
     }
     public function cv_create(){
-        return view('cv.AfficheinfoCv');
+        return view('cv.createcv');
     }
     public function titre_mon_cv(Request $request){
         $cond=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
@@ -36,9 +36,10 @@ class CvCondidatController extends Controller
     public function afficher_cv(){
      $cv=CV::select('id')->where('user_id','=',Auth::user()->id)->get();
      if($cv!='[]'){
-         $a= $cv[0]->id;
+         /*$a= $cv[0]->id;
          $CV=Cv::find($a);
-         return view('cv.AfficheinfoCv')->with('cv',$CV);
+         return view('cv.AfficheinfoCv')->with('cv',$CV);*/
+         return redirect('Cv_Condidat') ;
      }
      else {
         return redirect('ajouterCv') ;

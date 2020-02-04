@@ -12,7 +12,7 @@ class showrecController extends Controller
     public function show1($id){
         //$recruteurs=Recruteur::find($id);
         $recruteurs=Recruteur::select('Nom_Rec','Adresse','Telephone',
-                                        'Site_web','Email','user_id','type'
+                                        'Site_web','Email','user_id','type','logo_avt'
                                       )->where('id','=',$id)->get();
        
       //  $offres=Offre::all();

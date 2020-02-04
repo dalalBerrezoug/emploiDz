@@ -3,7 +3,7 @@
 
 <div class="overlay" id="overlay">
                       <div class="popup" id="popup">
-                        <h2>Complétez vos informations personnelles <span id="close" class="close"> &times; </span></h2><hr>
+                        <h2>Complétez vos informations personnelles <a href="{{url('home')}}"><span id="close" class="close"> &times; </span></a></h2><hr>
                        
                         <form action= "{{url('InsertionCondidat')}}" method="get">
     <input type="hidden" name="_method" value="POST">
@@ -26,10 +26,6 @@
                                     <input class="form-check-input" type="radio" name="civilite" id="inlineRadio3" value="Mademoiselle"> Mademoiselle
                                   </label>
                                 </div>
-                              <div style="margin-left:200px;">
-                                <input type="file" id="file" accept="image/*" name="photo">
-                                <label for="file" class="image"><span class="oi oi-cloud-upload"></span>  &nbsp; &nbsp;choisir une image</label>
-                              </div>
                               
                               </div>
 
@@ -80,7 +76,7 @@
                                 <div class="col-5">
                                   <input class="form-control" type="text"  id="example-text-input" name="adresse">
                                 
-                                </div><br><br>
+                                </div>
                                 <div class="col-5"  style="margin-left=800px;" >
                                   <input  type="submit" value="Compléter" id="example-text-input" class="btn btn-success btn-lg mb-2">
                                 
