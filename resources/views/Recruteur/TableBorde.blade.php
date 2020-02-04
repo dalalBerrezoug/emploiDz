@@ -112,7 +112,7 @@
                                     <div class="mail-contnet">
                                         <h5>{{$postule1->prenom}} {{$postule1->nom}}</h5> <span class="mail-desc"> a vous envoyer une condidature <span class="time pull-right"> SPONTANNE </span></span>
                                        
-                                        <span class="time pull-left"><a href="#"> <strong>Voir son CV</strong></a> </span>
+                                        <span class="time pull-left"><a href="{{url('voir_cv/'.$postule->condidat_id)}}"> <strong>Voir son CV</strong></a> </span>
                                          <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><br>
                                          
                                          <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a></div>
@@ -124,6 +124,6 @@
                     </div>
                     <!-- ************************* -->
                   
-                  
+               </div>   
             </div>
             @stop

@@ -38,7 +38,6 @@ class HomeController extends Controller
           //  foreach($postule1 as $postule1){
           //     $con->id = $postule1->condidat_id;
            // }
-            
 
                                 $postule = DB::table('postules')
                                 

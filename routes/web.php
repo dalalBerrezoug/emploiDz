@@ -359,3 +359,10 @@ Route::get('update_div/{id}','DiverController@update');
 ///Spontatni cv///
 Route::get('voir_cv/{id}','PostuleController@Voir_cv_Spont');
 /////fin/////
+
+
+
+
+///logo recruteur///
+Route::post('logo','RecruteurController@avatar_update');
+/////fin/////

@@ -8,7 +8,11 @@
        
      @foreach($offres as $offres)
 <div class="row" style=" background-color: white; margin-top: 5px;margin-left: 10px;">
-        <div class="col-lg-3"><img src=img/icon/e1.png></div>
+        @foreach($Rec as $R)
+        @if($R->user_id == $offres->rec_id )
+        <div class="col-lg-3"> <img src="/uploads/avatars/{{$R->logo_avt}}" alt=""/></div>
+        @endif
+        @endforeach
         <div class="col-lg-6"><h5 style="margin-top: 5px;">
           <h2>  <strong>{{$offres->nom}}</strong></h2>
         

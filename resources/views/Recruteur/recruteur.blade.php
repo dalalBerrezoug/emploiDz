@@ -14,6 +14,17 @@
 <button target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light"><a href="{{url('ModifProfilRec')}}">Modifier information</a>
                        
                     </div>
+                    <div>
+                    <img src="/uploads/avatars/{{$Rec->logo_avt}}" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                            <form enctype="multipart/form-data" action="{{url('logo')}}" method="POST">
+                               <input type="file" id="file" accept="image/*" name="avatar">
+                               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <label for="file">changer photo</label>
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
+                    
+                    </div>
                     </div>
                 
                       <div class="popup" id="popup">

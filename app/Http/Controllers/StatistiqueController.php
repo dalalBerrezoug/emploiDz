@@ -115,6 +115,8 @@ $p=\Lava::LineChart('LINE',$lolo, [
 ///////////////////////////////////////postule and spontane//////////////////
 
 $rec=Recruteur::select('id')->where('user_id','=',Auth::user()->id)->get();
+if($rec=='[]') return redirect('inserRec');
+else{
 $A= $rec[0]->id;
 $post=DB::table('postules')->where('recruteur_id','=',Auth::user()->id)->where('typepostule','=',0)->where('anne','=',$a)->where('mois','=','Feb')->count();
 $spont=DB::table('postules')->where('recruteur_id','=',Auth::user()->id)->where('typepostule','=',1)->where('anne','=',$a)->where('mois','=','Feb')->count();
@@ -143,6 +145,7 @@ $postule->addStringColumn('Mois')
                 'fontSize' => 10
             ]
         ]);
+    }
 ///////////////////////////fin de postule////////////////
                 return  view('Recruteur.statistique');
                              

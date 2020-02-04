@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Recruteur;
+use Image;
+use Auth;
 class RecruteurController extends Controller
 {
     //
@@ -12,7 +14,12 @@ class RecruteurController extends Controller
          
         }
         public function create_modifier_Rec(){
-          return view('modifierINFOrec');
+          $Rec=Recruteur::select('id')->where('user_id','=',Auth::user()->id)->get();
+          $rec=Recruteur::find($Rec);
+          //hadi $a bash nrecupriw id 
+          $a= $rec[0]->id;
+          $R=Recruteur::find($a);
+          return view('modifierINFOrec')->with('Rec',$R);
       
           }
 
@@ -26,7 +33,7 @@ class RecruteurController extends Controller
             $Rec->Telephone=$request->input('num');
             $Rec->Site_web=$request->input('site');
             $Rec->Email=$request->input('email');
-            $Rec->user_id=$id;
+            $Rec->user_id=Auth::user()->id;
             $Rec->save();
             return  redirect('InfoRec/'.$id);
         }
@@ -92,12 +99,32 @@ class RecruteurController extends Controller
                 $Rec->Telephone=$request->input('num');
                 $Rec->Site_web=$request->input('site');
                 $Rec->Email=$request->input('email');
-                $Rec->user_id=$id;
                 $Rec->save();
                 return  redirect('InfoRec/'.$id);
         
         
             }
+
+
+            public function avatar_update(Request $request){
+              // Logic for user upload of avatar
+              if($request->hasFile('avatar')){
+                  $avatar = $request->file('avatar');
+                  $filename = time() . '.' . $avatar->getClientOriginalExtension();
+                  Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename ) );
+                  $Cont=Recruteur::select('id')->where('user_id','=',Auth::user()->id)->get();
+                  $cont=Recruteur::find($Cont);
+                  $a= $cont[0]->id;
+                  $Rec=Recruteur::find($a);
+                  $Rec->logo_avt = $filename;
+                  $Rec->save();
+              }
+              $Cont=Recruteur::select('id')->where('user_id','=',Auth::user()->id)->get();
+                  $cont=Recruteur::find($Cont);
+                  $a= $cont[0]->id;
+                  $Rec=Recruteur::find($a);
+              return view('Recruteur.recruteur')->with('Rec',$Rec);
+          }
             
       
         

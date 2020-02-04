@@ -53,7 +53,7 @@
                        <!--pour quite-->
                        <div class="form-group">
                       <div class="col-md-12">
-                      <span id="close" class="close"><a href="{{url('statique')}}"> &times; </span></a><hr>
+                      <span id="close" class="close"><a href="{{url('home')}}"> &times; </span></a><hr>
                       </div>
                      
                       <!--pour quite-->
