@@ -177,6 +177,9 @@ Route::get('/cvCondidat',function(){
 Route::get('/TitreCv',function(){
   return view('cv.createcv');
 });
+Route::get('/show',function(){
+  return view('Recruteur.ShowOffre');
+});
 
 //Testttttt
 Route::get('/Test','TestrecController@create');

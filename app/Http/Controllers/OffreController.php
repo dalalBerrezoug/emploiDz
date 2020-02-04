@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offre;
+use App\Postule;
+use App\Condidat;
 use Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -49,7 +51,23 @@ class OffreController extends Controller
     }
     public function Affiche_Info(Request $request,$id){
         $offres=Offre::find($id);
-        return view('Recruteur.AfficherLesinfOffre')->with('offres',$offres);
+        $spont=array();
+        $post=Postule::select('id')->where('offre_id','=',$id)->where('recruteur_id','=',Auth::user()->id)->get();
+        
+        foreach ($post as $user) {
+            $condidat=Condidat::select('*')->where('user_id','=',$user->id)->get();
+            array_push($spont,$condidat);
+        }
+
+       /* foreach ($spont as $user){
+        foreach($user as $a){
+            echo $a->id."<br>";
+            echo $a->nom."<br>";
+            echo $a->prenom."<br>";
+        }
+    }*/
+    return view('Recruteur.ShowOffre',compact('offres','spont'));
+        //return view('Recruteur.AfficherLesinfOffre')->with('offres',$offres);
     }
     public function edit($id){
         $offre=Offre::find($id);
