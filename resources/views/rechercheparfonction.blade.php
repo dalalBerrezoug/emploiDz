@@ -11,28 +11,28 @@
     
         <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/388.png"> </div>
         <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;"> Administration, Finance, Comptabilité & Juridique</span>
-           <p><a href=rechercheavance.html>Administration</a>, 
-            <a href=rechercheavance.html>Moyens généraux Assistanat</a>
-             , <a href=rechercheavance.html>secrétariat Comptabilité</a>
-             ,<a href=rechercheavance.html> Finance, Métiers Banque et assurances Juridique</a>
-             ,<a href=rechercheavance.html> Fiscal</a>,
-             <a href=rechercheavance.html> Audit</a></p>
+           <p><a href="{{url('liste/administration')}}">Administration</a>, 
+            <a href="{{url('liste/moyens généraux Assistanat')}}">Moyens généraux Assistanat</a>
+             , <a href="{{url('liste/secrétariat Comptabilité')}}">secrétariat Comptabilité</a>
+             ,<a href="{{url('liste/architecture')}}"> Finance, Métiers Banque et assurances Juridique</a>
+             ,<a href="{{url('liste/fiscal')}}"> Fiscal</a>,
+             <a href="{{url('liste/audit')}}"> Audit</a></p>
         </div>
         <br><br><br></div>
         <div style=" margin-left: 20px;margin-right: 300px; background-color: white;" class="row col-lg-9">
     
         <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/356.png"> </div>
          <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;">Commercial, Marketing, Communication & Création</span>
-         <p><a href =rechercheavance.html>Vente</a>,
-           <a href =rechercheavance.html>Télévente</a>, 
-           <a href=rechercheavance.html>Assistanat Commercial</a>,
-           <a href=rechercheavance.html> Technico Commercial</a>,
-              <a href=rechercheavance.html>  Service Client Responsable Commercial</a>,
-                  <a href=rechercheavance.html>   Grands comptes Création</a>, 
-                      <a href=rechercheavance.html>   Design Marketing</a>,
-                          <a href=rechercheavance.html>    Communication Journalisme</a>,
-                              <a href=rechercheavance.html>     Médias</a>, 
-                                  <a href=rechercheavance.html>    Traduction</a></p>
+         <p><a href ="{{url('liste/vente')}}">Vente</a>,
+           <a href ="{{url('liste/télévente')}}">Télévente</a>, 
+           <a href="{{url('liste/assistanat Commercial')}}">Assistanat Commercial</a>,
+           <a href="{{url('liste/technico Commercial')}}"> Technico Commercial</a>,
+              <a href="{{url('liste/service Client Responsable Commercial')}}">  Service Client Responsable Commercial</a>,
+                  <a href="{{url('liste/grands comptes Création')}}">   Grands comptes Création</a>, 
+                      <a href="{{url('liste/design Marketing')}}">   Design Marketing</a>,
+                          <a href="{{url('liste/communication Journalisme')}}">    Communication Journalisme</a>,
+                              <a href="{{url('liste/médias')}}">     Médias</a>, 
+                                  <a href="{{url('liste/traduction')}}">    Traduction</a></p>
         
         </div>
         </div>
@@ -42,10 +42,10 @@
          <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;"> 
                 Informatique, Télécommunication & Réseaux</span>
               <p>
-                  <a href=rechercheavance.html>   Informatique</a>,
-                      <a href=rechercheavance.html>   Systèmes d'information</a>,
-                          <a href=rechercheavance.html>    Internet Télécommunication</a>,
-                              <a href=rechercheavance.html>    Réseaux</a>
+                  <a href="{{url('listefonction/informatique')}}">   Informatique</a>,
+                      <a href="{{url('liste/systèmes information')}}">   Systèmes d'information</a>,
+                          <a href="{{url('liste/internet Télécommunication')}}">    Internet Télécommunication</a>,
+                              <a href="{{url('liste/réseaux')}}">    Réseaux</a>
               </p></div>
           </div>
          <div style=" margin-left: 20px;margin-right: 300px; background-color: white;" class="row col-lg-9">
@@ -53,20 +53,20 @@
             <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/367.png"> </div>
                                 <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;">Ingénierie, Industrie, Construction</span>
                                 <p>
-                                    <a href=rechercheavance.html> Chantier</a>,
-                                        <a href=rechercheavance.html> Métiers BTP</a>,
-                                            <a href=rechercheavance.html>Architecture Ingénierie</a>,
-                                                <a href=rechercheavance.html>  Etudes</a>,
-                                                    <a href=rechercheavance.html>  Projet</a>,
-                                                        <a href=rechercheavance.html>   R&D Logistique</a>,
-                                                            <a href=rechercheavance.html>   Achat</a>, 
-                                                                <a href=rechercheavance.html>    Stock</a>,
-                                                                    <a href=rechercheavance.html>   Transport Production</a>, 
-                                                                        <a href=rechercheavance.html>    méthode</a>,
-                                                                            <a href=rechercheavance.html>    industrie Maintenance</a>,
-                                                                                <a href=rechercheavance.html>     Entretien Qualité</a>,
-                                                                                    <a href=rechercheavance.html>   Sécurité</a>,
-                                                                                        <a href=rechercheavance.html> Environnement</a>
+                                    <a href="{{url('liste/chantier')}}"> Chantier</a>,
+                                        <a href="{{url('liste/métiers BTP')}}"> Métiers BTP</a>,
+                                            <a href="{{url('liste/architecture')}}">Architecture Ingénierie</a>,
+                                                <a href="{{url('liste/etudes')}}">  Etudes</a>,
+                                                    <a href="{{url('liste/projet')}}">  Projet</a>,
+                                                        <a href="{{url('liste/R&D Logistique')}}">   R&D Logistique</a>,
+                                                            <a href="{{url('liste/achat')}}">   Achat</a>, 
+                                                                <a href="{{url('liste/stock')}}">    Stock</a>,
+                                                                    <a href="{{url('liste/transport Production')}}">   Transport Production</a>, 
+                                                                        <a href="{{url('liste/méthode')}}">    méthode</a>,
+                                                                            <a href="{{url('liste/industrie Maintenance')}}">    industrie Maintenance</a>,
+                                                                                <a href="{{url('liste/ Entretien Qualité')}}">     Entretien Qualité</a>,
+                                                                                    <a href="{{url('liste/sécurité')}}">   Sécurité</a>,
+                                                                                        <a href="{{url('liste/environnement')}}"> Environnement</a>
                                    </p>
                                 </div>
                                 </div>
@@ -75,9 +75,9 @@
   
         <div class="col-lg-3 col-md-6"> <img src="bizPage/img/icon/375.png"> </div>
         <div class="col-lg-9 col-md-6" style="align-content: center;"> <span style="font-size: 20px;">Santé, Médical, Pharmaceutique, Délégué médical</span>
-          <a href=rechercheavance.html> Santé</a>, 
-              <a href=rechercheavance.html> Médical</a>,
-                  <a href=rechercheavance.html> Pharmacie</a><br><br><br>
+          <a href="{{url('liste/santé')}}"> Santé</a>, 
+              <a href="{{url('liste/médical')}}"> Médical</a>,
+                  <a href="{{url('liste/pharmacie')}}"> Pharmacie</a><br><br><br>
         </div>
         </div>
     </div>

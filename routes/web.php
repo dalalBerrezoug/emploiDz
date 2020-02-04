@@ -42,10 +42,13 @@ Route::get('/rechercheparregion', function () {
   return view('rechercheparregion');
  
 });
+Route::get('/liste/{ville}','listeController@showregion');
 Route::get('/rechercheparfonction', function () {
   return view('rechercheparfonction');
  
 });
+Route::get('/listefonction/{domaine}','listefoncController@show');
+
 Route::get('/rechercheparmotcle', function () {
   return view('rechercheparmotcle');
  
@@ -68,6 +71,9 @@ Route::get('/offres','RecruteurController@show1');
 Route::get('/offres/{id}','showrecController@show1');
 //Route::get('/detail/{id}','OffreController@show');
 Route::get('/detail/{id}','showOffreController@show');
+
+
+
 
 //Route::get('/home','PostuleController@index');
 /*
