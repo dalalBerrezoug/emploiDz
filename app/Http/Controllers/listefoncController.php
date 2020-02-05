@@ -21,6 +21,7 @@ class listefoncController extends Controller
          $list_des_offres1 = DB::table('offres')
                                 
          ->join('recruteurs','recruteurs.user_id','offres.rec_id')
+         ->where('offres.statu','=',1)
          
          
          ->select('recruteurs.*','offres.*')

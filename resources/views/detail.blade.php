@@ -127,6 +127,8 @@
                  <p> <span style="margin-left:40px;">{{$offres->type}}</span></p><br><br>
                  <h4>Renumération</h4>
                   <p><span style="margin-left:40px;"> {{$offres->remuneration}}</span></p>
+                  <h4>Nombre d'année d'experience</h4>
+                  <p><span style="margin-left:40px;"> {{$offres->intitule}}</span></p>
             </div>
 
          </div> @endforeach

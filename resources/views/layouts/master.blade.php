@@ -75,6 +75,7 @@
           @if (Route::has('login'))
           <li>
           @auth 
+          @if(Auth::user()->role == 0)
            <!-- <a href="{{ url('/home') }}">Home</a>-->
            <li class="menu-has-children">
            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -90,6 +91,9 @@
                                                      document.getElementById('logout-form').submit();" >
                                         {{ __('Déconnexion') }}
                                     </a>
+                                    @else
+                                    <li> <a href="{{ route('home') }}"><button type="button" class="btn btn-outline-success btn-lg mb-2">Mon espace</button></a><li>
+ @endif
                                    <!-- -->
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"style="display: none;" >
                                         @csrf
@@ -106,6 +110,7 @@
                                   </ul></li>
                                 <!--</div>-->
                     @else
+                    
                        <li> <a href="{{ url('LogTous') }}">Se connecter</a><li>
 
                         @if (Route::has('register'))

@@ -100,6 +100,7 @@ class OffreController extends Controller
         $offre->debut_prevu=$request->input('debut_prevu');
         $offre->depot_offre=$request->input('depot_offre');
         $offre->description=$request->input('description');
+        $offre->statu=$request->input('statu');
         $offre->save();
         return redirect('ConsulterOffre/'.Auth::user()->id);
 

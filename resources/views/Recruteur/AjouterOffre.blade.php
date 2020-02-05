@@ -19,7 +19,7 @@
 
                              <div class="form-group">
                                     <div class="col-md-6">
-                                    <label>Nom d'Offre</label>
+                                    <label>Intitulé</label>
                                     <input type="text" placeholder="Nom d'Offre" class="form-control form-control-line" name="nom"> 
                                      </div>
                                      <div class="col-md-6">
@@ -33,8 +33,8 @@
                                         <input type="text" placeholder="Diplôme" class="form-control form-control-line" name="diplome"> </div>
                                         <div class="form-group">
                                     <div class="col-md-6">
-                                    <label>Intitulé</label>
-                                    <input type="text" placeholder="intitulé" class="form-control form-control-line" name="intitule"> 
+                                    <label>Nombre d'année d'experience</label>
+                                    <input type="text" placeholder="Nombre d'année d'experience" class="form-control form-control-line" name="intitule"> 
                                      </div>
                                      
                                 </div>

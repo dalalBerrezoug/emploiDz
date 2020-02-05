@@ -15,9 +15,7 @@
                      
                       <!--pour quite-->
                                     <div class="col-md-12">
-                                     <div class="col-md-4">
-                                     <label style="color:black">Intitulé:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->intitule}}</label>
-                                     </div>
+                
                                      <div class="col-md-4">
                                      <label style="color:black">Domaine:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->domaine}}</label>
                                      </div>
@@ -36,6 +34,9 @@
                                      </div>
                                      <div class="col-md-4">
                                      <label style="color:black">Rémunération:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->remuneration}}</label>
+                                     </div>
+                                     <div class="col-md-4">
+                                     <label style="color:black">Nombre d'année d'experience:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->intitule}}</label>
                                      </div>
                                     </div>
                                     <br><br><br><br>

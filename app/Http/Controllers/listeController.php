@@ -43,6 +43,7 @@ class listeController extends Controller
              $list_des_offres = DB::table('offres')
                                     
              ->join('recruteurs','recruteurs.user_id','offres.rec_id')
+             ->where('offres.statu','=',1)
              
              
              ->select('recruteurs.id as idrec','recruteurs.Nom_Rec','offres.*')

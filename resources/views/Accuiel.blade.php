@@ -45,42 +45,8 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header" style="background-color: black;">
-
-      <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">Emploi.dz</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
-      </div>
-      <nav id="nav-menu-container" style="background-color: black;">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="{{ route('home') }}">Home</a></li>
-          <li class="menu-has-children"><a href="">Offres d'emploi</a>
-            <ul>
-              <li><a href="{{ url('rechercheavance') }}">Recherche Avancé</a></li>
-              <li><a href="{{ url('rechercheparregion') }}">Recherche par Région</a></li>
-              <li><a href="{{ url('rechercheparfonction') }}">Recherche par Fonction</a></li>
-              <li><a href="{{ url('recruteurs') }}">Nos Recruteurs</a></li>
-            </ul>
-          </li>
-          <li class="menu-has-children"><a href="">Conseils</a>
-            <ul>
-              <li><a href="{{ url('actualite') }}">Actualités</a></li>
-              <li><a href="{{ url('modelecv') }}">Modeles de CV</a></li>
-              
-            </ul>
-          </li>
-          <li><a href="{{url('LogTous')}}">Se connecter</a></li>
-          <li><a href="{{url('InsecriptionRec')}}"><button type="button" class="btn btn-outline-success btn-lg mb-2">ESPACE RECRUTEUR</button></li>
-          <li>
-              <button type="button" class="btn btn-success btn-lg mb-2">
-                  <a href="{{url('register')}}">
-                 S'INSCRIRE </a>
-               </button>&nbsp;&nbsp;&nbsp;
-          </li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </header>
+  @extends('layouts.master')
+ @section('content')
    
     @yield('content')
     <body>
@@ -378,3 +344,4 @@
 
 
     </body>
+    @endsection

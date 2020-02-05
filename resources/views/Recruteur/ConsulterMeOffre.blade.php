@@ -24,7 +24,7 @@
                                     <thead>
                                         <tr>
                                             
-                                            <th>Nom d'offre</th>
+                                            
                                             <th>Intitulé</th>
                                             <th>Type</th>
                                             <th>Domaine</th>
@@ -34,9 +34,8 @@
                                         </tr>
                                         @foreach($offres as $offre)
                                         <tr>
-                                            <td>{{$offre->nom}}</td>
-                                            <td>{{$offre->type}}</td>
                                             <td>{{$offre->intitule}}</td>
+                                            <td>{{$offre->type}}</td>
                                             <td>{{$offre->domaine}}</td>
                                             <td>{{$offre->diplome}}</td>
                                             <td>{{$offre->lieuTrav}}</td>

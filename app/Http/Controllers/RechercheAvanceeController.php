@@ -27,7 +27,9 @@ class RechercheAvanceeController extends Controller
       {
        $data = DB::table('offres')
           ->join('recruteurs','recruteurs.user_id','offres.rec_id')
+          ->where('offres.statu','=',1)
           ->select('Nom_Rec', 'domaine', 'diplome', 'lieuTrav', 'offres.type','offres.id')
+
          //->select('id', 'domaine', 'diplome', 'lieuTrav', 'description')
         
          ->get();

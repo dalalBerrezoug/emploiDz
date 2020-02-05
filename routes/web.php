@@ -252,7 +252,7 @@ Route::get('insere/{id}','OffreController@Store');
 Route::get('ConsulterOffre/{id}','OffreController@index');
 Route::get('AfficherInfOffre/{id}','OffreController@Affiche_Info');
 Route::get('Offre/{id}/modifier','OffreController@edit');
-Route::put('Offre/{id}/update/{rec_id}','OffreController@update');
+Route::post('Offre/{id}/update/{rec_id}','OffreController@update');
 Route::get('Offre/{id}/delete','OffreController@destroy');
 Route::get('inserRec','RecruteurController@create');
 Route::get('Insertion/{id}','RecruteurController@Store');
