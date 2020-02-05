@@ -53,8 +53,8 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
-
-      <nav id="nav-menu-container" style="background-color: black;">
+<!--hadi tji f nav (id="nav-menu-container")-->
+      <nav  style="background-color: black;">
         <ul class="nav-menu">
           <li class="menu-active"><a href="{{ url('accueil') }}">Home</a></li>
           <li class="menu-has-children"><a href="">Offres d'emploi</a>

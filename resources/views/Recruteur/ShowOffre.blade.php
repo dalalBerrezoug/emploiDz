@@ -1,78 +1,90 @@
 @extends('layouts.masterRec')
 @section('contenu')
-<div id="page-wrapper">
+        <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Detail d' offre :</h4> </div>
-                    
-                        <div class="form-group">
-                        <!--pour quite-->
-                        <div class="form-group">
-                      <div class="col-md-12">
-                      <h2 style="color:green">{{$offres->nom}}<span id="close" class="close"><a href="{{url('ConsulterOffre/'.Auth::user()->id)}}"> &times; </span></a></h2><hr>
-                      </div>
-                     
-                      <!--pour quite-->
-                                    <div class="col-md-12">
-                
-                                     <div class="col-md-4">
-                                     <label style="color:black">Domaine:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->domaine}}</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Diplome:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->diplome}}</label>
-                                     </div>
-                                    </div>
-                                    <br><br><br><br>
-                                    <br><br><br>
-                                    <div class="col-md-12">
-                                     <div class="col-md-4">
-                                     <label style="color:black">Comptences:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->competences}}</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Lieu de travialle:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->lieu}}</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Rémunération:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->remuneration}}</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Nombre d'année d'experience:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->intitule}}</label>
-                                     </div>
-                                    </div>
-                                    <br><br><br><br>
-                                    <div class="col-md-12">
-                                     <div class="col-md-4">
-                                     <label style="color:black">Durée CDD/Stage:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->duree}}</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Type D'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->type}}</label>
-                                     </div>
-                                     <div class="col-md-4">
-                                     <label style="color:black">Date de bébut prévu:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->debut_prevu}}</label>
-                                     </div>
-                                    </div>
-                                    <br><br><br><br>
-                                    <div class="col-md-12">
-                                     <div class="col-md-4">
-                                     <label style="color:black">Date de dépot d'offre:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->depot_offre}}</label>
-                                     </div>
-                                     <div class="col-md-8">
-                                    <label style="color:black">Description:</label>  
-                                    <table>
-                                    <tr><td>
-                                    <textarea name="description" rows="5" cols="60"  name="description">
-                                    {{$offres->description}}
-                                          </textarea>
-                                    </td></tr>
-                                    </table></div></div>
-                                    <div class="col-md-12">
-                                    <div class="col-md-8">
-                                    <label style="color:black">Adresse de travaille:</label>   <label for="example-text-input" class="col-2 col-form-label">{{$offres->lieuTrav}}</label>
-                                    </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                    <br><br>
-                                    <h4 style="color:green">Les personnes qui postuler cette offre</h4>
+                        <h4 class="page-title">Detail d'Offre:<h2 style="color:green">{{$offres->nom}}</h2></h4> </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"><!-- <a href="http://wrappixel.com/templates/pixeladmin/" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Upgrade to Pro</a>-->
+                       
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Informations sur l'offre</h3>
+                            <!--<p class="text-muted">Add class <code>.table</code></p>-->
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            
+                                            
+                                            
+                                            <th>Type</th>
+                                            <th>Domaine</th>
+                                            <th>Diplôme</th>
+                                            <th>lieu de travail</th>
+                                            <th>Comptences</th>
+                                            <th>Rémunération</th>
+                                            
+                                            </tr>
+                                            <tr>
+                                            <td>{{$offres->type}}</td>
+                                            <td>{{$offres->domaine}}</td>
+                                            <td>{{$offres->diplome}}</td>
+                                            <td>{{$offres->lieuTrav}}</td>
+                                            <td>{{$offres->competences}}</td>
+                                            <td>{{$offres->remuneration}}</td>
+                                            
+                                            
+                                            
+                                            </tr>
+                                            
+                                            <tr>
+                                            <th>Nombre d'année d'experience</th>
+                                            <th>Durée CDD/Stage</th>
+                                            <th>Date de dépot d'offre</th>
+                                            <th>Date de bébut prévu</th>
+                                            <th>Statu</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{{$offres->intitule}}</td>
+                                            <td>{{$offres->duree}}</td>
+                                            <td>{{$offres->depot_offre}}</td>
+                                            <td>{{$offres->debut_prevu}}</td>
+                                        
+                                            @if($offres->statu == 1)
+                                            <td>
+                                            Publie
+                                            </td>
+                                            @endif
+                                            @if($offres->statu == 0)
+                                            <td>
+                                            Retire
+                                            </td>
+                                            @endif
+                                            
+                                            
+                                            </tr>
+                                      
+                                     
+                                    </thead>
+                                    <tbody>
+                                   <!--hna nzido les informations d'offres-->
+                                    </tbody>
+                                </table>
+                                <table>
+                                <tbody><thead>
+                               <tr> <th colspan="4">Description</th></tr>
+                               <tr> <td colspan="4">{{$offres->description}}</td></tr>
+                                
+                                </thead></tbody>
+                                </table>
+
+                                <h2 style="color:green" align="center">Les personnes qui postuler cette offre</h2>
                                     <table class="table table-bordered table-striped col-md-12">
                                     <thead>
                         <tr style="width: 200px;">
@@ -90,10 +102,10 @@
     @endforeach
                                     </table>
                                     
-                                    </div>
-                                    </div>
-                                    
-                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-            @stop
+             </div>
+             @stop
