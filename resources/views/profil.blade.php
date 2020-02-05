@@ -24,13 +24,16 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                                    <h5>{{ $cond->nom }} {{ $cond->prenom }} 
+                                    <h5><strong>{{ $cond->nom }} {{ $cond->prenom }} </strong>
                                     
-</h5>
+</h5> @foreach($cv as $cv)
+                                   {{$cv->titre}}
+                                   @endforeach
                                    <!-- <h6>
                                         Web Developer and Designer 
                                     </h6>-->
                                    <br><br><br>
+                                  
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">A propos</a>

@@ -32,6 +32,12 @@ class DocumentController extends Controller
       $doc->cv_id=$cv_id;
       $doc->titre=$request->input('titre');
       $doc->type=$request->input('type');
+      if($request->hasFile('avatar')){
+        $avatar = $request->file('avatar');
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename ) );
+        $doc->doc=$filename;
+      }
       $doc->save();
       return redirect('Cv_Condidat');
     }else{

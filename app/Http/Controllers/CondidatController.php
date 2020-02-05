@@ -64,8 +64,9 @@ class CondidatController extends Controller
           ->join('recruteurs','recruteurs.user_id','postules.recruteur_id')
           ->join('condidats','condidats.user_id','postules.condidat_id')
           ->join('offres','offres.id','postules.offre_id')
+          ->where('condidats.user_id','=',Auth::user()->id)
           
-          ->select('condidats.*','offres.nom as titre','offres.intitule','offres.rec_id'
+          ->select('condidats.*','recruteurs.*','offres.nom as titre','offres.intitule','offres.rec_id'
           ,'offres.created_at as cree','postules.*')
           
           ->get();
@@ -77,6 +78,7 @@ class CondidatController extends Controller
                                 
           ->join('recruteurs','recruteurs.user_id','postules.recruteur_id')
           ->join('condidats','condidats.user_id','postules.condidat_id')
+          ->where('condidats.user_id','=',Auth::user()->id)
           
           
           ->select('condidats.*','recruteurs.*'
@@ -85,7 +87,20 @@ class CondidatController extends Controller
           ->get();
 
 
-          return view('profil',compact('cond','postule','postule1'));
+
+          $cv = DB::table('cvs')
+                                
+          ->join('condidats','condidats.user_id','cvs.user_id')
+          ->where('condidats.user_id','=',Auth::user()->id)
+          
+          
+          
+          ->select('condidats.*','cvs.*')
+          
+          ->get();
+
+
+          return view('profil',compact('cond','postule','postule1','cv'));
         }else 
         {
             return redirect('Condidat');
@@ -134,10 +149,11 @@ class CondidatController extends Controller
             $Rec->avatar = $filename;
             $Rec->save();
         }
-        $Cont=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
+        /*$Cont=Condidat::select('id')->where('user_id','=',Auth::user()->id)->get();
             $cont=Condidat::find($Cont);
             $a= $cont[0]->id;
             $Rec=Condidat::find($a);
-        return view('profil')->with('cond',$Rec);
+        return view('profil')->with('cond',$Rec);*/
+        return redirect('ProfilCondidat'); 
     }
 }

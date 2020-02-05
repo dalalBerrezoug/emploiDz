@@ -26,10 +26,7 @@
                                     <input class="form-check-input" type="radio" name="civilite" id="inlineRadio3" value="Mademoiselle"> Mademoiselle
                                   </label>
                                 </div>
-                              <div style="margin-left:200px;">
-                                <input type="file" id="file" accept="image/*" name="photo">
-                                <label for="file" class="image"><span class="oi oi-cloud-upload"></span>  &nbsp; &nbsp;choisir une image</label>
-                              </div>
+                              
                               
                               </div>
 

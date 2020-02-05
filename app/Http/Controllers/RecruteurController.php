@@ -38,8 +38,8 @@ class RecruteurController extends Controller
             return  redirect('InfoRec/'.$id);
         }
     
-           public function index($user_id){
-            $Rec=Recruteur::select('id')->where('user_id','=',$user_id)->get();
+           public function index(){
+            $Rec=Recruteur::select('id')->where('user_id','=',Auth::user()->id)->get();
             if($Rec=='[]'){
             return  redirect('inserRec');
                //echo "hhhhhh";

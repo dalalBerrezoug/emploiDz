@@ -60,7 +60,6 @@
               <li><a href="{{ url('rechercheavance') }}">Recherche Avancé</a></li>
               <li><a href="{{ url('rechercheparregion') }}">Recherche par Région</a></li>
               <li><a href="{{ url('rechercheparfonction') }}">Recherche par Fonction</a></li>
-              <li><a href="{{ url('rechercheparmotcle') }}">Recherche par mot clée</a></li>
               <li><a href="{{ url('recruteurs') }}">Nos Recruteurs</a></li>
             </ul>
           </li>
@@ -100,45 +99,7 @@
               <div class="carousel-content">
                 <h2>Trouvez votre Futur Emploi en Algerie</h2>
                 
-                <form class="header-job-search" method="get" style="padding-left: 200px;">
-                    <div class="row">
-                      <div class="input-keyword col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="q"
-            placeholder="Titre de poste, compétence, entreprise ..."
-            data-url="/?task=suggestions.display&format=json&tmpl=component"
-            data-query-field="q"
-            data-item-text="txt"
-            data-item-value="txt"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <div class="input-location col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="l"
-            placeholder="Région, wilaya ..."
-            data-url="/component/location/location/getAutocompletion?tmpl=component&stoplevel=3"
-            data-query-field="value"
-            data-item-text="txt"
-            data-item-value="id"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <input type="hidden" name="option" value="com_finder">
-                      <input type="hidden" name="task" value="jobs.display">
-                      <div class="btn-search">
-                          <button class="btn btn-success" type="submit">
-                              CHERCHER                        </button>
-                          
-                      </div>
-                    </div>
-                  </form> 
+               
               </div>
             </div>
           </div>
@@ -147,47 +108,9 @@
             <div class="carousel-background"><img src="bizPage/img/intro-carousel/2.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Nous sommes Profetionnel</h2>
+                <h2>Trouvez votre Futur Employés en Algerie</h2>
                 
-                <form class="header-job-search" method="get" style="padding-left: 200px;">
-                    <div class="row">
-                      <div class="input-keyword col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="q"
-            placeholder="Titre de poste, compétence, entreprise ..."
-            data-url="/?task=suggestions.display&format=json&tmpl=component"
-            data-query-field="q"
-            data-item-text="txt"
-            data-item-value="txt"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <div class="input-location col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="l"
-            placeholder="Région, wilaya ..."
-            data-url="/component/location/location/getAutocompletion?tmpl=component&stoplevel=3"
-            data-query-field="value"
-            data-item-text="txt"
-            data-item-value="id"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <input type="hidden" name="option" value="com_finder">
-                      <input type="hidden" name="task" value="jobs.display">
-                      <div class="btn-search">
-                          <button class="btn btn-success" type="submit">
-                              CHERCHER                        </button>
-                          
-                      </div>
-                    </div>
-                  </form> 
+               
               </div>
             </div>
           </div>
@@ -196,47 +119,9 @@
             <div class="carousel-background"><img src="bizPage/img/intro-carousel/3.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Tous les Domaines</h2>
+                <h2>Nous sommes Profetionnel</h2>
                
-                <form class="header-job-search" method="get" style="padding-left: 200px;">
-                    <div class="row">
-                      <div class="input-keyword col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="q"
-            placeholder="Titre de poste, compétence, entreprise ..."
-            data-url="/?task=suggestions.display&format=json&tmpl=component"
-            data-query-field="q"
-            data-item-text="txt"
-            data-item-value="txt"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <div class="input-location col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="l"
-            placeholder="Région, wilaya ..."
-            data-url="/component/location/location/getAutocompletion?tmpl=component&stoplevel=3"
-            data-query-field="value"
-            data-item-text="txt"
-            data-item-value="id"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <input type="hidden" name="option" value="com_finder">
-                      <input type="hidden" name="task" value="jobs.display">
-                      <div class="btn-search">
-                          <button class="btn btn-success" type="submit">
-                              CHERCHER                        </button>
-                          
-                      </div>
-                    </div>
-                  </form> 
+               
               </div>
             </div>
           </div>
@@ -245,47 +130,9 @@
             <div class="carousel-background"><img src="bizPage/img/intro-carousel/4.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Tous les Offres</h2>
+                <h2>Tous les Domaines</h2>
                 
-                <form class="header-job-search" method="get" style="padding-left: 200px;">
-                    <div class="row">
-                      <div class="input-keyword col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="q"
-            placeholder="Titre de poste, compétence, entreprise ..."
-            data-url="/?task=suggestions.display&format=json&tmpl=component"
-            data-query-field="q"
-            data-item-text="txt"
-            data-item-value="txt"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <div class="input-location col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="l"
-            placeholder="Région, wilaya ..."
-            data-url="/component/location/location/getAutocompletion?tmpl=component&stoplevel=3"
-            data-query-field="value"
-            data-item-text="txt"
-            data-item-value="id"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <input type="hidden" name="option" value="com_finder">
-                      <input type="hidden" name="task" value="jobs.display">
-                      <div class="btn-search">
-                          <button class="btn btn-success" type="submit">
-                              CHERCHER                        </button>
-                          
-                      </div>
-                    </div>
-                  </form> 
+               
               </div>
             </div>
           </div>
@@ -294,47 +141,9 @@
             <div class="carousel-background"><img src="bizPage/img/intro-carousel/5.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Tous les Offres possibles</h2>
+                <h2>Tous les Offres</h2>
                
-                <form class="header-job-search" method="get" style="padding-left: 200px;">
-                    <div class="row">
-                      <div class="input-keyword col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="q"
-            placeholder="Titre de poste, compétence, entreprise ..."
-            data-url="/?task=suggestions.display&format=json&tmpl=component"
-            data-query-field="q"
-            data-item-text="txt"
-            data-item-value="txt"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <div class="input-location col-lg-5">
-                          <input type="text"
-            class="form-control"
-            data-plugin="typeahead"
-            name="l"
-            placeholder="Région, wilaya ..."
-            data-url="/component/location/location/getAutocompletion?tmpl=component&stoplevel=3"
-            data-query-field="value"
-            data-item-text="txt"
-            data-item-value="id"
-            data-min-length="3"
-            data-text-no-result="Aucun résultat correspondant"
-            />
-                      </div>
-                      <input type="hidden" name="option" value="com_finder">
-                      <input type="hidden" name="task" value="jobs.display">
-                      <div class="btn-search">
-                          <button class="btn btn-success" type="submit">
-                              CHERCHER                        </button>
-                          
-                      </div>
-                    </div>
-                  </form> 
+                
               </div>
             </div>
           </div>
@@ -366,8 +175,7 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h3>A propos de nous</h3>
         </header>
 
         <div class="row about-cols">
@@ -431,8 +239,8 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>Facts</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <h3>Facteurs</h3>
+          
         </header>
 
         <div class="row counters">
@@ -478,7 +286,7 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>Notre Recruteurs</h3>
+ 
         </header>
 
         <div class="owl-carousel clients-carousel">

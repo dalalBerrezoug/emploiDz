@@ -10,7 +10,7 @@
 <div class="row" style=" background-color: white; margin-top: 5px;margin-left: 10px;">
         @foreach($Rec as $R)
         @if($R->user_id == $offres->rec_id )
-        <div class="col-lg-3"> <img src="/uploads/avatars/{{$R->logo_avt}}" alt=""/></div>
+        <div class="col-lg-3"> <img src="/uploads/avatars/{{$R->logo_avt}}" alt="" style="width:200px;"/></div>
         @endif
         @endforeach
         <div class="col-lg-6"><h5 style="margin-top: 5px;">
@@ -87,18 +87,20 @@
      <div class="row" style=" background-color: white; margin-top: 5px;margin-left: 10px;">
         <table class="table ">
             <tr>
+            <td><strong>Recruteur</strong></td>
+                    <td>{{$offres->Nom_Rec}}</td>
                 <td><strong>domaine</strong></td>
                 <td>{{$offres->domaine}}</td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><strong>Diplome</strong></td>
-                <td>{{$offres->diplome}}</td>
+                
             </tr>
             <tr>
+            <td><strong>Diplome</strong></td>
+                <td>{{$offres->diplome}}</td>
                     <td><strong>Date d'expiration</strong></td>
                     <td>{{$offres->debut_prevu}}</td>
                     <td></td>
-                    <td><strong>Nombre de postes</strong></td>
-                    <td>1 poste</td>
+                    
                 </tr>
         </table>
             

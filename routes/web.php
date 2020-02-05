@@ -290,7 +290,7 @@ Route::get('Cv_Condidat','UserController@Cv_Condidat');
 Route::get('AjouterExperience','ExperienceController@index');
 Route::get('InsertionExperience','ExperienceController@stroy');
 Route::get('UpdateExperience/{id}','ExperienceController@index_update');
-Route::get('Update/{id}','ExperienceController@Update_Experience');
+Route::get('Updatexp/{id}','ExperienceController@Update_Experience');
 ///fin 
 
 

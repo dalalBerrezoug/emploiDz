@@ -52,12 +52,23 @@ class OffreController extends Controller
     public function Affiche_Info(Request $request,$id){
         $offres=Offre::find($id);
         $spont=array();
-        $post=Postule::select('id')->where('offre_id','=',$id)->where('recruteur_id','=',Auth::user()->id)->get();
+        $postule = DB::table('postules')
+                                
+                                ->join('recruteurs','recruteurs.user_id','postules.recruteur_id')
+                                ->join('condidats','condidats.user_id','postules.condidat_id')
+                                ->join('offres','offres.id','postules.offre_id')
+                                ->where('offres.id','=',$id)
+                                
+                                ->select('condidats.*','offres.nom as titre','offres.intitule','offres.rec_id'
+                                ,'offres.created_at as cree','postules.*')
+                                
+                                ->get();
+        /*$post=Postule::select('id')->where('offre_id','=',$id)->where('recruteur_id','=',Auth::user()->id)->get();
         
         foreach ($post as $user) {
             $condidat=Condidat::select('*')->where('user_id','=',$user->id)->get();
             array_push($spont,$condidat);
-        }
+        }*/
 
        /* foreach ($spont as $user){
         foreach($user as $a){
@@ -66,7 +77,7 @@ class OffreController extends Controller
             echo $a->prenom."<br>";
         }
     }*/
-    return view('Recruteur.ShowOffre',compact('offres','spont'));
+    return view('Recruteur.ShowOffre',compact('offres','postule'));
         //return view('Recruteur.AfficherLesinfOffre')->with('offres',$offres);
     }
     public function edit($id){

@@ -79,13 +79,13 @@
                             <th style="width: 200px;">Prenom</th>
                             <th style="width: 200px;">Email</th>
                             <th style="width: 200px;">Adresse</th>
+                            <th style="width: 200px;"></th>
                         </tr>
                     </thead>
-                     @foreach ($spont as $user)
-        @foreach($user as $a)
-            <tr style="width: 200px;"><td>{{$a->nom}}</td><td>{{$a->prenom}}</td><td>{{$a->email}}</td><td>{{$a->adresse}}</td></tr>   
+                     @foreach ($postule as $user)
+            <tr style="width: 200px;"><td>{{$user->nom}}</td><td>{{$user->prenom}}</td><td>{{$user->email}}</td><td>{{$user->adresse}}</td><td><a href="{{url('voir_cv/'.$user->condidat_id)}}">Voir Cv</a></td></tr>   
     
-    @endforeach
+    
     @endforeach
                                     </table>
                                     

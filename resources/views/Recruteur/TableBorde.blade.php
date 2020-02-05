@@ -76,7 +76,7 @@
                                 
                                 
                                 <div class="comment-body b-none">
-                                    <div class="user-img"> <img src="{{asset('pixel/plugins/images/users/arijit.jpg')}}" alt="user" class="img-circle"> </div>
+                                    <div class="user-img"> <img src="/uploads/avatars/{{$postule->avatar}}" alt="user" class="img-circle"> </div>
                                     <div class="mail-contnet">
                                         <h5>{{$postule->prenom}} {{$postule->nom}}</h5> <span class="mail-desc"> a Postulé {{$postule->titre}}   <span class="time pull-right"> le {{$postule->cree}}</span></span>
                                         
@@ -108,7 +108,7 @@
                                 
                                 
                                 <div class="comment-body b-none">
-                                    <div class="user-img"> <img src="{{asset('pixel/plugins/images/users/arijit.jpg')}}" alt="user" class="img-circle"> </div>
+                                    <div class="user-img"> <img src="/uploads/avatars/{{$postule1->avatar}}" alt="user" class="img-circle"> </div>
                                     <div class="mail-contnet">
                                         <h5>{{$postule1->prenom}} {{$postule1->nom}}</h5> <span class="mail-desc"> a vous envoyer une condidature <span class="time pull-right"> SPONTANNE </span></span>
                                        

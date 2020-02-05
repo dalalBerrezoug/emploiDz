@@ -71,7 +71,7 @@
                             <label for="example-text-input" class="col-2 col-form-label">Numéro de telephone:</label>
                          
                          <input class="form-control" type="text" value="{{$Rec->telephone}}" id="example-text-input" name="telephone">
-                         <label for="example-text-input" class="col-2 col-form-label">Votre Entreprise:</label>
+                         <label for="example-text-input" class="col-2 col-form-label">Fonction:</label>
                          <div class="col-12">
                          <div class="col-6">
                          <input class="form-control" type="text" value="{{$Rec->fonction}}" id="example-text-input" name="fonction">

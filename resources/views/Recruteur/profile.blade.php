@@ -90,7 +90,7 @@
                                        </div> </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-12">Votre Entreprise</label>
+                                    <label class="col-md-12">Fonction</label>
                                     <div class="col-md-12">
                                        <p>{{$Rec->fonction}}</p>
                                     </div>

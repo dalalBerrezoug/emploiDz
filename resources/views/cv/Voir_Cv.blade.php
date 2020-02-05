@@ -150,8 +150,39 @@
           
             
             <div style="margin-left:200px;"> <h1>
-            titre: @if($data['titre'] ){{$data['titre']->titre}}@endif</h1></div><br><br>
+            @if($data['titre'] ){{$data['titre']->titre}}@endif</h1></div><br><br>
            </div><br><br>
+
+
+
+           <div class="row"> <span style="margin-left:200px";>  <h1 style="color:#49EC64">Formations</h1></span> 
+           </div>
+           <div class="row" style="margin-top: 50px; margin-left:30px ;">
+            <div class="col-lg-10">
+            <table class="table">
+            @if($data['formation'] )
+            @foreach($data['formation'] as $exper)
+              
+
+
+
+              <tr>
+                <td style="width:5px;">  {{$exper->titreformation}}<br>({{$exper->domaine}} )</td>
+                <td style="width:5px;"><strong>A </strong> {{$exper->lieu_formation}}<br> ({{$exper->type_etat}})</td>
+
+                <td style="width:100px;"><strong>Du</strong> {{$exper->datedebut}}<br><strong>Au</strong> {{$exper->datefin}}</td>
+              </tr>
+              @endforeach
+              @endif
+               
+   </table>
+
+                     
+                      <br><br>
+                  </div></div>
+
+
+
            
           
           <div class="row"><h1 style="color:#49EC64"><span style="margin-left:200px";>Experiences</h1> </span></div>
@@ -177,26 +208,7 @@
                   
          
          
-            <div class="row"> <span style="margin-left:200px";>  <h1 style="color:#49EC64">Formations</h1></span> 
-           </div>
-           <div class="row" style="margin-top: 50px; margin-left:30px ;">
-            <div class="col-lg-10">
-            <table class="table">
-            @if($data['formation'] )
-            @foreach($data['formation'] as $exper)
-              <tr>
-                <td style="width:10px;"> {{$exper->titreformation}}</td>
-                <td style="width:50px;">Du {{$exper->datedebut}}<br>Au {{$exper->datefin}}</td>
-              <td style="width:10px;"><h4> </h4><br></td>
-              </tr>
-              @endforeach
-              @endif
-               
-   </table>
-
-                     
-                      <br><br>
-                  </div></div>
+            
                   
                   <div class="row"> <span style="margin-left:200px;font-color:black;"> <h1 style="color:#49EC64">Competences</h1></span> </div>
             <div class="row" style="margin-top: 50px; margin-left:30px ;">

@@ -5,7 +5,7 @@
 <div class="overlayeditexp" id="overlayeditexp">
                               <div class="popupeditexp" id="popupeditexp">
                                 <h2>Editer ma experience <a href="{{url('Cv_Condidat')}}"><span id="closeeditexp" class="closeeditexp"> &times; </span></a></h2><hr>
-                                <form action= "{{url('Update/'.$exp->id)}}" method="get">
+                                <form action= "{{url('Updatexp/'.$exp->id)}}" method="get">
                 <input type="hidden" name="_method" value="POST">
     {{csrf_field()}}
                                         
