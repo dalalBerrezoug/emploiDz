@@ -24,20 +24,19 @@
                                     <thead>
                                         <tr>
                                             
-                                            
-                                            <th>Intitulé</th>
+                                        <th>Domaine</th>
                                             <th>Type</th>
-                                            <th>Domaine</th>
                                             <th>Diplôme</th>
+                                            <th>Nombre d'année d'experience</th>
                                             <th>lieu de travail</th>
                                             <th></th>
                                         </tr>
                                         @foreach($offres as $offre)
                                         <tr>
-                                            <td>{{$offre->intitule}}</td>
+                                        <td>{{$offre->domaine}}</td>
                                             <td>{{$offre->type}}</td>
-                                            <td>{{$offre->domaine}}</td>
                                             <td>{{$offre->diplome}}</td>
+                                            <td>{{$offre->intitule}}</td>
                                             <td>{{$offre->lieuTrav}}</td>
                                             
                                             <td>
